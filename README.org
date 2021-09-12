@@ -1,0 +1,42 @@
+#+TITLE: pgronkievitz's dotfiles
+#+AUTHOR: Patryk Gronkiewicz
+#+PROPERTY: header-args :tangle no :tangle-mode (identity #o444) :cache yes :results silent
+#+OPTIONS: broken-links:auto
+#+EXPORT_FILE_NAME: index.html
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+
+[[https://img.shields.io/badge/Made_with-Doom_Emacs-blueviolet.svg]] [[https://img.shields.io/badge/NixOS-v21.11-blue.svg]]
+#+begin_center
+| *Shell*    | zsh        |
+| *DM*       | lightdm    |
+| *WM*       | qtile      |
+| *Editor*   | Doom Emacs |
+| *Terminal* | Alacritty  |
+| *Launcher* | rofi       |
+| *Browser*  | Firefox    |
+#+end_center
+
+#+CAPTION: Nobody's gonna use my laptop!
+[[https://imgs.xkcd.com/comics/borrow_your_laptop.png]]
+
+This is my NixOS configuraiton. It's quite simple for now, but it'll be improved over time.
+* TODOs
+** General
+*** TODO Move all of the configs into literates (preferably into this file)
+*** TODO Consider moving to ZFS instead of BTRFS
+*** TODO Consider [[https://grahamc.com/blog/erase-your-darlings?source=techstories.org][removing my darlings]]
+*** TODO Fix colors to be defined in one file instead of every themed app
+*** TODO Set up logging in with password + U2F key
+*** TODO Set up "panic password" which deletes all of =/home/=
+** WM
+*** TODO Add qtile config into this directory to make it more manageable
+** Emacs
+*** TODO Set up Emacs overlay as flake
+*** TODO Fix Emacs' service
+** NixOS
+*** TODO Set up automatic GC with ~2 weeks of generations
+*** TODO Set up backups properly
+*** TODO Set up agenix secrets
+* Requirements
+1. NixOS
+2. FLakes enabled
