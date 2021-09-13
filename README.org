@@ -21,18 +21,18 @@
 
 This is my NixOS configuraiton. It's quite simple for now, but it'll be improved over time.
 * TODOs
-** General
+** PROJ General
 *** TODO Move all of the configs into literates (preferably into this file)
-*** TODO Consider moving to ZFS instead of BTRFS
-*** TODO Consider [[https://grahamc.com/blog/erase-your-darlings?source=techstories.org][removing my darlings]]
+*** IDEA Consider moving to ZFS instead of BTRFS
+*** IDEA Consider [[https://grahamc.com/blog/erase-your-darlings?source=techstories.org][removing my darlings]]
 *** TODO Fix colors to be defined in one file instead of every themed app
 *** TODO Set up logging in with password + U2F key
 *** TODO Set up "panic password" which deletes all of =/home/=
-** WM
+** PROJ WM
 *** TODO Add qtile config into this directory to make it more manageable
 *** TODO configure autorandr
 *** TODO set background with Nix
-** Shell
+** PROJ Shell
 *** TODO configure ZSH via nix file
 **** TODO configure prezto
 *** TODO configure neovim
@@ -40,12 +40,10 @@ This is my NixOS configuraiton. It's quite simple for now, but it'll be improved
 *** TODO configure gh
 *** TODO configure ssh
 *** TODO configure lsd
-** WM
-*** TODO Add qtile config into this directory to make it more manageable
-** Emacs
+** PROJ Emacs
 *** TODO Set up Emacs overlay as flake
-*** TODO Fix Emacs' service
-** NixOS
+*** KILL Fix Emacs' service
+** PROJ NixOS
 *** TODO Set up automatic GC with ~2 weeks of generations
 *** TODO Set up backups properly
 *** TODO Set up agenix secrets
