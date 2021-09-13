@@ -19,6 +19,7 @@ in {
     ./neovim.nix
     ./redshift.nix
     ./ssh.nix
+    ./git.nix
   ];
 
   # Home Manager needs a bit of information about you and the
