@@ -38,7 +38,7 @@ This is my NixOS configuraiton. It's quite simple for now, but it'll be improved
 *** TODO configure git
 *** TODO configure gh
 *** TODO configure ssh
-*** TODO configure lsd
+*** DONE configure lsd
 ** PROJ Emacs
 *** TODO Set up Emacs overlay as flake
 *** KILL Fix Emacs' service
