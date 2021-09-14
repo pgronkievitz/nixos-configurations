@@ -34,7 +34,7 @@ This is my NixOS configuraiton. It's quite simple for now, but it'll be improved
 ** PROJ Shell
 *** TODO configure ZSH via nix file
 **** TODO configure prezto
-*** TODO configure neovim
+*** DONE configure neovim
 *** DONE configure git
 *** DONE configure gh
 *** DONE configure ssh
