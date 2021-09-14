@@ -32,8 +32,9 @@ This is my NixOS configuraiton. It's quite simple for now, but it'll be improved
 *** TODO Add qtile config into this directory to make it more manageable
 *** TODO set background with Nix
 ** PROJ Shell
-*** TODO configure ZSH via nix file
-**** TODO configure prezto
+*** DONE configure ZSH via nix file
+**** KILL configure prezto
+There's no use to use prezto
 *** DONE configure neovim
 *** DONE configure git
 *** DONE configure gh
