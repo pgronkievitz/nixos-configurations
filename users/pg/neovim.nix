@@ -7,5 +7,12 @@
     withNodeJs = true;
     withPython3 = true;
     withRuby = true;
+    extraConfig = ''
+      set nocompatible
+      set number
+      set relativenumber
+      nnoremap j gj
+      nnoremap k gk
+    '';
   };
 }
