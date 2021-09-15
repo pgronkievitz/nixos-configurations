@@ -29,7 +29,7 @@ in {
   home.homeDirectory = "/home/pg";
   programs.rofi = {
     enable = true;
-    font = "FantasqueMono Nerd Font 16";
+    font = "FantasqueSansMono Nerd Font 16";
     theme = "paper-float";
   };
   # nixpkgs.overlays = [ (import "${emacs-overlay}") ];
