@@ -3,6 +3,7 @@
 {
   services.xserver = {
     enable = true;
+    videoDrivers = [ "amdgpu" ];
     desktopManager = { xterm.enable = false; };
     displayManager = {
       lightdm.extraConfig =
