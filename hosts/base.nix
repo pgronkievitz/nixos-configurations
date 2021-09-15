@@ -74,6 +74,11 @@
   };
   time.timeZone = "Europe/Warsaw";
   nixpkgs.config.allowUnfree = true;
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "-d --delete-older-than '30d'";
+  };
   nixpkgs.overlays = [
     (import (builtins.fetchGit {
       url = "https://github.com/nix-community/emacs-overlay.git";
