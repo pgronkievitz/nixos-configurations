@@ -15,6 +15,8 @@
       mv = "mv -i";
       rm = "rm -I";
       ln = "ln -i";
+      sysup =
+        "sudo nixos-rebuild switch --flake '/home/pg/Documents/nixos-configurations#'";
     };
     dirHashes = {
       docs = "$HOME/Documents";
