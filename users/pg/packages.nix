@@ -4,6 +4,8 @@ let
   python-with-my-packages = pkgs.python3.withPackages my-python-packages;
 in {
   home.packages = [
+    pkgs.nixos-option
+    pkgs.libreoffice-fresh
     pkgs.xkcd-font
     pkgs.gammastep
     pkgs.texlive.combined.scheme-full
