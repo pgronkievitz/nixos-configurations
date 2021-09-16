@@ -21,17 +21,13 @@ in {
     ./ssh.nix
     ./git.nix
     ./zsh.nix
+    ./rofi.nix
   ];
 
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "pg";
   home.homeDirectory = "/home/pg";
-  programs.rofi = {
-    enable = true;
-    font = "FantasqueSansMono Nerd Font 16";
-    theme = "paper-float";
-  };
   # nixpkgs.overlays = [ (import "${emacs-overlay}") ];
 
   # This value determines the Home Manager release that your
