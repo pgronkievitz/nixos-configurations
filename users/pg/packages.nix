@@ -2,6 +2,8 @@
 let
   my-python-packages = python-packages: with python-packages; [ grip ];
   python-with-my-packages = pkgs.python3.withPackages my-python-packages;
+  my-dicts = dicts: with dicts; [ en pl en-computers en-science ];
+  my-aspell = pkgs.aspellWithDicts my-dicts;
 in {
   home.packages = [
     pkgs.nixos-option
@@ -36,9 +38,7 @@ in {
     pkgs.yadm
     pkgs.pcmanfm
     pkgs.pandoc
-    pkgs.aspell
-    pkgs.aspellDicts.pl
-    pkgs.aspellDicts.en
+    my-aspell
     pkgs.ispell
     pkgs.languagetool
     pkgs.libreoffice
