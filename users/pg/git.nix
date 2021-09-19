@@ -28,7 +28,10 @@
       key = "AFE7E2FEE443F184";
       signByDefault = true;
     };
-    extraConfig = { github.user = "pgronkievitz"; };
+    extraConfig = {
+      github.user = "pgronkievitz";
+      init.defaultBranch = "main";
+    };
   };
   programs.gh = {
     enable = true;
