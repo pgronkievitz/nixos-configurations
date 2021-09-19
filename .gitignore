@@ -4,5 +4,5 @@
 tmp/
 index.html
 result/
-*.qcow
+*.qcow2
 *.fd
