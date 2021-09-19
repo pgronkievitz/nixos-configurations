@@ -7,6 +7,7 @@
   ];
   boot = {
     extraModulePackages = [ config.boot.kernelPackages.tuxedo-keyboard ];
+    initrd.kernelModules = [ "amdgpu" ];
     kernelParams = [
       "pci=noats"
       "tuxedo_keyboard.mode=0"
