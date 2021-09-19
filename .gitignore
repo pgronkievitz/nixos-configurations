@@ -3,3 +3,6 @@
 *.log
 tmp/
 index.html
+result/
+*.qcow
+*.fd
