@@ -92,10 +92,13 @@
   };
   time.timeZone = "Europe/Warsaw";
   nixpkgs.config.allowUnfree = true;
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "-d --delete-older-than '30d'";
+  nix = {
+    autoOptimiseStore = true;
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "-d --delete-older-than '30d'";
+    };
   };
   nixpkgs.overlays = [
     (import (builtins.fetchGit {
