@@ -10,7 +10,7 @@ in {
     pkgs.libreoffice-fresh
     pkgs.xkcd-font
     pkgs.gammastep
-    pkgs.texlive.combined.scheme-full
+    pkgs.texlive.combined.scheme-medium
     pkgs.networkmanagerapplet
     pkgs.htop
     pkgs.gimp
