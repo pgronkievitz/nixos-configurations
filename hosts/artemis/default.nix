@@ -14,6 +14,7 @@
       "tuxedo_keyboard.brightness=4"
       "tuxedo_keybaord.color_left=0x00ffff"
     ];
+    plymouth = { enable = true; };
   };
   networking = {
     hostName = "artemis";
