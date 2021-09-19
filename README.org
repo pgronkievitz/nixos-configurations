@@ -44,7 +44,7 @@ There's no use to use prezto
 *** TODO Set up Emacs overlay as flake
 *** KILL Fix Emacs' service
 ** PROJ NixOS
-*** TODO Set up automatic GC with ~2 weeks of generations
+*** DONE Set up automatic GC with ~2 weeks of generations
 *** TODO Set up backups properly
 *** TODO Set up agenix secrets
 * Requirements
