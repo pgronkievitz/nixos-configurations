@@ -6,8 +6,7 @@
     videoDrivers = [ "amdgpu" ];
     desktopManager = { xterm.enable = false; };
     displayManager = {
-      lightdm.extraConfig =
-        "display-setup-script=/home/pg/.screenlayout/default.sh";
+      sddm.enable = true;
       defaultSession = "none+qtile";
     };
     windowManager.qtile = { enable = true; };
