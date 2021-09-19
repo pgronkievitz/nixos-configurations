@@ -33,7 +33,7 @@ in {
     pkgs.direnv
     pkgs.pinentry-qt
     pkgs.nodePackages.yaml-language-server
-    pkgs.ocrmypdf
+    # pkgs.ocrmypdf
     pkgs.multilockscreen
     pkgs.yadm
     pkgs.pcmanfm
