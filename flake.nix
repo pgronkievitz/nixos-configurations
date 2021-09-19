@@ -6,7 +6,6 @@
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    emacs-overlay.url = "github:nix-community/emacs-overlay";
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, nixos-hardware, ... }:
