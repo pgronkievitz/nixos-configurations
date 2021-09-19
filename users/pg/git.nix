@@ -30,6 +30,7 @@
     };
     extraConfig = {
       github.user = "pgronkievitz";
+      gitlab.user = "pgronkievitz";
       init.defaultBranch = "main";
     };
   };
