@@ -78,7 +78,6 @@ in {
     pkgs.jre
     pkgs.maim
     pkgs.nixfmt
-    pkgs.go
     pkgs.megasync
     pkgs.zip
     pkgs.unzip
