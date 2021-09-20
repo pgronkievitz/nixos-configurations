@@ -59,6 +59,7 @@ in {
     pkgs.sqlite
     pkgs.julia_16-bin
     python-with-my-packages
+    pkgs.go
     pkgs.R
     pkgs.graphviz
     pkgs.github-cli
