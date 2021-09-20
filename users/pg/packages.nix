@@ -1,6 +1,12 @@
 { config, pkgs, ... }:
 let
-  my-python-packages = python-packages: with python-packages; [ grip ];
+  my-python-packages = python-packages:
+    with python-packages; [
+      grip
+      pyflakes
+      isort
+      pytest
+    ];
   python-with-my-packages = pkgs.python3.withPackages my-python-packages;
   my-dicts = dicts: with dicts; [ en pl en-computers en-science ];
   my-aspell = pkgs.aspellWithDicts my-dicts;
