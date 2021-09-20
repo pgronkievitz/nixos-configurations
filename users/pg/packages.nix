@@ -64,6 +64,7 @@ in {
     pkgs.gomodifytags
     pkgs.gotests
     pkgs.gore
+    pkgs.gopls
     pkgs.R
     pkgs.graphviz
     pkgs.github-cli
