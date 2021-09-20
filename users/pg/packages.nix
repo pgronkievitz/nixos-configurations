@@ -60,6 +60,10 @@ in {
     pkgs.julia_16-bin
     python-with-my-packages
     pkgs.go
+    pkgs.gocode
+    pkgs.gomodifytags
+    pkgs.gotests
+    pkgs.gore
     pkgs.R
     pkgs.graphviz
     pkgs.github-cli
