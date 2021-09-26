@@ -52,7 +52,6 @@ in {
     pkgs.thunderbird-bin-91
     pkgs.birdtray
     pkgs.teams
-    pkgs.slack
     pkgs.kotatogram-desktop
     pkgs.git
     pkgs.git-lfs
@@ -65,6 +64,7 @@ in {
     pkgs.gotests
     pkgs.gore
     pkgs.gopls
+    # pkgs.kube3d
     pkgs.R
     pkgs.graphviz
     pkgs.github-cli
