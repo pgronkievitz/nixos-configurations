@@ -8,7 +8,7 @@
       };
       efi.canTouchEfiVariables = true;
     };
-    kernelPackages = pkgs.linuxPackages_zen;
+    kernelPackages = pkgs.linuxPackages_latest;
     kernel.sysctl = { "net.ipv4.ip_forward" = 1; };
   };
   networking = {
