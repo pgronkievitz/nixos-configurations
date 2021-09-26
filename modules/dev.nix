@@ -13,7 +13,6 @@
     git-lfs
     sqlite
     julia_16-bin
-    python-with-my-packages
     go
     gocode
     gomodifytags
