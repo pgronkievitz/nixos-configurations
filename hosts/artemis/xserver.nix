@@ -9,7 +9,7 @@
       sddm.enable = true;
       defaultSession = "none+qtile";
     };
-    windowManager.qtile = { enable = true; };
+    windowManager.qtile.enable = true;
     layout = "pl";
     xkbOptions = "caps:swapescape";
     libinput.enable = true;
