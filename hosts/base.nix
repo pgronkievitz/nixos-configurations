@@ -11,36 +11,6 @@
     kernelPackages = pkgs.linuxPackages_latest;
     kernel.sysctl = { "net.ipv4.ip_forward" = 1; };
   };
-  networking = {
-    networkmanager.enable = true;
-    useDHCP = false;
-    firewall = {
-      enable = true;
-      trustedInterfaces = [ "tailscale0" ];
-    };
-  };
-  security.auditd.enable = true;
-  security.audit.enable = true;
-  security.audit.rules = [ "-a exit,always -F arch=b64 -S execve" ];
-  security.sudo.execWheelOnly = true;
-  i18n.defaultLocale = "en_US.UTF-8";
-  console = {
-    font = "Lat2-Terminus16";
-    keyMap = "pl";
-  };
-  virtualisation.libvirtd = {
-    enable = true;
-    qemuPackage = pkgs.qemu_kvm;
-    qemuOvmf = true;
-    onBoot = "ignore";
-    onShutdown = "shutdown";
-  };
-  virtualisation.podman = {
-    enable = true;
-    dockerCompat = true;
-    dockerSocket.enable = true;
-  };
-  nix.trustedUsers = [ "root" "pg" ];
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     neovim
@@ -53,29 +23,8 @@
     OVMF-CSM
     OVMF-secureBoot
   ];
-  nix = {
-    package = pkgs.nixUnstable;
-    extraOptions = ''
-      experimental-features = nix-command flakes
-    '';
-  };
   services.tailscale.enable = true;
   programs.mtr.enable = true;
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = false;
-  };
-  programs.ssh.startAgent = true;
-  services.openssh = {
-    enable = true;
-    allowSFTP = false;
-    passwordAuthentication = false;
-    permitRootLogin = "no";
-    listenAddresses = [{
-      addr = "100.79.65.104";
-      port = 22;
-    }];
-  };
   users.mutableUsers = false;
   users.users.pg = {
     isNormalUser = true;
@@ -90,20 +39,4 @@
     hashedPassword =
       "$6$spoDBwr2hANMIaZ$joTTa3EpgdT2U.eOisBOEr26WasNdiVj39J3f4DcRkG48ubiobsdIiskgdreGl2EiW4JbpKFcwp5ByjjkfgmJ/";
   };
-  time.timeZone = "Europe/Warsaw";
-  nixpkgs.config.allowUnfree = true;
-  nix = {
-    autoOptimiseStore = true;
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "-d --delete-older-than '30d'";
-    };
-  };
-  nixpkgs.overlays = [
-    (import (builtins.fetchGit {
-      url = "https://github.com/nix-community/emacs-overlay.git";
-      rev = "44b437b1d6f8b4ac6720d56827e7d802eef7f59e";
-    }))
-  ];
 }
