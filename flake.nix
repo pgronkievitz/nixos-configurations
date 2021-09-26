@@ -44,6 +44,11 @@
               home-manager.useUserPackages = true;
               home-manager.users.pg = import ./users/pg/home.nix;
             }
+            ./modules/dev.nix
+            ./modules/games.nix
+            ./modules/misc.nix
+            ./modules/office.nix
+            ./modules/python.nix
           ];
         };
         apollo = lib.nixosSystem {

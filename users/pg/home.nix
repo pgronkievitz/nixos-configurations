@@ -5,7 +5,6 @@ in {
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
   imports = [
-    ./packages.nix
     ./emacs.nix
     ./alacrity.nix
     ./dunst.nix
