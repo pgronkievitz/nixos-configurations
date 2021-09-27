@@ -6,9 +6,11 @@
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    emacs-overlay.url = "github:nix-community/emacs-overlay/master";
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, nixos-hardware, ... }:
+  outputs =
+    inputs@{ self, nixpkgs, home-manager, nixos-hardware, emacs-overlay, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -55,6 +57,7 @@
             ./modules/security.nix
             ./modules/virt.nix
             ./modules/cache.nix
+            ({ nixpkgs.overlays = [ inputs.emacs-overlay.overlay ]; })
           ];
         };
         apollo = lib.nixosSystem {
@@ -76,6 +79,7 @@
             ./modules/security.nix
             ./modules/virt.nix
             ./modules/cache.nix
+            ({ nixpkgs.overlays = [ inputs.emacs-overlay.overlay ]; })
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
