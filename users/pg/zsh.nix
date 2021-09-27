@@ -24,6 +24,7 @@
       nts = "$HOME/Documents/notes";
       dl = "$HOME/Downloads";
     };
+    enableSyntaxHighlighting = true;
     enableAutosuggestions = true;
     defaultKeymap = "viins";
     plugins = [{
