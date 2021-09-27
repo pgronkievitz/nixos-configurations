@@ -4,4 +4,5 @@
     font = "Lat2-Terminus16";
     keyMap = "pl";
   };
+  time.timeZone = "Europe/Warsaw";
 }
