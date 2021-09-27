@@ -13,5 +13,6 @@
     layout = "pl";
     xkbOptions = "caps:swapescape";
     libinput.enable = true;
+    enableCtrlAltBackpsace = true;
   };
 }
