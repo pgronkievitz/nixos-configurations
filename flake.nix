@@ -54,6 +54,7 @@
             ./modules/nix.nix
             ./modules/security.nix
             ./modules/virt.nix
+            ./modules/cache.nix
           ];
         };
         apollo = lib.nixosSystem {
@@ -74,6 +75,7 @@
             ./modules/nix.nix
             ./modules/security.nix
             ./modules/virt.nix
+            ./modules/cache.nix
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
