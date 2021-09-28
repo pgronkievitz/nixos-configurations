@@ -68,7 +68,7 @@
           inherit system;
           modules = [
             ./hosts/base.nix
-            ./hosts/themis/themis/default.nix
+            ./hosts/themis/default.nix
             ./modules/dev.nix
             ./modules/misc.nix
             ./modules/office.nix
