@@ -79,6 +79,7 @@
             ./modules/security.nix
             ./modules/virt.nix
             ./modules/cache.nix
+            ./modules/boot.nix
             ({ nixpkgs.overlays = [ inputs.emacs-overlay.overlay ]; })
             home-manager.nixosModules.home-manager
             {
