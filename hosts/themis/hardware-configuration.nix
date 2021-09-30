@@ -20,18 +20,13 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/723d1af3-981b-4557-bce1-c3d39874d899";
+    device = "/dev/nvme0n1p2";
     fsType = "btrfs";
   };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/0CDD-BC72";
+    device = "/dev/disk/by-uuid/8280-5912";
     fsType = "vfat";
-  };
-
-  fileSystems."/home" = {
-    device = "/dev/disk/by-uuid/a6f5008f-788a-4043-ad35-f04f90026018";
-    fsType = "btrfs";
   };
 
   swapDevices = [ ];
