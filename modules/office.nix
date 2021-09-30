@@ -26,4 +26,5 @@ in {
     firefox
     brave
   ];
+  fonts.fonts = with pkgs; [ nerdfonts ];
 }
