@@ -9,7 +9,6 @@ in {
     gammastep
     texlive.combined.scheme-medium
     gimp
-    nerdfonts
     pandoc
     my-aspell
     ispell
@@ -26,4 +25,5 @@ in {
     firefox
     brave
   ];
+  fonts.fonts = with pkgs; [ nerdfonts ];
 }
