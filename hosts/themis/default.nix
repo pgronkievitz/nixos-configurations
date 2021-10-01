@@ -14,14 +14,8 @@
     settings = { General = { Enable = "Source,Sink,Media,Socket"; }; };
   };
   boot = {
-    extraModulePackages = [ config.boot.kernelPackages.tuxedo-keyboard ];
-    initrd.kernelModules = [ "amdgpu" ];
-    kernelParams = [
-      "pci=noats"
-      "tuxedo_keyboard.mode=0"
-      "tuxedo_keyboard.brightness=4"
-      "tuxedo_keybaord.color_left=0x00ffff"
-    ];
+    initrd.kernelModules = [ "nvidia" "amdgpu" ];
+    kernelParams = [ "pci=noats" ];
     plymouth = { enable = true; };
   };
 }
