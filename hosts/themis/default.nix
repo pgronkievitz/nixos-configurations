@@ -18,4 +18,5 @@
     kernelParams = [ "pci=noats" ];
     plymouth = { enable = true; };
   };
+  hardware.system76.enableAll = true;
 }
