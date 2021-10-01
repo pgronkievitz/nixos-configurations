@@ -6,8 +6,8 @@
   ];
   networking = {
     hostName = "themis";
-    interfaces.enp2s0.useDHCP = true;
-    interfaces.wlo1.useDHCP = true;
+    interfaces.enp3s0.useDHCP = true;
+    interfaces.wlp4s0.useDHCP = true;
   };
   hardware.bluetooth = {
     enable = true;
