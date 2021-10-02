@@ -6,6 +6,7 @@
     cachix
     networkmanager
     networkmanagerapplet
+    networkmanager_openvpn
     tailscale
     OVMF
     OVMF-CSM
