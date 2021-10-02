@@ -103,7 +103,7 @@ in {
         color = "0xffffff";
         duration = 0;
       };
-      backround_opacity = 0.9;
+      backround_opacity = 1.0;
       key_bindings = [
         {
           key = "J";
