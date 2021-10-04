@@ -22,6 +22,10 @@
         hostname = "164.90.171.118";
         user = "root";
       };
+      "testenv" = {
+        hostname = "192.168.100.160";
+        user = "ubuntu";
+      };
     };
   };
 }
