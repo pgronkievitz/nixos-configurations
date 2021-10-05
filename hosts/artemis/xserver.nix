@@ -12,6 +12,10 @@
     windowManager.qtile.enable = true;
     layout = "pl";
     xkbOptions = "caps:swapescape";
-    libinput.enable = true;
+    libinput = {
+      enable = true;
+      naturalScrolling = true;
+      disableWhileTyping = true;
+    };
   };
 }
