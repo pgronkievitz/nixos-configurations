@@ -7,7 +7,7 @@ in {
     libreoffice-fresh
     xkcd-font
     gammastep
-    texlive.combined.scheme-medium
+    texlive.combined.scheme-full
     gimp
     pandoc
     my-aspell
