@@ -81,7 +81,7 @@ in {
           black = colors.light.base1;
           red = colors.light.orange;
           green = colors.light.teal;
-          yellow = colors.light.yellow-alt;
+          yellow = colors.light.yellow;
           blue = colors.light.blue;
           magenta = colors.light.magenta;
           cyan = colors.light.cyan;
