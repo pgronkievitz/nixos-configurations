@@ -7,6 +7,11 @@
     onBoot = "ignore";
     onShutdown = "shutdown";
   };
+  virtualisation.virtualbox.host = {
+    enable = true;
+    enableExtensionPack = true;
+    enableHardening = true;
+  };
   virtualisation.podman = {
     enable = true;
     dockerCompat = true;
