@@ -36,7 +36,9 @@
   };
   programs.gh = {
     enable = true;
-    editor = "emacs";
-    gitProtocol = "ssh";
+    settings = {
+      editor = "emacs";
+      git_protocol = "ssh";
+    };
   };
 }
