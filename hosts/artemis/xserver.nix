@@ -18,6 +18,7 @@
         naturalScrolling = true;
         disableWhileTyping = true;
       };
+      mouse = { accelProfile = "flat"; };
     };
   };
 }
