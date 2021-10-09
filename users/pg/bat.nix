@@ -2,6 +2,6 @@
 
   programs.bat = {
     enable = true;
-    config = { theme = "Sublime Snazzy"; };
+    config = { theme = "base16-256"; };
   };
 }
