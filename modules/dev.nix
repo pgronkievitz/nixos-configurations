@@ -37,5 +37,7 @@
     rclone
     wget
     curl
+    mono
+    dotnet-sdk_5
   ];
 }
