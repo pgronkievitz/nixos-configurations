@@ -9,8 +9,7 @@
     networkmanager_openvpn
     tailscale
     OVMF
-    OVMF-CSM
-    OVMF-secureBoot
+    OVMFFull
   ];
   services.tailscale.enable = true;
   programs.mtr.enable = true;

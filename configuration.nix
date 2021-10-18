@@ -177,8 +177,7 @@
     networkmanagerapplet
     tailscale
     OVMF
-    OVMF-CSM
-    OVMF-secureBoot
+    OVMFFull
   ];
   nix = {
     package = pkgs.nixUnstable;
