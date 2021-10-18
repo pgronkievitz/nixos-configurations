@@ -39,5 +39,6 @@
     curl
     mono
     dotnet-sdk_5
+    scilab-bin
   ];
 }
