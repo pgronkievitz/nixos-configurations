@@ -177,7 +177,7 @@
     networkmanagerapplet
     tailscale
     OVMF
-    OVMF-CSM
+    OVMFFull
     OVMF-secureBoot
   ];
   nix = {
