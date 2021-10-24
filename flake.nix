@@ -57,6 +57,7 @@
             ./modules/security.nix
             ./modules/virt.nix
             ./modules/cache.nix
+            ./modules/kube.nix
             ({ nixpkgs.overlays = [ inputs.emacs-overlay.overlay ]; })
           ];
         };
