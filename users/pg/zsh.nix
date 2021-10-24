@@ -31,8 +31,11 @@
       name = "p10k";
       src = pkgs.zsh-powerlevel10k;
     }];
-    initExtra =
-      "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme && source ~/.config/zsh//.p10k.zsh";
+    initExtra = ''
+      source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme && source ~/.config/zsh//.p10k.zsh
+      . <(helm completion zsh)
+      . <(kubectl completion zsh)
+    '';
     envExtra = "export KUBECONFIG=$HOME/.kube/config";
   };
 }
