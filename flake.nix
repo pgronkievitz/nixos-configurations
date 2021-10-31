@@ -73,6 +73,12 @@
             ./modules/nix.nix
             ./modules/python.nix
             ./modules/containers.nix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.pg = import ./users/pg/home.nix;
+            }
           ];
         };
         themis = lib.nixosSystem {
