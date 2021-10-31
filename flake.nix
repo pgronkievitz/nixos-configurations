@@ -63,7 +63,16 @@
         };
         apollo = lib.nixosSystem {
           inherit system;
-          modules = [ ./hosts/base.nix ]; # ./hosts/apollo/base.nix ];
+          modules = [
+            ./hosts/base.nix
+            ./hosts/apollo/base.nix
+            ./modules/kubeserver.nix
+            ./modules/security.nix
+            ./modules/boot.nix
+            ./modules/nix.nix
+            ./modules/python.nix
+            ./modules/virt.nix
+          ];
         };
         themis = lib.nixosSystem {
           inherit system;
