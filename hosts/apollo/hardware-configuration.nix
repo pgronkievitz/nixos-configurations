@@ -23,7 +23,7 @@
   };
 
   fileSystems."/media/sdcard" = {
-    device = "/dev/disk/by-uuid/761f001a-0e774312-a0e6-1259b788556f";
+    device = "/dev/disk/by-uuid/761f001a-0e77-4312-a0e6-1259b788556f";
     fsType = "ext4";
   };
   fileSystems."/media/backup" = {
