@@ -15,7 +15,7 @@
         port = 10130;
       };
       "apollo" = {
-        hostname = "100.80.207.36";
+        hostname = "100.85.251.69";
         user = "pg";
       };
       "cass" = {
