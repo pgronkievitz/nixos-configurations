@@ -58,6 +58,7 @@
             ./modules/virt.nix
             ./modules/cache.nix
             ./modules/kube.nix
+            ./modules/containers.nix
             ({ nixpkgs.overlays = [ inputs.emacs-overlay.overlay ]; })
           ];
         };
@@ -71,7 +72,7 @@
             ./modules/boot.nix
             ./modules/nix.nix
             ./modules/python.nix
-            ./modules/virt.nix
+            ./modules/containers.nix
           ];
         };
         themis = lib.nixosSystem {
@@ -90,6 +91,7 @@
             ./modules/virt.nix
             ./modules/cache.nix
             ./modules/boot.nix
+            ./modules/containers.nix
             ({ nixpkgs.overlays = [ inputs.emacs-overlay.overlay ]; })
             home-manager.nixosModules.home-manager
             {
