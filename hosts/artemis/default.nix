@@ -29,4 +29,8 @@
   services.udev.extraRules = ''
     ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="amdgpu_bl0", MODE="0666", RUN+="${pkgs.coreutils}/bin/chmod a+w /sys/class/backlight/%k/brightness"
   '';
+  services.openssh.listenAddresses = [{
+    addr = "100.79.65.104";
+    port = 22;
+  }];
 }

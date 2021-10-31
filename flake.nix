@@ -65,7 +65,7 @@
           inherit system;
           modules = [
             ./hosts/base.nix
-            ./hosts/apollo/base.nix
+            ./hosts/apollo/default.nix
             ./modules/kubeserver.nix
             ./modules/security.nix
             ./modules/boot.nix
