@@ -10,8 +10,8 @@
   };
   hardware.bluetooth.enable = false;
 
-  services.openssh.listenAddresses = [{
-    addr = "100.79.65.104";
-    port = 22;
-  }];
+  # services.openssh.listenAddresses = [{
+  #   addr = "100.79.65.104";
+  #   port = 22;
+  # }];
 }
