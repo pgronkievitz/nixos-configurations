@@ -22,6 +22,19 @@
     fsType = "vfat";
   };
 
+  fileSystems."/media/sdcard" = {
+    device = "/dev/disk/by-uuid/761f001a-0e774312-a0e6-1259b788556f";
+    fsType = "ext4";
+  };
+  fileSystems."/media/backup" = {
+    device = "/dev/disk/by-uuid/d5a00ce3-4675-4e19-a1b3-1d3f81218e1e";
+    fsType = "btrfs";
+  };
+  fileSystems."/media/data" = {
+    device = "/dev/disk/by-uuid/e3390765-b53c-44c0-9094-542227e1663b";
+    fsType = "btrfs";
+  };
+
   swapDevices = [ ];
 
 }
