@@ -24,6 +24,7 @@ in {
     spotify
     firefox
     brave
+    discord
   ];
   fonts.fonts = with pkgs; [ nerdfonts ];
 }
