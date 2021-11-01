@@ -16,6 +16,8 @@ in {
     thunderbird-bin-91
     birdtray
     teams
+    slack
+    discord
     kotatogram-desktop
     pcmanfm
     pavucontrol
@@ -24,7 +26,6 @@ in {
     spotify
     firefox
     brave
-    discord
   ];
   fonts.fonts = with pkgs; [ nerdfonts ];
 }
