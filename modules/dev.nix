@@ -35,6 +35,7 @@
     jq
     jre
     nixfmt
+    nix-linter
     zip
     unzip
     rclone
