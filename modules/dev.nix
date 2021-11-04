@@ -22,6 +22,7 @@
     gore
     gopls
     R
+    conda
     graphviz
     github-cli
     virt-manager
