@@ -1,5 +1,7 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
+    gcc
+    clang
     nixos-option
     fd
     tailscale
