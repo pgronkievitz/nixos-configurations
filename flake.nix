@@ -73,6 +73,7 @@
             ./modules/nix.nix
             ./modules/python.nix
             ./modules/containers.nix
+            ./modules/monitoring.nix
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
