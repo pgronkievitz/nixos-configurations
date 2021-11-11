@@ -9,8 +9,7 @@
     emacs-overlay.url = "github:nix-community/emacs-overlay/master";
   };
 
-  outputs =
-    inputs@{ self, nixpkgs, home-manager, nixos-hardware, emacs-overlay, ... }:
+  outputs = inputs@{ nixpkgs, home-manager, nixos-hardware, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -39,7 +38,6 @@
           modules = [
             ./hosts/base.nix
             ./hosts/artemis/default.nix
-            nixos-hardware.nixosModules.system76
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
@@ -50,7 +48,6 @@
             ./modules/games.nix
             ./modules/misc.nix
             ./modules/office.nix
-            ./modules/python.nix
             ./modules/boot.nix
             ./modules/locale.nix
             ./modules/nix.nix
@@ -71,7 +68,6 @@
             ./modules/security.nix
             ./modules/boot.nix
             ./modules/nix.nix
-            ./modules/python.nix
             ./modules/containers.nix
             ./modules/monitoring.nix
             home-manager.nixosModules.home-manager
@@ -90,7 +86,6 @@
             ./modules/dev.nix
             ./modules/misc.nix
             ./modules/office.nix
-            ./modules/python.nix
             ./modules/kube.nix
             ./modules/locale.nix
             ./modules/nix.nix

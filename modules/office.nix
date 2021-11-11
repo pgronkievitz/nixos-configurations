@@ -3,29 +3,29 @@ let
   my-dicts = dicts: with dicts; [ en pl en-computers en-science ];
   my-aspell = pkgs.aspellWithDicts my-dicts;
 in {
-  environment.systemPackages = with pkgs; [
-    libreoffice-fresh
-    xkcd-font
-    gammastep
-    texlive.combined.scheme-full
-    gimp
-    pandoc
+  environment.systemPackages = [
+    pkgs.libreoffice-fresh
+    pkgs.xkcd-font
+    pkgs.gammastep
+    pkgs.texlive.combined.scheme-full
+    pkgs.gimp
+    pkgs.pandoc
     my-aspell
-    ispell
-    languagetool
-    thunderbird-bin-91
-    birdtray
-    teams
-    slack
-    discord
-    kotatogram-desktop
-    pcmanfm
-    pavucontrol
-    pamixer
-    alsa-utils
-    spotify
-    firefox
-    brave
+    pkgs.ispell
+    pkgs.languagetool
+    pkgs.thunderbird-bin-91
+    pkgs.birdtray
+    pkgs.teams
+    pkgs.slack
+    pkgs.discord
+    pkgs.kotatogram-desktop
+    pkgs.pcmanfm
+    pkgs.pavucontrol
+    pkgs.pamixer
+    pkgs.alsa-utils
+    pkgs.spotify
+    pkgs.firefox
+    pkgs.brave
   ];
-  fonts.fonts = with pkgs; [ nerdfonts ];
+  fonts.fonts = [ pkgs.nerdfonts ];
 }

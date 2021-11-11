@@ -1,7 +1,4 @@
-{ config, pkgs, ... }:
-let
-
-in {
+{ config, pkgs, ... }: {
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
   imports = [
@@ -21,13 +18,13 @@ in {
     ./git.nix
     ./zsh.nix
     ./rofi.nix
+    ./xserver.nix
   ];
 
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "pg";
   home.homeDirectory = "/home/pg";
-  # nixpkgs.overlays = [ (import "${emacs-overlay}") ];
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

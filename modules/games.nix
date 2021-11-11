@@ -1,1 +1,1 @@
-{ pkgs, ... }: { environment.systemPackages = with pkgs; [ multimc ]; }
+{ pkgs, ... }: { environment.systemPackages = [ pkgs.multimc ]; }
