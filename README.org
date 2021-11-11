@@ -49,4 +49,4 @@ There's no use to use prezto
 *** TODO Set up agenix secrets
 * Requirements
 1. NixOS
-2. FLakes enabled
+2. Flakes enabled
