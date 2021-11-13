@@ -8,7 +8,7 @@
 [[https://img.shields.io/badge/Made_with-Doom_Emacs-blueviolet.svg]] [[https://img.shields.io/badge/NixOS-v21.11-blue.svg]]
 #+begin_center
 | *Shell*    | zsh        |
-| *DM*       | lightdm    |
+| *DM*       | sddm       |
 | *WM*       | qtile      |
 | *Editor*   | Doom Emacs |
 | *Terminal* | Alacritty  |
