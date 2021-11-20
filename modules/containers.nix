@@ -5,4 +5,5 @@
     dockerSocket.enable = true;
   };
   virtualisation.oci-containers.backend = "podman";
+  users.groups.services = { };
 }
