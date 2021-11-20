@@ -18,6 +18,19 @@ in {
       };
     };
   };
+  services.caddy.virtualHosts = {
+    "${shortname}.gronkiewicz.xyz" = {
+      serverAliases = [
+        "www.${shortname}.gronkiewicz.xyz"
+        "${servicename}.gronkiewicz.xyz"
+        "www.${servicename}.gronkiewicz.xyz"
+      ];
+      extraConfig = ''
+        reverse_proxy ${port}
+        metrics /metrics
+      '';
+    };
+  };
   users.extraUsers."${servicename}" = {
     extraGroups = [ "services" ];
     isNormalUser = false;
