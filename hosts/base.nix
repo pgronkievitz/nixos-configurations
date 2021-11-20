@@ -16,7 +16,7 @@
   users.mutableUsers = false;
   users.users.pg = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" "libvirtd" "podman" ];
+    extraGroups = [ "wheel" "video" "libvirtd" "podman" "network" ];
     shell = pkgs.zsh;
     description = "Patryk Gronkiewicz";
     openssh.authorizedKeys.keys = [
