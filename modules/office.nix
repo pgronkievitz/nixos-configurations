@@ -26,6 +26,7 @@ in {
     pkgs.spotify
     pkgs.firefox
     pkgs.brave
+    pkgs.nextcloud-client
   ];
   fonts.fonts = [ pkgs.nerdfonts ];
 }
