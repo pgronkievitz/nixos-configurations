@@ -14,7 +14,9 @@
     settings = { General = { Enable = "Source,Sink,Media,Socket"; }; };
   };
   boot = {
-    initrd.kernelModules = [ "nvidia" "amdgpu" ];
+    initrd.kernelModules = [ # "nvidia"
+      "amdgpu"
+    ];
     kernelParams = [ "pci=noats" ];
     plymouth = { enable = true; };
   };
