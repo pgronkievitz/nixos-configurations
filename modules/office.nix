@@ -27,6 +27,7 @@ in {
     pkgs.firefox
     pkgs.brave
     pkgs.nextcloud-client
+    pkgs.zotero
   ];
   fonts.fonts = [ pkgs.nerdfonts ];
 }
