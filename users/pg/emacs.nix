@@ -1,13 +1,13 @@
 { pkgs, ... }: {
   programs.emacs = {
     enable = true;
-    package = pkgs.emacs;
     extraPackages = (epkgs: [ epkgs.vterm ]);
+    package = pkgs.emacsGcc;
   };
 
   services.emacs = {
     enable = true;
-    package = pkgs.emacs;
+    package = pkgs.emacsGcc;
     client.enable = true;
   };
 
