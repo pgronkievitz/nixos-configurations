@@ -41,4 +41,5 @@
       git_protocol = "ssh";
     };
   };
+  home.packages = [ pkgs.gitflow ];
 }
