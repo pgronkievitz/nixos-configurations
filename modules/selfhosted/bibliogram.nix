@@ -12,6 +12,7 @@ in {
           "SYMFONY__ENV__DOMAIN_NAME" =
             "https://${servicename}.gronkiewicz.xyz";
         };
+        user = "podman";
       };
     };
   };

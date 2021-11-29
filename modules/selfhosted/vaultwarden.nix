@@ -14,6 +14,7 @@ in {
           DOMAIN = "https://${shortname}.gronkiewicz.xyz";
           SIGNUPS_ALLOWED = "false";
         };
+        user = "podman";
       };
     };
   };

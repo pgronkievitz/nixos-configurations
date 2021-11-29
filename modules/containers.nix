@@ -7,5 +7,9 @@
   };
   virtualisation.oci-containers.backend = "podman";
   users.groups.services = { };
+  users.users.podman = {
+    isSystemUser = true;
+    extraGroups = [ "podman" ];
+  };
   environment.systemPackages = [ pkgs.docker-client ];
 }

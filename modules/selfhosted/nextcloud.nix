@@ -16,14 +16,17 @@ in {
           REDIS_HOST = "nc_redis";
           POSTGRES_DB = "nc_postgres";
         };
+        user = "podman";
       };
       "${shortname}_postgres" = {
         image = "docker.io/postgresql:13.5-alpine";
         volumes = [ "/media/data/${servicename}_db:/var/lib/postgresql/data" ];
+        user = "podman";
       };
       "${shortname}_redis" = {
         image = "docker.io/redis:6.2.6-alpine";
         volumes = [ "/media/data/${servicename}_redis:/data" ];
+        user = "podman";
       };
     };
   };
