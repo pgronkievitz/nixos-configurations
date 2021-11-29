@@ -40,6 +40,6 @@ in {
   };
   users.extraUsers."${servicename}" = {
     extraGroups = [ "services" ];
-    isNormalUser = false;
+    isSystemUser = true;
   };
 }
