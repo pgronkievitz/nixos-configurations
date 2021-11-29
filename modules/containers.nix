@@ -9,7 +9,7 @@
   users.groups.services = { };
   users.users.podman = {
     isSystemUser = true;
-    extraGroups = [ "podman" ];
+    group = "podman";
   };
   environment.systemPackages = [ pkgs.docker-client ];
 }
