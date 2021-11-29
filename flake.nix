@@ -69,12 +69,12 @@
             ./modules/nix.nix
             ./modules/containers.nix
             ./modules/monitoring.nix
-            ./modules/selfhosted/nginx.nix
-            ./modules/selfhosted/bibliogram.nix
-            ./modules/selfhosted/freshrss.nix
-            ./modules/selfhosted/nextcloud.nix
-            ./modules/selfhosted/vaultwarden.nix
-            ./modules/selfhosted/wallabag.nix
+            # ./modules/selfhosted/nginx.nix
+            # ./modules/selfhosted/bibliogram.nix
+            # ./modules/selfhosted/freshrss.nix
+            # ./modules/selfhosted/nextcloud.nix
+            # ./modules/selfhosted/vaultwarden.nix
+            # ./modules/selfhosted/wallabag.nix
             ({ nixpkgs.overlays = [ inputs.emacs-overlay.overlay ]; })
             home-manager.nixosModules.home-manager
             {
