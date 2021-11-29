@@ -3,13 +3,12 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    wayland.url = "github:nix-community/nixpkgs-wayland/master";
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     emacs-overlay.url = "github:nix-community/emacs-overlay/master";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, wayland, ... }:
+  outputs = inputs@{ nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -56,10 +55,7 @@
             ./modules/cache.nix
             ./modules/kube.nix
             ./modules/containers.nix
-            ({
-              nixpkgs.overlays =
-                [ inputs.wayland.overlay inputs.emacs-overlay.overlay ];
-            })
+            ({ nixpkgs.overlays = [ inputs.emacs-overlay.overlay ]; })
           ];
         };
         apollo = lib.nixosSystem {
@@ -67,12 +63,19 @@
           modules = [
             ./hosts/base.nix
             ./hosts/apollo/default.nix
-            ./modules/kubeserver.nix
+            # ./modules/kubeserver.nix
             ./modules/security.nix
             ./modules/boot.nix
             ./modules/nix.nix
             ./modules/containers.nix
             ./modules/monitoring.nix
+            # ./modules/selfhosted/nginx.nix
+            # ./modules/selfhosted/bibliogram.nix
+            # ./modules/selfhosted/freshrss.nix
+            # ./modules/selfhosted/nextcloud.nix
+            # ./modules/selfhosted/vaultwarden.nix
+            # ./modules/selfhosted/wallabag.nix
+            ({ nixpkgs.overlays = [ inputs.emacs-overlay.overlay ]; })
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
