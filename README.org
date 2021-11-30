@@ -46,10 +46,10 @@ There's no use to use prezto
 *** DONE Set up automatic GC with ~2 weeks of generations
 *** DONE Set up backups properly
 *** TODO Set up agenix secrets
-** PROJ Rewrite configs to more like [[github:fufexan/dotfiles][fufexan's]]
-*** TODO New folder structure
-*** TODO Use FUP
-*** TODO Modularize HM's stuff
+** DONE Rewrite configs to more like [[github:fufexan/dotfiles][fufexan's]]
+*** DONE New folder structure
+*** DONE Use FUP
+*** DONE Modularize HM's stuff
 * Requirements
 1. NixOS
 2. Flakes enabled
