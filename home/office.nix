@@ -3,7 +3,7 @@ let
   my-dicts = dicts: with dicts; [ en pl en-computers en-science ];
   my-aspell = pkgs.aspellWithDicts my-dicts;
 in {
-  environment.systemPackages = [
+  home.packages = [
     pkgs.libreoffice-fresh
     pkgs.xkcd-font
     pkgs.gammastep
@@ -13,12 +13,6 @@ in {
     my-aspell
     pkgs.ispell
     pkgs.languagetool
-    pkgs.thunderbird-bin-91
-    pkgs.birdtray
-    pkgs.teams
-    pkgs.slack
-    pkgs.discord
-    pkgs.kotatogram-desktop
     pkgs.pcmanfm
     pkgs.pavucontrol
     pkgs.pamixer
@@ -28,6 +22,9 @@ in {
     pkgs.brave
     pkgs.nextcloud-client
     pkgs.zotero
+    pkgs.calibre
+    pkgs.megasync
+    pkgs.youtube-dl
+    pkgs.freetube
   ];
-  fonts.fonts = [ pkgs.nerdfonts ];
 }

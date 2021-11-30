@@ -1,7 +1,4 @@
-{ config, pkgs, ... }:
-let colors = import ./colors.nix;
-in {
-
+{ colors, ... }: {
   services.dunst = {
     enable = true;
     settings = {
