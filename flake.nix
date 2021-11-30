@@ -22,105 +22,101 @@
 
   outputs = inputs@{ self, nixpkgs, home-manager, fup, ... }:
     let
-      system = "x86_64-linux";
-      pkgs = import nixpkgs {
-        inherit system;
-        config = {
-          allowUnfree = true;
-          allowBroken = true;
-        };
+      hmModules = let
+        shared = [
+          ./home
+          ./home/bat.nix
+          ./home/lorri.nix
+          ./home/lsd.nix
+          ./home/fzf.nix
+          ./home/editors/neovim
+          ./home/ssh.nix
+          ./home/git.nix
+        ];
+        graphics = [
+          ./home/xserver.nix
+          ./home/editors/emacs
+          ./home/alacrity.nix
+          ./home/dunst.nix
+          ./home/zathura.nix
+          ./home/syncthing.nix
+          ./home/mpv.nix
+          ./home/redshift.nix
+          ./home/rofi.nix
+          ./home/communicators.nix
+          ./home/office.nix
+          ./home/nmapplet.nix
+          ./home/blueman.nix
+        ];
+      in {
+        ################
+        # WORKSTATIONS #
+        ################
+        artemis = shared ++ graphics ++ [ ./home/private ./home/games.nix ];
+        themis = shared ++ graphics ++ [ ./home/work ];
+        ###########
+        # SERVERS #
+        ###########
+        apollo = shared ++ [ ];
       };
-      lib = nixpkgs.lib;
-    in {
-
-      homeManagerConfigurations = {
-        pg = home-manager.lib.homeManagerConfiguration {
-          inherit system pkgs;
-          username = "pg";
-          homeDirectory = "/home/pg";
-          configuration = { imports = [ ./users/pg/home.nix ]; };
-        };
+    in fup.lib.mkFlake {
+      inherit self inputs;
+      hostDefaults = {
+        system = "x86_64-linux";
+        modules = [
+          ./modules/minimal.nix
+          ./modules/security.nix
+          ./modules/containers.nix
+          ./modules/development/kube.nix
+          ./modules/fonts.nix
+          # inputs.kmonad.nixosModule
+          inputs.home-manager.nixosModule
+          {
+            home-manager = {
+              extraSpecialArgs = {
+                inherit inputs self;
+                colors = import ./home/colors.nix;
+              };
+              useGlobalPkgs = true;
+              useUserPackages = true;
+            };
+          }
+        ];
       };
-
-      packages."${system}" = pkgs;
-      nixosConfigurations = {
-        artemis = lib.nixosSystem {
-          inherit system;
-          modules = [
-            ./hosts/base.nix
-            ./hosts/artemis/default.nix
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.pg = import ./users/pg/home.nix;
-            }
-            ./modules/dev.nix
-            ./modules/games.nix
-            ./modules/misc.nix
-            ./modules/office.nix
-            ./modules/boot.nix
-            ./modules/locale.nix
-            ./modules/nix.nix
-            ./modules/security.nix
-            ./modules/virt.nix
-            ./modules/cache.nix
-            ./modules/kube.nix
-            ./modules/containers.nix
-            ({ nixpkgs.overlays = [ inputs.emacs-overlay.overlay ]; })
-          ];
-        };
-        apollo = lib.nixosSystem {
-          inherit system;
-          modules = [
-            ./hosts/base.nix
-            ./hosts/apollo/default.nix
-            # ./modules/kubeserver.nix
-            ./modules/security.nix
-            ./modules/boot.nix
-            ./modules/nix.nix
-            ./modules/containers.nix
-            ./modules/monitoring.nix
-            # ./modules/selfhosted/nginx.nix
-            # ./modules/selfhosted/bibliogram.nix
-            # ./modules/selfhosted/freshrss.nix
-            # ./modules/selfhosted/nextcloud.nix
-            # ./modules/selfhosted/vaultwarden.nix
-            # ./modules/selfhosted/wallabag.nix
-            ({ nixpkgs.overlays = [ inputs.emacs-overlay.overlay ]; })
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.pg = import ./users/pg/home.nix;
-            }
-          ];
-        };
-        themis = lib.nixosSystem {
-          inherit system;
-          modules = [
-            ./hosts/base.nix
-            ./hosts/themis/default.nix
-            ./modules/dev.nix
-            ./modules/misc.nix
-            ./modules/office.nix
-            ./modules/kube.nix
-            ./modules/locale.nix
-            ./modules/nix.nix
-            ./modules/security.nix
-            ./modules/virt.nix
-            ./modules/cache.nix
-            ./modules/boot.nix
-            ./modules/containers.nix
-            ({ nixpkgs.overlays = [ inputs.emacs-overlay.overlay ]; })
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.pg = import ./users/pg/home.nix;
-            }
-          ];
-        };
+      channels.nixpkgs.overlaysBuilder = channels: [
+        inputs.fup.overlay
+        inputs.emacs-overlay.overlay
+      ];
+      channelsConfig = {
+        allowUnfree = true;
+        allowBroken = true;
+      };
+      hosts = {
+        artemis.modules = [
+          ./hosts/artemis
+          { home-manager.users.pg.imports = hmModules.artemis; }
+          ./modules/development
+          ./modules/virtual-machines.nix
+          ./modules/audio.nix
+          ./modules/school.nix
+          ./modules/xserver.nix
+        ];
+        themis.modules = [
+          ./hosts/themis
+          { home-manager.users.pg.imports = hmModules.themis; }
+          ./modules/development
+          ./modules/development/devops.nix
+          ./modules/virtual-machines.nix
+          ./modules/audio.nix
+          ./modules/xserver.nix
+        ];
+        apollo.modules = [
+          ./hosts/apollo
+          { home-manager.users.pg.imports = hmModules.apollo; }
+          ./modules/monitoring.nix
+          # ./modules/selfhosted
+          # ./modules/selfhosted/kubeserver.nix
+        ];
       };
     };
 }
