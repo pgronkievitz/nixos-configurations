@@ -9,21 +9,13 @@ let
   '';
 in {
   services.xserver = {
-    enable = true;
-    videoDrivers = [ "modesetting" "nvidia" ];
-    desktopManager = { xterm.enable = false; };
-    displayManager = {
-      sddm.enable = true;
-      defaultSession = "none+qtile";
+    videoDrivers = [ "nvidia" ];
+    environment.systemPackages = [ nvidia-offload ];
+    hardware.nvidia.modesetting.enable = true;
+    hardware.nvidia.prime = {
+      offload.enable = true;
+      amdgpuBusId = "PCI:05:00:0";
+      nvidiaBusId = "PCI:01:00:0";
     };
-    windowManager.qtile.enable = true;
-    layout = "pl";
-    xkbOptions = "caps:swapescape";
-    libinput.enable = true;
-  };
-  hardware.nvidia.prime = {
-    offload.enable = true;
-    amdgpuBusId = "PCI:05:00:0";
-    nvidiaBusId = "PCI:01:00:0";
   };
 }
