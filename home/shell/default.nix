@@ -32,7 +32,7 @@
       {
         name = "p10k-config";
         src = lib.cleanSource ./p10k-config;
-        file = "p10k.zsh";
+        file = "p10k.zsh-theme";
       }
     ];
   };
