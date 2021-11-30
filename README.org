@@ -4,8 +4,7 @@
 #+OPTIONS: broken-links:auto
 #+EXPORT_FILE_NAME: index.html
 #+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
-
-[[https://img.shields.io/badge/Made_with-Doom_Emacs-blueviolet.svg]] [[https://img.shields.io/badge/NixOS-v21.11-blue.svg]]
+[[https://builtwithnix.org/badge.svg]] [[https://img.shields.io/badge/Made_with-Doom_Emacs-blueviolet.svg]]
 #+begin_center
 | *Shell*    | zsh        |
 | *DM*       | sddm       |
