@@ -1,10 +1,5 @@
-{ lib, config, pkgs, ... }: {
-  imports = [ # Include the results of the hardware scan.
-    ./hardware-configuration.nix
-    ./xserver.nix
-    ./audio.nix
-    ./backups.nix
-  ];
+{ config, pkgs, ... }: {
+  imports = [ ./hardware-configuration.nix ./xserver.nix ./backups.nix ];
   boot = {
     extraModulePackages = [ config.boot.kernelPackages.tuxedo-keyboard ];
     initrd.kernelModules = [ "amdgpu" ];
@@ -23,14 +18,10 @@
   };
   hardware.bluetooth = {
     enable = true;
-    settings = { General = { Enable = "Source,Sink,Media,Socket"; }; };
+    settings.General.Enable = "Source,Sink,Media,Socket";
   };
 
   services.udev.extraRules = ''
     ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="amdgpu_bl0", MODE="0666", RUN+="${pkgs.coreutils}/bin/chmod a+w /sys/class/backlight/%k/brightness"
   '';
-  services.openssh.listenAddresses = [{
-    addr = "100.79.65.104";
-    port = 22;
-  }];
 }

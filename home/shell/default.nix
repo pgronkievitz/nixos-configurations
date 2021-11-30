@@ -1,13 +1,9 @@
-{ config, lib, pkgs, ... }:
-
-{
+{ lib, pkgs, ... }: {
   programs.zsh = {
     enable = true;
     autocd = true;
     dotDir = ".config/zsh";
     shellAliases = {
-      apollo = "ssh apollo";
-      mikrus = "ssh mikrus";
       g = "git";
       ping = "ping -c 3";
       space = "df -h -x tmpfs -x devtmpfs 2>& /dev/null";
@@ -16,7 +12,7 @@
       rm = "rm -I";
       ln = "ln -i";
       sysup =
-        "sudo nixos-rebuild switch --flake '/home/pg/Documents/nixos-configurations#'";
+        "sudo nixos-rebuild switch --flake '/home/pg/Projects/private/nixos-configurations#'";
     };
     dirHashes = {
       docs = "$HOME/Documents";
@@ -27,15 +23,17 @@
     enableSyntaxHighlighting = true;
     enableAutosuggestions = true;
     defaultKeymap = "viins";
-    plugins = [{
-      name = "p10k";
-      src = pkgs.zsh-powerlevel10k;
-    }];
-    initExtra = ''
-      source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme && source ~/.config/zsh//.p10k.zsh
-      . <(helm completion zsh)
-      . <(kubectl completion zsh)
-    '';
-    envExtra = "export KUBECONFIG=$HOME/.kube/config";
+    plugins = [
+      {
+        name = "p10k";
+        src = pkgs.zsh-powerlevel10k;
+        file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+      }
+      {
+        name = "p10k-config";
+        src = lib.cleanSource ./p10k-config;
+        file = "p10k.zsh";
+      }
+    ];
   };
 }

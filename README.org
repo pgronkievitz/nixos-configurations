@@ -4,8 +4,7 @@
 #+OPTIONS: broken-links:auto
 #+EXPORT_FILE_NAME: index.html
 #+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
-
-[[https://img.shields.io/badge/Made_with-Doom_Emacs-blueviolet.svg]] [[https://img.shields.io/badge/NixOS-v21.11-blue.svg]]
+[[https://builtwithnix.org/badge.svg]] [[https://img.shields.io/badge/Made_with-Doom_Emacs-blueviolet.svg]]
 #+begin_center
 | *Shell*    | zsh        |
 | *DM*       | sddm       |
@@ -31,7 +30,7 @@ This is my NixOS configuraiton. It's quite simple for now, but it'll be improved
 ** PROJ WM
 *** TODO Add qtile config into this directory to make it more manageable
 *** TODO set background with Nix
-** PROJ Shell
+** DONE Shell
 *** DONE configure ZSH via nix file
 **** KILL configure prezto
 There's no use to use prezto
@@ -40,13 +39,17 @@ There's no use to use prezto
 *** DONE configure gh
 *** DONE configure ssh
 *** DONE configure lsd
-** PROJ Emacs
+** DONE Emacs
 *** DONE Set up Emacs overlay as flake
 *** KILL Fix Emacs' service
 ** PROJ NixOS
 *** DONE Set up automatic GC with ~2 weeks of generations
 *** DONE Set up backups properly
 *** TODO Set up agenix secrets
+** DONE Rewrite configs to more like [[github:fufexan/dotfiles][fufexan's]]
+*** DONE New folder structure
+*** DONE Use FUP
+*** DONE Modularize HM's stuff
 * Requirements
 1. NixOS
 2. Flakes enabled
