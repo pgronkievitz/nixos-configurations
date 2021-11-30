@@ -30,7 +30,7 @@ This is my NixOS configuraiton. It's quite simple for now, but it'll be improved
 ** PROJ WM
 *** TODO Add qtile config into this directory to make it more manageable
 *** TODO set background with Nix
-** PROJ Shell
+** DONE Shell
 *** DONE configure ZSH via nix file
 **** KILL configure prezto
 There's no use to use prezto
@@ -39,7 +39,7 @@ There's no use to use prezto
 *** DONE configure gh
 *** DONE configure ssh
 *** DONE configure lsd
-** PROJ Emacs
+** DONE Emacs
 *** DONE Set up Emacs overlay as flake
 *** KILL Fix Emacs' service
 ** PROJ NixOS
