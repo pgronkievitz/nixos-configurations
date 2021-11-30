@@ -8,9 +8,19 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     emacs-overlay.url = "github:nix-community/emacs-overlay/master";
+    fu.url = "github:numtide/flake-utils/master";
+    fup = {
+      url = "github:gytis-ivaskevicius/flake-utils-plus/master";
+      inputs.flake-utils.follows = "fu";
+    };
+    # kmonad = {
+    #   url = "github:kmonad/kmonad/master";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    #   inputs.flake-utils.follows = "fup";
+    # };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, fup, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
