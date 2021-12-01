@@ -58,6 +58,7 @@
         # SERVERS #
         ###########
         apollo = shared ++ [ ];
+        dart = shared ++ [ ];
       };
     in fup.lib.mkFlake {
       inherit self inputs;
@@ -113,6 +114,13 @@
         apollo.modules = [
           ./hosts/apollo
           { home-manager.users.pg.imports = hmModules.apollo; }
+          ./modules/monitoring.nix
+          # ./modules/selfhosted
+          # ./modules/selfhosted/kubeserver.nix
+        ];
+        dart.modules = [
+          ./hosts/dart
+          { home-manager.users.pg.imports = hmModules.dart; }
           ./modules/monitoring.nix
           # ./modules/selfhosted
           # ./modules/selfhosted/kubeserver.nix
