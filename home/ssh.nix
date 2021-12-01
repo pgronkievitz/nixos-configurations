@@ -16,14 +16,6 @@
         hostname = "100.85.251.69";
         user = "pg";
       };
-      "cass" = {
-        hostname = "164.90.171.118";
-        user = "root";
-      };
-      "testenv" = {
-        hostname = "192.168.100.160";
-        user = "ubuntu";
-      };
     };
   };
 }
