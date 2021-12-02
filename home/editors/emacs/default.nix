@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   programs.emacs = {
     enable = true;
-    package = pkgs.emacsGcc;
+    package = pkgs.emacsGcc28;
     extraPackages = (epkgs: [ epkgs.vterm epkgs.melpaPackages.pdf-tools ]);
   };
 
