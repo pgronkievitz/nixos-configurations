@@ -5,6 +5,6 @@
     pkgs.discord
     pkgs.thunderbird-bin-91
     pkgs.birdtray
-    pkgs.kotatogram-desktop
+    pkgs.tdesktop
   ];
 }
