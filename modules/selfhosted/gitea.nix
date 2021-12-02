@@ -1,17 +1,35 @@
-{ config, lib, pkgs, ... }:
-{
+let
+  servicename = "gitea";
+  shortname = "git";
+  port = "9001";
+in {
   virtualisation.oci-containers = {
     containers = {
-      gitea = {
-        image = "docker.io/gitea/gitea:1.15.6-rootless";
-        ports = [ "8081:3000" ];
-        user = "pg";
+      "${servicename}" = {
+        image = "gitea/gitea:1.15.6-rootless";
+        ports = [ "${port}:3000" ];
         # login = {
         #   username = "pgronkievitz";
         #   registry = "https://docker.io";
         #   passwordFile = "/home/pg/.local/dockerhub-password.txt";
         # };
       };
+    };
+  };
+  services.nginx.virtualHosts = {
+    "${shortname}.gronkiewicz.xyz" = {
+      enableACME = true;
+      forceSSL = true;
+      locations."/" = {
+        proxyPass = "https://127.0.0.1:${port}";
+        extraConfig = "proxy_ssl_server_name on;"
+          + "proxy_pass_header Authorization;";
+      };
+      serverAliases = [
+        "www.${shortname}.gronkiewicz.xyz"
+        "${servicename}.gronkiewicz.xyz"
+        "www.${servicename}.gronkiewicz.xyz"
+      ];
     };
   };
 }
