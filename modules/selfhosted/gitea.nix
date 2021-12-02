@@ -20,6 +20,7 @@ in {
     "${shortname}.gronkiewicz.xyz" = {
       enableACME = true;
       forceSSL = true;
+      credentialsFile = "/etc/certs/credentials.sh";
       locations."/" = {
         proxyPass = "https://127.0.0.1:${port}";
         extraConfig = "proxy_ssl_server_name on;"
