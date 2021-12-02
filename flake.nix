@@ -30,7 +30,6 @@
           ./home/lsd.nix
           ./home/fzf.nix
           ./home/editors/neovim
-          ./home/ssh.nix
           ./home/git.nix
         ];
         graphics = [
