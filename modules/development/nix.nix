@@ -1,5 +1,1 @@
-{ pkgs, ... }: {
-  environment.systemPackages = [
-    pkgs.nixfmt
-  ];
-}
+{ pkgs, ... }: { environment.systemPackages = [ pkgs.nixfmt ]; }
