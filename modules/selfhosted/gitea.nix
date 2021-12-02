@@ -32,4 +32,9 @@ in {
       ];
     };
   };
+  security.acme.certs."gronkiewicz.xyz" = {
+    dnsProvider = "cloudflare";
+    dnsResolver = "1.1.1.1:53";
+    credentialsFile = ./credentials.sh;
+  };
 }
