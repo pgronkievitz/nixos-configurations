@@ -1,1 +1,1 @@
-{ ... }: { imports = [ ./python.nix ./clang.nix ]; }
+{ ... }: { imports = [ ./python.nix ./clang.nix ./nix.nix ]; }
