@@ -32,7 +32,12 @@ in {
       ];
     };
   };
-  security.acme.certs."gronkiewicz.xyz" = {
+  security.acme.certs."${shortname}.gronkiewicz.xyz" = {
+    extraDomainNames = [
+      "www.${shortname}.gronkiewicz.xyz"
+      "${servicename}.gronkiewicz.xyz"
+      "www.${servicename}.gronkiewicz.xyz"
+    ];
     dnsProvider = "cloudflare";
     dnsResolver = "1.1.1.1:53";
     credentialsFile = ./credentials.sh;
