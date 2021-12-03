@@ -20,7 +20,6 @@ in {
     "${shortname}.gronkiewicz.xyz" = {
       useACMEHost = "${shortname}.gronkiewicz.xyz";
       forceSSL = true;
-      credentialsFile = "/etc/certs/credentials.sh";
       locations."/".proxyPass = "http://127.0.0.1:${port}";
       serverAliases = domains;
     };
