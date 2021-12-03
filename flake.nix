@@ -51,7 +51,8 @@
         ################
         # WORKSTATIONS #
         ################
-        artemis = shared ++ graphics ++ [ ./home/private ./home/games.nix ];
+        artemis = shared ++ graphics
+          ++ [ ./home/private ./home/games.nix ./home/graphics.nix ];
         themis = shared ++ graphics ++ [ ./home/work ];
         ###########
         # SERVERS #
