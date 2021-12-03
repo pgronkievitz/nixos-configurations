@@ -9,6 +9,7 @@ let
     python-packages.pylint
     python-packages.mypy
     python-packages.nose
+    python-packages.editorconfig
   ];
   python-with-my-packages = pkgs.python3.withPackages my-python-packages;
 in {
