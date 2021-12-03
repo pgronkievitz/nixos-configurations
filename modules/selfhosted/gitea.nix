@@ -13,6 +13,11 @@ in {
       "${servicename}" = {
         image = "gitea/gitea:1.15.6-rootless";
         ports = [ "${port}:3000" ];
+        volumes = [
+          "/media/data/${servicename}:/data"
+          "/etc/timezone:/etc/timezone:ro"
+          "/etc/localtime:/etc/localtime:ro"
+        ];
       };
     };
   };
