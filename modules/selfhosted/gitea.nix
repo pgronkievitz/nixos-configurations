@@ -24,7 +24,7 @@ in {
       serverAliases = domains;
     };
   };
-  services.nginx.security.acme.certs."${shortname}.gronkiewicz.xyz" = {
+  security.acme.certs."${shortname}.gronkiewicz.xyz" = {
     extraDomainNames = domains;
     dnsProvider = "cloudflare";
     credentialsFile = "/home/pg/credentials.sh";
