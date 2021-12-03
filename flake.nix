@@ -123,7 +123,8 @@
           ./hosts/dart
           { home-manager.users.pg.imports = hmModules.dart; }
           ./modules/monitoring.nix
-          # ./modules/selfhosted
+          ./modules/selfhosted/gitea.nix
+          ./modules/selfhosted
           # ./modules/selfhosted/kubeserver.nix
         ];
       };
