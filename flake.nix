@@ -69,6 +69,7 @@
           ./modules/security.nix
           ./modules/containers.nix
           ./modules/development/kube.nix
+          ./modules/development/go.nix
           ./modules/fonts.nix
           # inputs.kmonad.nixosModule
           inputs.home-manager.nixosModule
