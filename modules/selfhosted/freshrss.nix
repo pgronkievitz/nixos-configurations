@@ -15,7 +15,6 @@ in {
         ports = [ "${port}:80" ];
         environment = { TZ = "Europe/Warsaw"; };
         volumes = [ "/media/data/${servicename}:/config" ];
-        user = "podman";
       };
     };
   };
