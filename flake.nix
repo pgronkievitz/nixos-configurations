@@ -120,6 +120,7 @@
           ./modules/selfhosted/vaultwarden.nix
           ./modules/selfhosted/nextcloud.nix
           ./modules/selfhosted/freshrss.nix
+          ./modules/selfhosted/wallabag.nix
           # ./modules/selfhosted/bibliogram.nix
           # ./modules/selfhosted/kubeserver.nix
         ];
