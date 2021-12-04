@@ -116,7 +116,8 @@
           ./hosts/apollo
           { home-manager.users.pg.imports = hmModules.apollo; }
           ./modules/monitoring.nix
-          # ./modules/selfhosted
+          ./modules/selfhosted
+          ./modules/selfhosted/vaultwarden.nix
           # ./modules/selfhosted/kubeserver.nix
         ];
         dart.modules = [
