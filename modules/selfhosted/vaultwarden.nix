@@ -11,7 +11,7 @@ in {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "docker.io/vaultwarden/server:1.23.0-alpine";
+        image = "vaultwarden/server:1.23.0-alpine";
         volumes = [ "/media/data/${servicename}:/data" ];
         ports = [ "${port}:80" ];
         environment = {
@@ -19,7 +19,6 @@ in {
           DOMAIN = "https://${shortname}.gronkiewicz.xyz";
           SIGNUPS_ALLOWED = "false";
         };
-        user = "podman";
       };
     };
   };
