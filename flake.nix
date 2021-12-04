@@ -118,6 +118,7 @@
           ./modules/monitoring.nix
           ./modules/selfhosted
           ./modules/selfhosted/vaultwarden.nix
+          ./modules/selfhosted/bibliogram.nix
           # ./modules/selfhosted/kubeserver.nix
         ];
         dart.modules = [
