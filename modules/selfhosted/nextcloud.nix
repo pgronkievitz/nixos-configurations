@@ -11,7 +11,7 @@ in {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "lscr.io/linuxserver/nextlcoud:php8-version-22.2.3";
+        image = "lscr.io/linuxserver/nextcloud:php8-version-22.2.3";
         volumes = [
           "/media/data/${servicename}:/data"
           "/media/data/${servicename}_config:/config"
