@@ -11,11 +11,8 @@ in {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "lscr.io/linuxserver/nextcloud:php8-version-22.2.3";
-        volumes = [
-          "/media/data/${servicename}:/data"
-          "/media/data/${servicename}_config:/config"
-        ];
+        image = "nextcloud:23.0.0";
+        volumes = [ "/media/data/${servicename}:/var/www/html" ];
         ports = [ "${port}:80" ];
         environment = {
           REDIS_HOST = "nc_redis";
