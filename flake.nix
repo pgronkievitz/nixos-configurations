@@ -13,6 +13,7 @@
       url = "github:gytis-ivaskevicius/flake-utils-plus/master";
       inputs.flake-utils.follows = "fu";
     };
+    agenix.url = "github:ryantm/agenix";
     # kmonad = {
     #   url = "github:kmonad/kmonad/master";
     #   inputs.nixpkgs.follows = "nixpkgs";
@@ -20,7 +21,7 @@
     # };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, fup, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, fup, agenix, ... }:
     let
       hmModules = let
         shared = [
@@ -72,6 +73,8 @@
           ./modules/development/go.nix
           ./modules/fonts.nix
           # inputs.kmonad.nixosModule
+          agenix.nixosModules.age
+          { age.secrets.cloudflare.file = ./secrets/cloudflare.age; }
           inputs.home-manager.nixosModule
           {
             home-manager = {
