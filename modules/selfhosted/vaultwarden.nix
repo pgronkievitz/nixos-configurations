@@ -7,7 +7,7 @@ let
     "${servicename}.gronkiewicz.xyz"
     "www.${servicename}.gronkiewicz.xyz"
   ];
-in {
+in { config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
@@ -33,6 +33,6 @@ in {
   security.acme.certs."${shortname}.gronkiewicz.xyz" = {
     extraDomainNames = domains;
     dnsProvider = "cloudflare";
-    credentialsFile = "/home/pg/credentials.sh";
+    credentialsFile = config.age.secrets.cloudflare.path;
   };
 }
