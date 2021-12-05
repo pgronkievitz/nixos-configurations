@@ -13,8 +13,7 @@ in { config, ... }: {
       "${servicename}" = {
         image = "lscr.io/linuxserver/overseerr:2021.12.05";
         ports = [ "${port}:5055" ];
-        volumes = [ "/media/data/${servicename}:/config" ];
-        environment = { TZ = "Europe/Warsaw"; };
+        volumes = [ "/media/data/${servicename}:/data" ];
       };
     };
   };
