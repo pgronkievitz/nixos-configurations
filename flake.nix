@@ -132,6 +132,7 @@
           ./modules/monitoring.nix
           ./modules/selfhosted/gitea.nix
           ./modules/selfhosted
+          ./modules/selfhosted/overseerr.nix
           # ./modules/selfhosted/kubeserver.nix
         ];
       };
