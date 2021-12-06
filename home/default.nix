@@ -15,4 +15,5 @@
     layout = "pl";
     options = [ "caps:swapescape" ];
   };
+  systemd.user.sessionVariables.EDITOR = "emacs";
 }
