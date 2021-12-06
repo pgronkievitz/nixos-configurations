@@ -1,7 +1,7 @@
 let
   servicename = "prowlarr";
-  shortname = "rad";
-  port = "9901";
+  shortname = "pro";
+  port = "9801";
   domains = [
     "www.${shortname}.gronkiewicz.xyz"
     "${servicename}.gronkiewicz.xyz"
