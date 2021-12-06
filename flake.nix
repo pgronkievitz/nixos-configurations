@@ -102,9 +102,9 @@
           ./hosts/artemis
           {
             home-manager.users.pg.imports = hmModules.artemis;
-            age.secrets.artemisbkp-id.file = ./secrets/artemis/bkp-id.age;
-            age.secrets.artemisbkp-key.file = ./secrets/artemis/bkp-key.age;
-            age.secrets.artemisbkp-.file = ./secrets/artemis/bkp.age;
+            age.secrets.artemisbkp.file = ./secrets/artemis/bkp.age;
+            age.secrets.artemisbkp-rclone.file =
+              ./secrets/artemis/bkp-rclone.age;
           }
           ./modules/development
           ./modules/virtual-machines.nix

@@ -9,10 +9,11 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHP69bvkDQefQZqUWNOqULeh5oiQ2xQJmHm5Mw0+/XeE";
   artemis =
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGA+womWFzFqOsX9Scz/zOXRabLErDjEzIFHrUMjePOm";
-  systems = [ apollo dart ];
+  systems = [ artemis apollo dart ];
+  servers = [ apollo dart ];
+  private = [ artemis pg ];
 in {
-  "cloudflare.age".publicKeys = users ++ systems;
-  "artemis-bkp-id.age".publicKeys = [ pg artemis ];
-  "artemis-bkp-key.age".publicKeys = [ pg artemis ];
-  "artemis-bkp.age".publicKeys = [ pg artemis ];
+  "cloudflare.age".publicKeys = users ++ servers;
+  "artemis/bkp-rclone.age".publicKeys = private;
+  "artemis/bkp.age".publicKeys = private;
 }

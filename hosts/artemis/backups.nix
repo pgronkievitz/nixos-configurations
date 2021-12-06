@@ -21,12 +21,7 @@
         "--keep-yearly 10"
       ];
       timerConfig = { OnCalendar = "0/4:00"; };
-      rcloneConfig = {
-        type = "b2";
-        hard_delete = "false";
-        account = config.age.secrets.artemisbkp-id.path;
-        key = config.age.secrets.artemisbkp-key.path;
-      };
+      rcloneConfigFile = config.age.secrets.artemisbkp-rclone.path;
     };
     local = {
       user = "pg";
