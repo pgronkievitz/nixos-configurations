@@ -15,7 +15,7 @@ in { config, ... }: {
         ports = [ "${port}:8989" ];
         volumes = [
           "/media/data/${servicename}/config:/config"
-          "/media/data/${servicename}/tv:/tv"
+          "/media/data/${servicename}/music:/music"
           "/media/data/${servicename}/downloads:/downloads"
         ];
         environment.TZ = "Europe/Warsaw";
