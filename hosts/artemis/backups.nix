@@ -24,8 +24,8 @@
       rcloneConfig = {
         type = "b2";
         hard_delete = "false";
-        account = "000f596f152d8670000000007";
-        key = "K000f1v8IGnD01VoVcJiNut7MuKP9Kw";
+        account = config.age.secrets.artemisbkp-id.path;
+        key = config.age.secrets.artemisbkp-key.path;
       };
     };
     local = {

@@ -48,6 +48,7 @@
           ./home/nmapplet.nix
           ./home/blueman.nix
         ];
+        servers = [{ age.secrets.cloudflare.file = ./secrets/cloudflare.age; }];
       in {
         ################
         # WORKSTATIONS #
@@ -58,8 +59,9 @@
         ###########
         # SERVERS #
         ###########
-        apollo = shared ++ [ ];
-        dart = shared ++ [ ];
+        ###########
+        apollo = shared ++ servers ++ [ ];
+        dart = shared ++ servers ++ [ ];
       };
     in fup.lib.mkFlake {
       inherit self inputs;
@@ -74,10 +76,6 @@
           ./modules/fonts.nix
           # inputs.kmonad.nixosModule
           agenix.nixosModules.age
-          {
-            age.secrets.cloudflare.file = ./secrets/cloudflare.age;
-            age.secrets.artemisbkp.file = ./secrets/artemis-bkp.age;
-          }
           inputs.home-manager.nixosModule
           {
             home-manager = {
@@ -102,7 +100,12 @@
       hosts = {
         artemis.modules = [
           ./hosts/artemis
-          { home-manager.users.pg.imports = hmModules.artemis; }
+          {
+            home-manager.users.pg.imports = hmModules.artemis;
+            age.secrets.artemisbkp-id.file = ./secrets/artemis/bkp-id.age;
+            age.secrets.artemisbkp-key.file = ./secrets/artemis/bkp-key.age;
+            age.secrets.artemisbkp-.file = ./secrets/artemis/bkp.age;
+          }
           ./modules/development
           ./modules/virtual-machines.nix
           ./modules/audio.nix

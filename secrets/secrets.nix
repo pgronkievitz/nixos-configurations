@@ -12,5 +12,7 @@ let
   systems = [ apollo dart ];
 in {
   "cloudflare.age".publicKeys = users ++ systems;
-  "apollo-bak.age".publicKeys = [ artemis ];
+  "artemis-bkp-id.age".publicKeys = [ pg artemis ];
+  "artemis-bkp-key.age".publicKeys = [ pg artemis ];
+  "artemis-bkp.age".publicKeys = [ pg artemis ];
 }
