@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 
 {
   services.restic.backups = {
@@ -6,7 +6,7 @@
       user = "pg";
       repository = "rclone:b2:artemis-backup";
       initialize = true;
-      passwordFile = "/home/pg/.cache/bkp_pass";
+      passwordFile = config.age.secrets.cloudflare.path;
       paths = [ "/home/pg" ];
       extraBackupArgs = [
         "--exclude-caches"
@@ -21,6 +21,12 @@
         "--keep-yearly 10"
       ];
       timerConfig = { OnCalendar = "0/4:00"; };
+      rcloneConfig = {
+        type = "b2";
+        hard_delete = "false";
+        account = "000f596f152d8670000000007";
+        key = "K000f1v8IGnD01VoVcJiNut7MuKP9Kw";
+      };
     };
     local = {
       user = "pg";

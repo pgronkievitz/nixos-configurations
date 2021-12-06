@@ -7,5 +7,10 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAGHoqKFSGiw0pdUPb5kIZ3L829rmnNZniWy3rnHdiYd";
   dart =
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHP69bvkDQefQZqUWNOqULeh5oiQ2xQJmHm5Mw0+/XeE";
+  artemis =
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGA+womWFzFqOsX9Scz/zOXRabLErDjEzIFHrUMjePOm";
   systems = [ apollo dart ];
-in { "cloudflare.age".publicKeys = users ++ systems; }
+in {
+  "cloudflare.age".publicKeys = users ++ systems;
+  "apollo-bak.age".publicKeys = [ artemis ];
+}

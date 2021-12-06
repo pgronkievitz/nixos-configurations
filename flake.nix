@@ -74,7 +74,10 @@
           ./modules/fonts.nix
           # inputs.kmonad.nixosModule
           agenix.nixosModules.age
-          { age.secrets.cloudflare.file = ./secrets/cloudflare.age; }
+          {
+            age.secrets.cloudflare.file = ./secrets/cloudflare.age;
+            age.secrets.artemisbkp.file = ./secrets/artemis-bkp.age;
+          }
           inputs.home-manager.nixosModule
           {
             home-manager = {
