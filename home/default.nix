@@ -16,4 +16,5 @@
     options = [ "caps:swapescape" ];
   };
   systemd.user.sessionVariables.EDITOR = "emacs";
+  home.sessionVariables.EDITOR = "emacs";
 }
