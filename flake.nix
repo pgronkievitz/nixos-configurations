@@ -140,6 +140,7 @@
           ./modules/selfhosted/radarr.nix
           ./modules/selfhosted/lidarr.nix
           ./modules/selfhosted/bazarr.nix
+          ./modules/selfhosted/prowlarr.nix
           ./modules/selfhosted/grocy.nix
           # ./modules/selfhosted/kubeserver.nix
         ];
