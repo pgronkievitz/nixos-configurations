@@ -32,7 +32,7 @@
       user = "pg";
       repository = "/media/pg/ext";
       initialize = true;
-      passwordFile = "/home/pg/.cache/bkp_pass";
+      passwordFile = config.age.secrets.artemisbkp.path;
       paths = [ "/home/pg" ];
       extraBackupArgs = [
         "--exclude-caches"
