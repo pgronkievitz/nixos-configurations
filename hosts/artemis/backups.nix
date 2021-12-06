@@ -6,7 +6,7 @@
       user = "pg";
       repository = "rclone:b2:artemis-backup";
       initialize = true;
-      passwordFile = config.age.secrets.cloudflare.path;
+      passwordFile = config.age.secrets.artemisbkp.path;
       paths = [ "/home/pg" ];
       extraBackupArgs = [
         "--exclude-caches"
