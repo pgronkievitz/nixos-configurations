@@ -135,6 +135,7 @@
           ./modules/monitoring.nix
           ./modules/selfhosted/gitea.nix
           ./modules/selfhosted
+          ./modules/selfhosted/readarr.nix
           # ./modules/selfhosted/kubeserver.nix
         ];
       };
