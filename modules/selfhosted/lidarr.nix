@@ -12,7 +12,7 @@ in { config, ... }: {
     containers = {
       "${servicename}" = {
         image = "lscr.io/linuxserver/lidarr:0.0.2372";
-        ports = [ "${port}:8989" ];
+        ports = [ "${port}:8686" ];
         volumes = [
           "/media/data/${servicename}/config:/config"
           "/media/data/${servicename}/music:/music"
