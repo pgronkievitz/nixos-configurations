@@ -12,7 +12,7 @@ in { config, ... }: {
     containers = {
       "${servicename}" = {
         image = "lscr.io/linuxserver/prowlarr:1.7.1199";
-        ports = [ "${port}:7878" ];
+        ports = [ "${port}:9696" ];
         volumes = [ "/media/data/${servicename}:/config" ];
         environment.TZ = "Europe/Warsaw";
       };
