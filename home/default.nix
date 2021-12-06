@@ -13,6 +13,6 @@
   };
   home.keyboard = {
     layout = "pl";
-    options = ["caps:swapescape"];
+    options = [ "caps:swapescape" ];
   };
 }
