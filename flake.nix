@@ -136,6 +136,7 @@
           ./modules/selfhosted/gitea.nix
           ./modules/selfhosted
           ./modules/selfhosted/readarr.nix
+          ./modules/selfhosted/grocy.nix
           # ./modules/selfhosted/kubeserver.nix
         ];
       };
