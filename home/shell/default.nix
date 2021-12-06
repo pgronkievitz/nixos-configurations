@@ -35,5 +35,6 @@
         file = "p10k.zsh-theme";
       }
     ];
+    sessionVariables.EDITOR = "emacs";
   };
 }
