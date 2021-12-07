@@ -3,7 +3,7 @@
     layout = "pl";
     options = [ "caps:swapescape" ];
   };
-  language = {
+  home.language = {
     address = "pl";
     base = "us";
     collate = "pl";
