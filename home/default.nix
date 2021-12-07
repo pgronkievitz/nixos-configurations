@@ -15,7 +15,6 @@
   home.sessionVariables.EDITOR = "emacs";
   services.pasystray.enable = true;
   services.picom.enable = true;
-  services.playerctld.enable = true;
   services.udiskie = {
     enable = true;
     automount = true;
