@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  imports = [ ./cli ./shell ];
+  imports = [ ./cli ./shell ./localization.nix ];
   gtk = {
     enable = true;
     iconTheme = {
@@ -10,10 +10,6 @@
       package = pkgs.orchis-theme;
       name = "Orchis-light";
     };
-  };
-  home.keyboard = {
-    layout = "pl";
-    options = [ "caps:swapescape" ];
   };
   systemd.user.sessionVariables.EDITOR = "emacs";
   home.sessionVariables.EDITOR = "emacs";
