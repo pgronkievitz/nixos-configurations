@@ -14,7 +14,11 @@ in { config, ... }: {
         image = "lscr.io/linuxserver/transmission:2021.11.18";
         ports = [ "${port}:9091" "51413:51413" "51413:51413/udp" ];
         environment = { TZ = "Europe/Warsaw"; };
-        volumes = [ "/media/data/${servicename}:/config" ];
+        volumes = [
+          "/media/data/${servicename}/config:/config"
+          "/media/data/${servicename}/downloads:/downloads"
+          "/media/data/${servicename}/watch:/watch"
+        ];
       };
     };
   };
