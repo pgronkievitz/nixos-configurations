@@ -131,6 +131,7 @@
           ./modules/selfhosted/nextcloud.nix
           ./modules/selfhosted/freshrss.nix
           ./modules/selfhosted/wallabag.nix
+          ./modules/selfhosted/torrents.nix
           # ./modules/selfhosted/kubeserver.nix
         ];
         dart.modules = [
@@ -147,7 +148,6 @@
           ./modules/selfhosted/bazarr.nix
           ./modules/selfhosted/prowlarr.nix
           ./modules/selfhosted/grocy.nix
-          ./modules/selfhosted/torrents.nix
           # ./modules/selfhosted/kubeserver.nix
         ];
       };
