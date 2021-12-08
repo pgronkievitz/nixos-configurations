@@ -48,7 +48,7 @@
           ./home/nmapplet.nix
           ./home/blueman.nix
         ];
-        servers = [{ age.secrets.cloudflare.file = ./secrets/cloudflare.age; }];
+        servers = [ ];
       in {
         ################
         # WORKSTATIONS #
@@ -124,6 +124,7 @@
         apollo.modules = [
           ./hosts/apollo
           { home-manager.users.pg.imports = hmModules.apollo; }
+          { age.secrets.cloudflare.file = ./secrets/cloudflare.age; }
           ./modules/monitoring.nix
           ./modules/selfhosted
           ./modules/selfhosted/vaultwarden.nix
@@ -135,6 +136,7 @@
         dart.modules = [
           ./hosts/dart
           { home-manager.users.pg.imports = hmModules.dart; }
+          { age.secrets.cloudflare.file = ./secrets/cloudflare.age; }
           ./modules/monitoring.nix
           ./modules/selfhosted/gitea.nix
           ./modules/selfhosted
