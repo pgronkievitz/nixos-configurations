@@ -1,1 +1,1 @@
-{ ... }: { imports = [ ./git-signing.nix ./ssh-hosts.nix ]; }
+{ imports = [ ./git-signing.nix ./ssh-hosts.nix ./git-sync.nix ]; }
