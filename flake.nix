@@ -145,6 +145,7 @@
           ./modules/selfhosted/bazarr.nix
           ./modules/selfhosted/prowlarr.nix
           ./modules/selfhosted/grocy.nix
+          ./modules/selfhosted/torrents.nix
           # ./modules/selfhosted/kubeserver.nix
         ];
       };
