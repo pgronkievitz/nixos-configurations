@@ -14,7 +14,11 @@
   systemd.user.sessionVariables.EDITOR = "emacs";
   home.sessionVariables.EDITOR = "emacs";
   services.pasystray.enable = true;
-  services.picom.enable = true;
+  services.picom = {
+    enable = true;
+    fade = true;
+    fadeDelta = 5;
+  };
   services.udiskie = {
     enable = true;
     automount = true;
