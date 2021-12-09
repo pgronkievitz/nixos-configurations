@@ -3,12 +3,12 @@
   gtk = {
     enable = true;
     iconTheme = {
-      package = pkgs.maia-icon-theme;
-      name = "Violet-Maia";
+      package = pkgs.paper-icon-theme;
+      name = "Paper";
     };
     theme = {
-      package = pkgs.orchis-theme;
-      name = "Orchis-light";
+      package = pkgs.paper-gtk-theme;
+      name = "Paper";
     };
   };
   systemd.user.sessionVariables.EDITOR = "emacs";
