@@ -19,6 +19,10 @@
     fade = true;
     fadeDelta = 5;
   };
+  xsession.pointerCursor = {
+    package = pkgs.bibata-cursors;
+    name = "Bibata Classic";
+  };
   services.udiskie = {
     enable = true;
     automount = true;
