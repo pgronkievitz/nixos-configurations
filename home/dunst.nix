@@ -20,7 +20,7 @@
       };
       urgency_low = {
         backround = colors.light.base0;
-        foreground = colors.light.base8;
+        foreground = colors.dark.fg;
       };
       urgency_normal = {
         backround = colors.light.dark-blue;
