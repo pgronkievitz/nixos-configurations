@@ -1,13 +1,13 @@
 { pkgs, ... }: {
   programs.emacs = {
     enable = true;
-    package = pkgs.emacsUnstableGcc;
+    package = pkgs.emacsGcc;
     extraPackages = (epkgs: [ epkgs.vterm epkgs.melpaPackages.pdf-tools ]);
   };
 
   services.emacs = {
     enable = true;
-    package = pkgs.emacsUnstableGcc;
+    package = pkgs.emacsGcc;
     client.enable = true;
   };
 
