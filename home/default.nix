@@ -21,7 +21,8 @@
   };
   xsession.pointerCursor = {
     package = pkgs.bibata-cursors;
-    name = "Bibata_Classic";
+    name = "Bibata-Modern-Classic";
+    size = 24;
   };
   services.udiskie = {
     enable = true;
