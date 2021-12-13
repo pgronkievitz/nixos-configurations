@@ -26,5 +26,6 @@ in {
     pkgs.megasync
     pkgs.youtube-dl
     pkgs.freetube
+    pkgs.bitwarden
   ];
 }
