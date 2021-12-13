@@ -20,7 +20,6 @@ in {
     pkgs.spotify
     pkgs.firefox
     pkgs.brave
-    pkgs.nextcloud-client
     pkgs.zotero
     pkgs.calibre
     pkgs.megasync
