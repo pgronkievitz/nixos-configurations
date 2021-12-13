@@ -1,6 +1,6 @@
 { pkgs, ... }:
 let
-  my-dicts = dicts: with dicts; [ en pl en-computers en-science ];
+  my-dicts = dicts: [ dicts.en dicts.pl dicts.en-computers dicts.en-science ];
   my-aspell = pkgs.aspellWithDicts my-dicts;
 in {
   home.packages = [
