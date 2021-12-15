@@ -15,4 +15,5 @@
     After = [ "graphical-session-pre.target" ];
     PartOf = [ "graphical-session.target" ];
   };
+  home.packages = [ pkgs.openjdk ];
 }
