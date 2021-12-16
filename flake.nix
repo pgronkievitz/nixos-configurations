@@ -74,7 +74,7 @@
           ./modules/development/kube.nix
           ./modules/development/go.nix
           ./modules/fonts.nix
-          # inputs.kmonad.nixosModule
+          inputs.kmonad.nixosModule
           agenix.nixosModules.age
           inputs.home-manager.nixosModule
           {
@@ -100,7 +100,6 @@
       hosts = {
         artemis.modules = [
           ./hosts/artemis
-          inputs.kmonad.nixosModule
           {
             home-manager.users.pg.imports = hmModules.artemis;
             age.secrets.artemisbkp.file = ./secrets/artemis/bkp.age;

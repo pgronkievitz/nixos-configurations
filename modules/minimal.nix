@@ -60,4 +60,8 @@
     ];
   };
   programs.dconf.enable = true;
+  services.kmonad = {
+    enable = true;
+    configfiles = [ ./main.kbd ];
+  };
 }
