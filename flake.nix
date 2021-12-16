@@ -14,11 +14,11 @@
       inputs.flake-utils.follows = "fu";
     };
     agenix.url = "github:ryantm/agenix";
-    # kmonad = {
-    #   url = "github:kmonad/kmonad/master";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    #   inputs.flake-utils.follows = "fup";
-    # };
+    kmonad = {
+      url = "github:kmonad/kmonad/master?dir=nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "fup";
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, fup, agenix, ... }:
@@ -100,6 +100,7 @@
       hosts = {
         artemis.modules = [
           ./hosts/artemis
+          inputs.kmonad.nixosModule
           {
             home-manager.users.pg.imports = hmModules.artemis;
             age.secrets.artemisbkp.file = ./secrets/artemis/bkp.age;

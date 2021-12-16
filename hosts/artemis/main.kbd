@@ -1,0 +1,28 @@
+(defcfg
+  ;; For MS Ergo desktop
+  input  (device-file "/dev/input/by-id/usb-Microsoft_Microsoft®_2.4GHz_Transceiver_v9.0-event-kbd")
+  output (uinput-sink "My KMonad output")
+
+  ;; This option tells KMonad to let non-configured keys act normal
+  fallthrough true
+)
+
+(defsrc
+    a    s    d    f    g    h    j    k    l    ;
+)
+
+(defalias
+    met_a (tap-hold-next-release 300 a lmet)
+    alt_s (tap-hold-next-release 300 s lalt)
+    ctl_d (tap-hold-next-release 300 d lctl)
+    sft_f (tap-hold-next-release 300 f lsft)
+
+    sft_j (tap-hold-next-release 300 j rsft)
+    ctl_k (tap-hold-next-release 300 k rctl)
+    alt_l (tap-hold-next-release 300 l lalt)
+    met_; (tap-hold-next-release 300 ; rmet)
+)
+
+(deflayer homerowmods
+    @met_a   @alt_s   @ctl_d   @sft_f   g   h   @sft_j   @ctl_k   @alt_l   @met_;
+)
