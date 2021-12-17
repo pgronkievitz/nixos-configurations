@@ -4,7 +4,6 @@
   programs.git = {
     enable = true;
     userName = "Patryk Gronkiewicz";
-    userEmail = "patryk@gronkiewicz.dev";
     aliases = {
       uncommit = "reset --soft HEAD";
       unstage = "reset";
@@ -24,10 +23,6 @@
     ignores = [ "*~" "*.swp" ];
     lfs.enable = true;
     delta.enable = true;
-    signing = {
-      key = "AFE7E2FEE443F184";
-      signByDefault = true;
-    };
     extraConfig = {
       github.user = "pgronkievitz";
       gitlab.user = "pgronkievitz";

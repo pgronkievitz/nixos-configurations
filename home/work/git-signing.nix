@@ -1,6 +1,7 @@
 { ... }: {
+  programs.git.userEmail = "patryk.gronkiewicz@omnilogy.pl";
   programs.git.signing = {
-    key = "AFE7E2FEE443F184"; # this has to be changed as it's my private GPG key
+    key = "4F6A2A67E2EC8FD7A9BC20101BB5666B36D8CD93";
     signByDefault = true;
   };
 }
