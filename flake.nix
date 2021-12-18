@@ -136,6 +136,7 @@
         ];
         dart.modules = [
           ./hosts/dart
+          ./modules/zfs.nix
           { home-manager.users.pg.imports = hmModules.dart; }
           { age.secrets.cloudflare.file = ./secrets/cloudflare.age; }
           ./modules/monitoring.nix
