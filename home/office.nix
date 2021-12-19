@@ -27,4 +27,12 @@ in {
     pkgs.freetube
     pkgs.bitwarden
   ];
+  programs.rbw = {
+    enable = true;
+    # settings = {
+    #   base_url = "https://vault.gronkiewicz.xyz";
+    #   # identity_url = "https://vault.gronkiewicz.xyz/identity";
+    #   email = "vault@gronkiewicz.xyz";
+    # };
+  };
 }
