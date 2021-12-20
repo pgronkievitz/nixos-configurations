@@ -149,6 +149,7 @@
           ./modules/selfhosted/bazarr.nix
           ./modules/selfhosted/prowlarr.nix
           ./modules/selfhosted/grocy.nix
+          ./modules/selfhosted/calibre.nix
           # ./modules/selfhosted/kubeserver.nix
         ];
       };
