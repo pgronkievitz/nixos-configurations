@@ -1,5 +1,4 @@
 { pkgs, ... }: {
-
   virtualisation.libvirtd = {
     enable = true;
     qemu.package = pkgs.qemu_kvm;
@@ -8,9 +7,4 @@
     onShutdown = "shutdown";
   };
   environment.systemPackages = [ pkgs.virtmanager ];
-  virtualisation.virtualbox.host = {
-    enable = true;
-    enableExtensionPack = true;
-    enableHardening = true;
-  };
 }
