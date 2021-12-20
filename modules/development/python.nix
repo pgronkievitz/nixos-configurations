@@ -10,6 +10,7 @@ let
     python-packages.mypy
     python-packages.nose
     python-packages.editorconfig
+    python-packages.solo-python
   ];
   python-with-my-packages = pkgs.python3.withPackages my-python-packages;
 in {
