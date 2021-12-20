@@ -7,6 +7,7 @@
     onBoot = "ignore";
     onShutdown = "shutdown";
   };
+  environment.systemPackages = [ pkgs.virtmanager ];
   virtualisation.virtualbox.host = {
     enable = true;
     enableExtensionPack = true;
