@@ -26,4 +26,5 @@
     enable = true;
     enableSSHSupport = false;
   };
+  security.pam.u2f.enable = true;
 }
