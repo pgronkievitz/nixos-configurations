@@ -103,8 +103,7 @@
           {
             home-manager.users.pg.imports = hmModules.artemis;
             age.secrets.artemisbkp.file = ./secrets/artemis/bkp.age;
-            age.secrets.artemisbkp-rclone.file =
-              ./secrets/artemis/bkp-rclone.age;
+            age.secrets.artemisbkp-env.file = ./secrets/artemis/bkp-env.age;
           }
           ./modules/development
           ./modules/virtual-machines.nix

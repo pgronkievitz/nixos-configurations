@@ -4,7 +4,7 @@
   services.restic.backups = {
     b2 = {
       user = "pg";
-      repository = "rclone:b2:artemis-backup";
+      repository = "b2:artemis-backup:/";
       initialize = true;
       passwordFile = config.age.secrets.artemisbkp.path;
       paths = [ "/home/pg" ];
@@ -21,7 +21,7 @@
         "--keep-yearly 10"
       ];
       timerConfig = { OnCalendar = "0/4:00"; };
-      rcloneConfigFile = config.age.secrets.artemisbkp-rclone.path;
+      environmentFile = config.age.secrets.artemisbkp-env.path;
     };
     # local = {
     #   user = "pg";
