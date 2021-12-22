@@ -45,7 +45,7 @@ There's no use to use prezto
 ** PROJ NixOS
 *** DONE Set up automatic GC with ~2 weeks of generations
 *** DONE Set up backups properly
-*** TODO Set up agenix secrets
+*** DONE Set up agenix secrets
 ** DONE Rewrite configs to more like [[github:fufexan/dotfiles][fufexan's]]
 *** DONE New folder structure
 *** DONE Use FUP
