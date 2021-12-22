@@ -21,15 +21,19 @@
 This is my NixOS configuraiton. It's quite simple for now, but it'll be improved over time.
 * TODOs
 ** PROJ General
-*** TODO Move all of the configs into literates (preferably into this file)
-*** IDEA Consider moving to ZFS instead of BTRFS
-*** IDEA Consider [[https://grahamc.com/blog/erase-your-darlings?source=techstories.org][removing my darlings]]
+*** TODO [#C] Move all of the configs into literates (preferably into this file)
+my configs are managed via git anyways, so it's not a big deal
+*** TODO [#A] Consider moving to ZFS instead of BTRFS
+I've tested it on my server and it works great - to be done in the near future
+*** IDEA [#C] Consider [[https://grahamc.com/blog/erase-your-darlings?source=techstories.org][removing my darlings]]
 *** DONE Fix colors to be defined in one file instead of every themed app
-*** TODO Set up logging in with password + U2F key
-*** TODO Set up "panic password" which deletes all of =/home/=
+*** TODO [#A] Set up disk encryption
+*** TODO [#B] Set up logging in with password + U2F key
+*** TODO [#C] Set up "panic password" which deletes all of =/home/=
 ** PROJ WM
 *** TODO Add qtile config into this directory to make it more manageable
 *** TODO set background with Nix
+Or consider setting this up in qtile config
 ** DONE Shell
 *** DONE configure ZSH via nix file
 **** KILL configure prezto
@@ -50,6 +54,10 @@ There's no use to use prezto
 *** DONE New folder structure
 *** DONE Use FUP
 *** DONE Modularize HM's stuff
+** PROJ self hosted
+*** TODO set up minio server for laptop backups
+*** TODO set up tube archivist
+*** TODO move nextcloud to dart
 * Requirements
 1. NixOS
 2. Flakes enabled
