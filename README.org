@@ -24,8 +24,20 @@ This is my NixOS configuraiton. It's quite simple for now, but it'll be improved
 *** TODO [#C] Move all of the configs into literates (preferably into this file)
 my configs are managed via git anyways, so it's not a big deal
 *** TODO [#A] Consider moving to ZFS instead of BTRFS
+:PROPERTIES:
+:CUSTOM_ID: moving-zfs
+:END:
 I've tested it on my server and it works great - to be done in the near future
 *** IDEA [#C] Consider [[https://grahamc.com/blog/erase-your-darlings?source=techstories.org][removing my darlings]]
+This is probably a good idea with [[#moving-zfs][moving to ZFS]] as it won't take much additional time and I don't use much folders
+stuff to keep:
+- [ ] Projects folder
+- [ ] documents
+- [ ] Caches for customizaiton stuff
+- [ ] VMs
+- [ ] Photos (those are in nextcloud anyways, but it's nice to keep them locally as long as I have just enough space)
+
+I don't know if I wan't to keep anything else - I'll probably know after deleting something important
 *** DONE Fix colors to be defined in one file instead of every themed app
 *** TODO [#A] Set up disk encryption
 *** TODO [#B] Set up logging in with password + U2F key
