@@ -13,7 +13,7 @@
     pkgs.brillo
     pkgs.lxappearance
     pkgs.pinentry-qt
-    pkgs.multilockscreen
+    pkgs.betterlockscreen
     pkgs.maim
     pkgs.numlockx
   ];

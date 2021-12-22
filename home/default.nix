@@ -29,4 +29,8 @@
     automount = true;
     notify = true;
   };
+  services.betterlockscreen = {
+    enable = true;
+    arguments = [ "--dim" "20" "--blur" "0.3" "--wall" ];
+  };
 }
