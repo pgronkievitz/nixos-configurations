@@ -69,7 +69,8 @@ There's no use to use prezto
 ** PROJ self hosted :selfhosted:
 *** Dart
 **** TODO set up minio server for laptop backups
-**** TODO set up tube archivist
+**** TODO set up [[https://github.com/bbilly1/tubearchivist/blob/master/docker-compose.yml][tube archivist]]
+It might be a bit more difficult as it needs elasticsearch and redis
 **** TODO move nextcloud
 **** TODO set up jellyfin
 **** TODO set up papermerge-ng
