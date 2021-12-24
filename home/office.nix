@@ -26,6 +26,7 @@ in {
     pkgs.youtube-dl
     pkgs.freetube
     pkgs.bitwarden
+    pkgs.playerctl
   ];
   programs.rbw = {
     enable = true;
