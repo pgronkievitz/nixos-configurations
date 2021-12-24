@@ -64,4 +64,5 @@
     enable = true;
     configfiles = [ ./sculpt.kbd ];
   };
+  home-manager.backupFileExtension = "BAK";
 }
