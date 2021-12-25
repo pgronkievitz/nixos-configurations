@@ -13,7 +13,7 @@ in { config, ... }: {
     dataDir = "/media/backups";
     prometheus = true;
     listenAddress = "127.0.0.1:${port}";
-    extraFlags = [ "--no-auth" "--prometheus-no-auth" ];
+    extraFlags = [ "--no-auth" ];
   };
   services.nginx.virtualHosts = {
     "${shortname}.gronkiewicz.xyz" = {
