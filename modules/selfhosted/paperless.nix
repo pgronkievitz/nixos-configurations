@@ -12,7 +12,7 @@ in { config, ... }: {
     containers = {
       "${servicename}" = {
         image = "lscr.io/linuxserver/paperless-ng:1.5.0";
-        ports = [ "${port}:8083" ];
+        ports = [ "${port}:8000" ];
         volumes = [
           "/media/data/${servicename}/config:/config"
           "/media/data/${servicename}/data:/data"
