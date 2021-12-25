@@ -20,7 +20,10 @@
         "--keep-monthly 12"
         "--keep-yearly 10"
       ];
-      timerConfig = { OnCalendar = "0/4:00"; };
+      timerConfig = {
+        OnCalendar = "0/4:00";
+        RandomizedDelaySec = "30m";
+      };
       environmentFile = config.age.secrets.artemisbkp-env.path;
     };
     rest = {
