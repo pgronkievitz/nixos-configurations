@@ -4,6 +4,7 @@
     dockerCompat = true;
     dockerSocket.enable = true;
     enableNvidia = true;
+    defaultNetwork.dnsname.enable = true;
   };
   virtualisation.oci-containers.backend = "podman";
   users.groups.services = { };
