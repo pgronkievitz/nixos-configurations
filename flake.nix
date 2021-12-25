@@ -149,6 +149,7 @@
           ./modules/selfhosted/prowlarr.nix
           ./modules/selfhosted/grocy.nix
           ./modules/selfhosted/calibre.nix
+          ./modules/selfhosted/restic-server.nix
           # ./modules/selfhosted/kubeserver.nix
         ];
       };
