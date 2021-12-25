@@ -68,7 +68,7 @@ There's no use to use prezto
 *** DONE Modularize HM's stuff
 ** PROJ self hosted :selfhosted:
 *** Dart
-**** TODO set up restic server
+**** DONE set up restic server
 **** TODO set up [[https://github.com/bbilly1/tubearchivist/blob/master/docker-compose.yml][tube archivist]]
 It might be a bit more difficult as it needs elasticsearch and redis
 **** TODO move nextcloud
