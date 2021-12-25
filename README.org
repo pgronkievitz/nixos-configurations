@@ -73,7 +73,7 @@ There's no use to use prezto
 It might be a bit more difficult as it needs elasticsearch and redis
 **** TODO move nextcloud
 **** TODO set up jellyfin
-**** TODO set up papermerge-ng
+**** TODO set up paperless-ng
 * Requirements
 1. NixOS
 2. Flakes enabled
