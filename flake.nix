@@ -150,6 +150,7 @@
           ./modules/selfhosted/grocy.nix
           ./modules/selfhosted/calibre.nix
           ./modules/selfhosted/restic-server.nix
+          ./modules/selfhosted/paperless.nix
           # ./modules/selfhosted/kubeserver.nix
         ];
       };
