@@ -11,7 +11,7 @@ in { config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "vaultwarden/server:1.23.0-alpine";
+        image = "vaultwarden/server:1.23.1-alpine";
         volumes = [ "/media/data/${servicename}:/data" ];
         ports = [ "${port}:80" ];
         environment = {
