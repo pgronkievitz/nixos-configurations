@@ -11,7 +11,7 @@ in { config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "lscr.io/linuxserver/transmission:2021.11.18";
+        image = "lscr.io/linuxserver/transmission:version-3.00-r2";
         ports = [ "${port}:9091" "51413:51413" "51413:51413/udp" ];
         environment = { TZ = "Europe/Warsaw"; };
         volumes = [
