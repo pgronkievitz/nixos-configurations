@@ -11,7 +11,7 @@ in { config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "lscr.io/linuxserver/calibre-web:nightly-version-b85627da";
+        image = "lscr.io/linuxserver/calibre-web:0.6.14";
         ports = [ "${port}:8083" ];
         volumes = [
           "/media/data/${servicename}/config:/config"
