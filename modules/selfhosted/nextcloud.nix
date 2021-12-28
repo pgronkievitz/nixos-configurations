@@ -14,18 +14,6 @@ in { config, ... }: {
         image = "nextcloud:23.0.0";
         volumes = [ "/media/data/${servicename}:/var/www/html" ];
         ports = [ "${port}:80" ];
-        environment = {
-          REDIS_HOST = "nc_redis";
-          POSTGRES_DB = "nc_postgres";
-        };
-      };
-      "${shortname}_postgres" = {
-        image = "docker.io/postgresql:13.5-alpine";
-        volumes = [ "/media/data/${servicename}_db:/var/lib/postgresql/data" ];
-      };
-      "${shortname}_redis" = {
-        image = "docker.io/redis:6.2.6-alpine";
-        volumes = [ "/media/data/${servicename}_redis:/data" ];
       };
     };
   };
