@@ -67,7 +67,7 @@ There's no use to use prezto
 ** PROJ self hosted :selfhosted:
 *** Dart
 **** DONE set up restic server
-**** TODO set up [[https://github.com/bbilly1/tubearchivist/blob/master/docker-compose.yml][tube archivist]]
+**** KILL set up [[https://github.com/bbilly1/tubearchivist/blob/master/docker-compose.yml][tube archivist]]
 It might be a bit more difficult as it needs elasticsearch and redis
 **** TODO move nextcloud
 **** TODO set up jellyfin
