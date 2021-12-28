@@ -69,7 +69,6 @@ There's no use to use prezto
 **** DONE set up restic server
 **** KILL set up [[https://github.com/bbilly1/tubearchivist/blob/master/docker-compose.yml][tube archivist]]
 It might be a bit more difficult as it needs elasticsearch and redis
-**** TODO set up jellyfin
 **** DONE set up paperless-ng
 * Requirements
 1. NixOS
