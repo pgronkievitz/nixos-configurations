@@ -33,4 +33,8 @@
     enable = true;
     arguments = [ "--dim" "20" "--blur" "0.3" "--wall" ];
   };
+  xdg.userDirs = {
+    enable = true;
+    createDirectories = true;
+  };
 }
