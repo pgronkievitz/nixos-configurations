@@ -1,16 +1,16 @@
 (defcfg
   ;; For MS Ergo desktop
   input  (device-file "/dev/input/by-id/usb-Microsoft_Microsoft®_2.4GHz_Transceiver_v9.0-event-kbd")
-  output (uinput-sink "My KMonad output")
-  cmp-seq ralt    ;; Set the compose key to `RightAlt'
-  cmp-seq-delay 5 ;; 5ms delay between each compose-key sequence press
+  output (uinput-sink "My KMonad output"))
+cmp-seq ralt    ;; Set the compose key to `RightAlt'
+cmp-seq-delay 5 ;; 5ms delay between each compose-key sequence press
 
   ;; This option tells KMonad to let non-configured keys act normal
-  fallthrough true)
+fallthrough true
 
 
 (defsrc
-    a    s    d    f    g    h    j    k    l)    ;
+    a    s    d    f    g    h    j    k    l   ;)
 
 
 (defalias
@@ -22,9 +22,9 @@
     sft_j (tap-hold-next-release 250 j rsft)
     ctl_k (tap-hold-next-release 250 k rctl)
     alt_l (tap-hold-next-release 250 l lalt)
-    met_); (tap-hold-next-release 250 ; rmet)
+    met_; (tap-hold-next-release 250 ; rmet))
 
 
 (deflayer homerowmods
-    @met_a   @alt_s   @ctl_d   @sft_f   g   h   @sft_j   @ctl_k   @alt_l   @met_);
+    @met_a   @alt_s   @ctl_d   @sft_f   g   h   @sft_j   @ctl_k   @alt_l   @met_;)
 
