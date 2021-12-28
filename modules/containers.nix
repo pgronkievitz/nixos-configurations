@@ -1,12 +1,14 @@
 { pkgs, ... }: {
   virtualisation.podman = {
     enable = true;
-    dockerCompat = true;
-    dockerSocket.enable = true;
     enableNvidia = true;
     defaultNetwork.dnsname.enable = true;
   };
-  virtualisation.oci-containers.backend = "podman";
+  virtualisation.docker = {
+    enable = true;
+    enableNvidia = true;
+    autoPrune.enable = true;
+  };
   users.groups.services = { };
   environment.systemPackages = [ pkgs.docker-client ];
 }
