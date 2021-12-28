@@ -39,12 +39,10 @@ stuff to keep:
 
 I don't know if I wan't to keep anything else - I'll probably know after deleting something important
 *** DONE Fix colors to be defined in one file instead of every themed app
-*** TODO [#A] Set up disk encryption
+*** TODO [#D] Set up disk encryption
 *** TODO [#B] Set up logging in with password + U2F key
-*** TODO [#C] Set up "panic password" which deletes all of =/home/=
 ** PROJ WM :computers:
 *** TODO Add qtile config into this directory to make it more manageable
-*** TODO set background with Nix
 Or consider setting this up in qtile config
 ** DONE Shell :computers:
 *** DONE configure ZSH via nix file
