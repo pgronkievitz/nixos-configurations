@@ -23,7 +23,7 @@ This is my NixOS configuraiton. It's quite simple for now, but it'll be improved
 ** PROJ General :computers:
 *** TODO [#C] Move all of the configs into literates (preferably into this file)
 my configs are managed via git anyways, so it's not a big deal
-*** TODO [#A] Consider moving to ZFS instead of BTRFS
+*** DONE [#A] Consider moving to ZFS instead of BTRFS
 :PROPERTIES:
 :CUSTOM_ID: moving-zfs
 :END:
