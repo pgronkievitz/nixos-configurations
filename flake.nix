@@ -102,8 +102,14 @@
           ./hosts/artemis
           {
             home-manager.users.pg.imports = hmModules.artemis;
-            age.secrets.artemisbkp.file = ./secrets/artemis/bkp.age;
-            age.secrets.artemisbkp-env.file = ./secrets/artemis/bkp-env.age;
+            age.secrets.artemisbkp = {
+              owner = "1000";
+              file = ./secrets/artemis/bkp.age;
+            };
+            age.secrets.artemisbkp-env = {
+              owner = "1000";
+              file = ./secrets/artemis/bkp-env.age;
+            };
           }
           ./modules/development
           ./modules/virtual-machines.nix
