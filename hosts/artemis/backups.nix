@@ -14,6 +14,7 @@
         "--exclude=/home/pg/Videos"
         "--exclude=/home/pg/Music"
         "--exclude=/home/pg/Downloads"
+        "--exclude=/home/pg/.local/share/libvirt/images"
       ];
       pruneOpts = [
         "--keep-daily 4"
@@ -39,6 +40,7 @@
         "--exclude=/home/pg/Videos"
         "--exclude=/home/pg/Music"
         "--exclude=/home/pg/Downloads"
+        "--exclude=/home/pg/.local/share/libvirt/images"
       ];
       pruneOpts = [
         "--keep-daily 4"
