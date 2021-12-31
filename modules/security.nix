@@ -4,7 +4,7 @@
     useDHCP = false;
     firewall = {
       enable = true;
-      trustedInterfaces = [ "tailscale0" ];
+      trustedInterfaces = [ "tailscale0" "virbr0" ];
     };
   };
   security.auditd.enable = true;
