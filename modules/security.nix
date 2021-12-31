@@ -26,9 +26,4 @@
     enable = true;
     enableSSHSupport = false;
   };
-  security.pam.u2f = {
-    enable = true;
-    authFile = "/home/pg/.config/Yubico/u2fkeys";
-    control = "required";
-  };
 }
