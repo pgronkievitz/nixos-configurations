@@ -47,6 +47,7 @@
           ./home/office.nix
           ./home/nmapplet.nix
           ./home/blueman.nix
+          ./home/flameshot.nix
         ];
         servers = [ ];
       in {
