@@ -7,6 +7,6 @@
   };
   security.acme = {
     acceptTerms = true;
-    email = "patryk@gronkiewicz.dev";
+    defaults.email = "patryk@gronkiewicz.dev";
   };
 }
