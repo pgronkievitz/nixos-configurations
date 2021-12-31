@@ -40,7 +40,7 @@ stuff to keep:
 I don't know if I wan't to keep anything else - I'll probably know after deleting something important
 *** DONE Fix colors to be defined in one file instead of every themed app
 *** TODO [#D] Set up disk encryption
-*** TODO [#B] Set up logging in with password + U2F key
+*** DONE [#B] Set up logging in with password + U2F key
 ** PROJ WM :computers:
 *** TODO Add qtile config into this directory to make it more manageable
 Or consider setting this up in qtile config
