@@ -19,9 +19,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "fup";
     };
+    deploy-rs.url = "github:serokell/deploy-rs";
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, fup, agenix, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, fup, agenix, deploy-rs, ... }:
     let
       hmModules = let
         shared = [
@@ -160,6 +161,33 @@
           ./modules/selfhosted/paperless.nix
           # ./modules/selfhosted/kubeserver.nix
         ];
+      };
+      deploy = {
+        sshUser = "pg";
+        user = "root";
+        nodes = {
+          apollo = {
+            hostname = "apollo.gronkiewicz.xyz";
+            profiles.system = {
+              path = deploy-rs.lib.x86_64-linux.activate.nixos
+                self.nixosConfigurations.apollo;
+            };
+          };
+          dart = {
+            hostname = "dart.gronkiewicz.xyz";
+            profiles.system = {
+              path = deploy-rs.lib.x86_64-linux.activate.nixos
+                self.nixosConfigurations.dart;
+            };
+          };
+          artemis = {
+            hostname = "localhost";
+            profiles.system = {
+              path = deploy-rs.lib.x86_64-linux.activate.nixos
+                self.nixosConfigurations.artemis;
+            };
+          };
+        };
       };
     };
 }
