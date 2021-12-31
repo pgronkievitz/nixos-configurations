@@ -13,6 +13,7 @@
   };
   networking = {
     hostName = "artemis";
+    domain = "gronkiewicz.xyz";
     interfaces.enp2s0.useDHCP = true;
     interfaces.wlo1.useDHCP = true;
   };
