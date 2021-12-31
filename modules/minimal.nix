@@ -65,4 +65,6 @@
     configfiles = [ ./sculpt.kbd ];
   };
   home-manager.backupFileExtension = "BAK";
+  security.sudo.wheelNeedsPassword = false;
+  security.sudo.execWheelOnly = true;
 }
