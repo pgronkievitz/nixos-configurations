@@ -13,10 +13,11 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-label/ROOT";
+    device = "/dev/disk/by-uuid/4e63c128-cdbd-40ef-81ad-e8dd12cd6484";
     fsType = "btrfs";
   };
 
-  swapDevices = [{ device = "/dev/vda2"; }];
+  swapDevices =
+    [{ device = "/dev/disk/by-uuid/3a5a00d1-595e-452a-bdb1-850bcd9492cb"; }];
 
 }
