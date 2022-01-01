@@ -1,4 +1,4 @@
-{
+{ pkgs, lib, ... }: {
   networking = {
     networkmanager.enable = true;
     useDHCP = false;
@@ -39,4 +39,5 @@
     enable = true;
     enableSSHSupport = false;
   };
+  environment.systemPackages = [ pkgs.chkrootkit ];
 }
