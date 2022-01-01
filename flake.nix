@@ -50,7 +50,7 @@
           ./home/blueman.nix
           ./home/flameshot.nix
         ];
-        servers = [{ age.secrets.cloudflare.file = ./secrets/cloudflare.age; }];
+        servers = [ ];
       in {
         ################
         # WORKSTATIONS #
@@ -102,7 +102,11 @@
       };
       hosts = let
         common = [ ];
-        servers = [ ./modules/monitoring.nix ./modules/selfhosted ];
+        servers = [
+          { age.secrets.cloudflare.file = ./secrets/cloudflare.age; }
+          ./modules/monitoring.nix
+          ./modules/selfhosted
+        ];
       in {
         artemis.modules = [
           ./hosts/artemis
