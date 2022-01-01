@@ -19,13 +19,4 @@
 
   swapDevices = [{ device = "/dev/vda2"; }];
 
-  boot.loader = {
-    systemd-boot = { enable = false; };
-    efi.canTouchEfiVariables = false;
-    grub = {
-      enable = true;
-      version = 2;
-      device = "/dev/vda";
-    };
-  };
 }

@@ -122,6 +122,7 @@
           ./modules/audio.nix
           ./modules/school.nix
           ./modules/xserver.nix
+          ./modules/gpt.nix
         ];
         themis.modules = [
           ./hosts/themis
@@ -131,6 +132,7 @@
           ./modules/virtual-machines.nix
           ./modules/audio.nix
           ./modules/xserver.nix
+          ./modules/gpt.nix
         ];
         apollo.modules = [
           ./hosts/apollo
@@ -141,6 +143,7 @@
           ./modules/selfhosted/wallabag.nix
           ./modules/selfhosted/torrents.nix
           # ./modules/selfhosted/kubeserver.nix
+          ./modules/gpt.nix
         ] ++ servers;
         dart.modules = [
           ./hosts/dart
@@ -158,10 +161,12 @@
           ./modules/selfhosted/restic-server.nix
           ./modules/selfhosted/paperless.nix
           # ./modules/selfhosted/kubeserver.nix
+          ./modules/gpt.nix
         ] ++ servers;
         hubble.modules = [
           ./hosts/hubble
           # ./modules/selfhosted/kubeserver.nix
+          ./modules/mbr.nix
         ] ++ servers;
 
       };
