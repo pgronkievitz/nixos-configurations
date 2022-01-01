@@ -21,6 +21,19 @@
     allowSFTP = false;
     passwordAuthentication = false;
     permitRootLogin = "no";
+    extraConfig = ''
+      AllowTcpForwarding no
+      ClientAliveCountMax 2
+      Compression no
+      MaxAuthTries 3
+      MaxSessions 2
+      TCPKeepAlive no
+      AllowAgentForwarding no
+    '';
+    logLevel = "VERBOSE";
+    banner = ''
+      UNAUTHORIZED CONNECTIONS ARE FORBIDDEN AND WILL BE REPORTED
+    '';
   };
   programs.gnupg.agent = {
     enable = true;
