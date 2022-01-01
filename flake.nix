@@ -169,6 +169,9 @@
         ] ++ servers;
         hubble.modules = [
           ./hosts/hubble
+          {
+            home-manager.users.pg.imports = hmModules.hubble;
+          }
           # ./modules/selfhosted/kubeserver.nix
           ./modules/mbr.nix
         ] ++ servers;
