@@ -4,19 +4,20 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
+  imports = [ (modulesPath + "/profiles/qemu-guest.nix") ];
 
   boot.initrd.availableKernelModules =
-    [ "nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
+    [ "ata_piix" "uhci_hcd" "virtio_pci" "sr_mod" "virtio_blk" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
-    device = "/dev/vda1";
+    device = "/dev/disk/by-uuid/3507f38e-8a41-46bc-81e8-5bc78c7a20ed";
     fsType = "ext4";
   };
 
-  swapDevices = [{ device = "/dev/vda2"; }];
+  swapDevices =
+    [{ device = "/dev/disk/by-uuid/3a5a00d1-595e-452a-bdb1-850bcd9492cb"; }];
 
 }
