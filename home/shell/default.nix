@@ -13,6 +13,8 @@
       ln = "ln -i";
       sysup =
         "sudo nixos-rebuild switch --flake '/home/pg/Projects/private/nixos-configurations#'";
+      deploy-all =
+        "nix run github:serokell/deploy-rs -- --targets '/home/pg/Projects/private/nixos-configurations#'";
     };
     dirHashes = {
       docs = "$HOME/Documents";
