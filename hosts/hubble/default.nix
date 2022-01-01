@@ -2,6 +2,7 @@
   imports = [ ./hardware-configuration.nix ./backups.nix ];
   networking = {
     nameservers = [ "1.1.1.1" "9.9.9.9" ];
+    networkmanager.insertNameservers = [ "1.1.1.1" "9.9.9.9" ];
     hostName = "hubble";
     domain = "gronkiewicz.xyz";
     hostId = "9c527ac2";
