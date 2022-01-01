@@ -50,7 +50,7 @@
           ./home/blueman.nix
           ./home/flameshot.nix
         ];
-        servers = [ ];
+        servers = [{ age.secrets.cloudflare.file = ./secrets/cloudflare.age; }];
       in {
         ################
         # WORKSTATIONS #
@@ -64,6 +64,7 @@
         ###########
         apollo = shared ++ servers ++ [ ];
         dart = shared ++ servers ++ [ ];
+        hubble = shared ++ servers ++ [ ];
       };
     in fup.lib.mkFlake {
       inherit self inputs;
@@ -99,7 +100,10 @@
         allowUnfree = true;
         allowBroken = true;
       };
-      hosts = {
+      hosts = let
+        common = [ ];
+        servers = [ ./modules/monitoring.nix ./modules/selfhosted ];
+      in {
         artemis.modules = [
           ./hosts/artemis
           {
@@ -131,24 +135,18 @@
         apollo.modules = [
           ./hosts/apollo
           { home-manager.users.pg.imports = hmModules.apollo; }
-          { age.secrets.cloudflare.file = ./secrets/cloudflare.age; }
-          ./modules/monitoring.nix
-          ./modules/selfhosted
           ./modules/selfhosted/vaultwarden.nix
           ./modules/selfhosted/nextcloud.nix
           ./modules/selfhosted/freshrss.nix
           ./modules/selfhosted/wallabag.nix
           ./modules/selfhosted/torrents.nix
           # ./modules/selfhosted/kubeserver.nix
-        ];
+        ] ++ servers;
         dart.modules = [
           ./hosts/dart
           ./modules/zfs.nix
           { home-manager.users.pg.imports = hmModules.dart; }
-          { age.secrets.cloudflare.file = ./secrets/cloudflare.age; }
-          ./modules/monitoring.nix
           ./modules/selfhosted/gitea.nix
-          ./modules/selfhosted
           ./modules/selfhosted/readarr.nix
           ./modules/selfhosted/sonarr.nix
           ./modules/selfhosted/radarr.nix
@@ -160,7 +158,12 @@
           ./modules/selfhosted/restic-server.nix
           ./modules/selfhosted/paperless.nix
           # ./modules/selfhosted/kubeserver.nix
-        ];
+        ] ++ servers;
+        hubble.modules = [
+          ./hosts/hubble
+          # ./modules/selfhosted/kubeserver.nix
+        ] ++ servers;
+
       };
       deploy = {
         sshUser = "pg";
@@ -178,6 +181,13 @@
             profiles.system = {
               path = deploy-rs.lib.x86_64-linux.activate.nixos
                 self.nixosConfigurations.dart;
+            };
+          };
+          hubble = {
+            hostname = "hubble.gronkiewicz.xyz";
+            profiles.system = {
+              path = deploy-rs.lib.x86_64-linux.activate.nixos
+                self.nixosConfigurations.hubble;
             };
           };
           artemis = {
