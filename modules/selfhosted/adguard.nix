@@ -9,7 +9,7 @@ in { config, ... }: {
       "${servicename}" = {
         image = "adguard/adguardhome:v0.107.2";
         ports = [
-          "${port}:80"
+          "${builtins.toString port}:80"
           "3000:3000/tcp"
           # regular DNS
           "53:53/tcp"
