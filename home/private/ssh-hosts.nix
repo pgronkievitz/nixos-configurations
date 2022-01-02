@@ -15,10 +15,17 @@
       "apollo" = {
         hostname = "100.85.251.69";
         user = "pg";
+        port = 14442;
       };
       "dart" = {
         hostname = "100.95.47.112";
         user = "pg";
+        port = 14442;
+      };
+      "hubble" = {
+        hostname = "100.111.43.19";
+        user = "pg";
+        port = 14442;
       };
     };
   };
