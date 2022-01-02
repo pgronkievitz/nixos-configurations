@@ -103,7 +103,13 @@
       hosts = let
         common = [ ];
         servers = [
-          { age.secrets.cloudflare.file = ./secrets/cloudflare.age; }
+          {
+            age.secrets.cloudflare.file = ./secrets/cloudflare.age;
+            age.secrets.ssl = {
+              owner = "nginx";
+              file = ./secrets/ssl.age;
+            };
+          }
           ./modules/monitoring.nix
           ./modules/selfhosted
         ];

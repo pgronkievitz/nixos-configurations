@@ -18,4 +18,5 @@ in {
   "cloudflare.age".publicKeys = users ++ servers;
   "artemis/bkp.age".publicKeys = private;
   "artemis/bkp-env.age".publicKeys = private;
+  "ssl.age".publicKeys = servers ++ users;
 }
