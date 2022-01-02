@@ -2,11 +2,7 @@ let
   servicename = "adguard";
   shortname = "dns";
   port = 10001;
-  domains = [
-    "www.${shortname}.gronkiewicz.xyz"
-    "${servicename}.gronkiewicz.xyz"
-    "www.${servicename}.gronkiewicz.xyz"
-  ];
+  domains = [ "${servicename}.gronkiewicz.xyz" ];
 in { config, ... }: {
   services.adguardhome = {
     enable = true;
