@@ -9,7 +9,8 @@ in { config, ... }: {
       "${servicename}" = {
         image = "pihole/pihole:2021.12.1";
         ports = [
-          "${builtins.toString port}:80"
+          "127.0.0.1:${builtins.toString port}:80"
+          "100.111.43.19:${builtins.toString port}:80"
           # regular DNS
           "53:53/tcp"
           "53:53/udp"
