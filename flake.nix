@@ -180,6 +180,7 @@
       deploy = {
         sshUser = "pg";
         user = "root";
+        sshOpts = [ "-p" "14442" ];
         nodes = {
           apollo = {
             hostname = "apollo.gronkiewicz.xyz";
