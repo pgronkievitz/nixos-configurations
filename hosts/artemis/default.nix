@@ -30,4 +30,8 @@
     authFile = "/home/pg/.config/Yubico/u2fkeys";
     control = "required";
   };
+  services.openssh.listenAddresses = [{
+    addr = "100.113.244.67";
+    port = 14442;
+  }];
 }

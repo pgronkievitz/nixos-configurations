@@ -26,4 +26,8 @@
       interface = "ens3";
     };
   };
+  services.openssh.listenAddresses = [{
+    addr = "100.111.43.19";
+    port = 14442;
+  }];
 }
