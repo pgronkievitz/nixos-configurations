@@ -1,5 +1,5 @@
 let
-  servicename = "adguard";
+  servicename = "pihole";
   shortname = "dns";
   port = 10001;
   domains = [ "${servicename}.gronkiewicz.xyz" ];
@@ -7,24 +7,17 @@ in { config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "adguard/adguardhome:v0.107.2";
+        image = "pihole/pihole:2021.12.1";
         ports = [
           "${builtins.toString port}:80"
-          "3000:3000/tcp"
           # regular DNS
           "53:53/tcp"
           "53:53/udp"
-          # DNSCrypt
-          "5443:5443/tcp"
-          "5443:5443/udp"
-          # DoQ
-          "784:784/udp"
-          "853:853/udp"
-          "8853:8853/udp"
-          # DoT
-          "853:853/tcp"
         ];
-        volumes = [ "/media/data/${servicename}:/opt/adguardhome" ];
+        volumes = [
+          "/media/data/${servicename}/dnsmasq:/etc/pihole"
+          "/media/data/${servicename}/pihole:/etc/dnsmasq.d"
+        ];
         environment = { TZ = "Europe/Warsaw"; };
       };
     };

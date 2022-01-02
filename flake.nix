@@ -170,7 +170,7 @@
         hubble.modules = [
           ./hosts/hubble
           { home-manager.users.pg.imports = hmModules.hubble; }
-          ./modules/selfhosted/adguard.nix
+          ./modules/selfhosted/pihole.nix
           # ./modules/selfhosted/kubeserver.nix
           ./modules/mbr.nix
         ] ++ servers;
