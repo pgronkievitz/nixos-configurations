@@ -153,6 +153,7 @@
           ./hosts/dart
           ./modules/zfs.nix
           { home-manager.users.pg.imports = hmModules.dart; }
+          ./modules/selfhosted/ca.nix
           ./modules/selfhosted/gitea.nix
           ./modules/selfhosted/readarr.nix
           ./modules/selfhosted/sonarr.nix
