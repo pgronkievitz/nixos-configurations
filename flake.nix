@@ -113,6 +113,7 @@
           ./modules/monitoring.nix
           ./modules/selfhosted
         ];
+        graphics = [ ./modules/sculpt.nix ];
       in {
         artemis.modules = [
           ./hosts/artemis
@@ -133,8 +134,8 @@
           ./modules/school.nix
           ./modules/xserver.nix
           ./modules/gpt.nix
-        ];
-        themis.modules = [
+        ] ++ graphics;
+        themis.modules = graphics ++ [
           ./hosts/themis
           { home-manager.users.pg.imports = hmModules.themis; }
           ./modules/development

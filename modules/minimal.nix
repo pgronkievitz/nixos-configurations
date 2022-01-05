@@ -53,10 +53,6 @@
     ];
   };
   programs.dconf.enable = true;
-  services.kmonad = {
-    enable = true;
-    configfiles = [ ./sculpt.kbd ];
-  };
   home-manager.backupFileExtension = "BAK";
   security.sudo.wheelNeedsPassword = false;
   security.sudo.execWheelOnly = true;
