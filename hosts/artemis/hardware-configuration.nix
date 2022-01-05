@@ -36,4 +36,5 @@
 
   swapDevices = [ ];
 
+  hardware.tuxedo-control-center.enable = true;
 }
