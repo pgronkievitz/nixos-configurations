@@ -15,6 +15,7 @@
         "--exclude=/home/pg/Music"
         "--exclude=/home/pg/Downloads"
         "--exclude=/home/pg/.local/share"
+        "--exclude=/home/pg/.cache"
       ];
       pruneOpts = [
         "--keep-daily 4"
@@ -41,6 +42,7 @@
         "--exclude=/home/pg/Music"
         "--exclude=/home/pg/Downloads"
         "--exclude=/home/pg/.local/share"
+        "--exclude=/home/pg/.cache"
       ];
       pruneOpts = [
         "--keep-daily 4"
