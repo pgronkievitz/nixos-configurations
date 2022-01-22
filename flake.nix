@@ -18,11 +18,6 @@
       inputs.flake-utils.follows = "fu";
     };
     agenix.url = "github:ryantm/agenix";
-    kmonad = {
-      url = "github:kmonad/kmonad/master?dir=nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "fup";
-    };
     deploy-rs.url = "github:serokell/deploy-rs";
   };
 
