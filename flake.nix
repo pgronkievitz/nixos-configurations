@@ -75,8 +75,6 @@
           ./modules/containers.nix
           ./modules/development/kube.nix
           ./modules/development/go.nix
-          ./modules/fonts.nix
-          inputs.kmonad.nixosModule
           agenix.nixosModules.age
           inputs.home-manager.nixosModule
           {
@@ -112,7 +110,7 @@
           ./modules/monitoring.nix
           ./modules/selfhosted
         ];
-        graphics = [ ];
+        graphics = [ ./modules/fonts.nix ];
       in {
         artemis.modules = let tcc = import inputs.tuxedo;
         in [
