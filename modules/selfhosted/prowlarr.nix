@@ -11,7 +11,7 @@ in { config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "lscr.io/linuxserver/prowlarr:0.1.8-develop";
+        image = "lscr.io/linuxserver/prowlarr:0.2.0-nightly";
         ports = [ "${port}:9696" ];
         volumes = [ "/media/data/${servicename}:/config" ];
         environment.TZ = "Europe/Warsaw";

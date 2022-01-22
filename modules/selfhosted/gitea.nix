@@ -11,7 +11,7 @@ in { config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "gitea/gitea:1.15.8-rootless";
+        image = "gitea/gitea:1.16.0-rc1-rootless";
         ports = [ "${port}:3000" ];
         volumes = [ "/media/data/${servicename}:/data" ];
       };

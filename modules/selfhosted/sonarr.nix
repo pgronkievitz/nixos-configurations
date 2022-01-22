@@ -11,7 +11,7 @@ in { config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "lscr.io/linuxserver/sonarr:3.0.6-develop";
+        image = "lscr.io/linuxserver/sonarr:3.0.6";
         ports = [ "${port}:8989" ];
         volumes = [
           "/media/data/${servicename}/config:/config"
