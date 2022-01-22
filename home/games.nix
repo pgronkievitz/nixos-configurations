@@ -1,1 +1,1 @@
-{ pkgs, ... }: { home.packages = [ pkgs.multimc ]; }
+{ pkgs, ... }: { home.packages = [ pkgs.polymc ]; }
