@@ -117,7 +117,7 @@
           ./modules/monitoring.nix
           ./modules/selfhosted
         ];
-        graphics = [ ./modules/sculpt.nix ];
+        graphics = [ ];
       in {
         artemis.modules = let tcc = import inputs.tuxedo;
         in [
