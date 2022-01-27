@@ -18,9 +18,9 @@
         "--exclude=/home/pg/.cache"
       ];
       pruneOpts = [
-        "--keep-daily 4"
-        "--keep-weekly 3"
-        "--keep-monthly 12"
+        "--keep-daily 1"
+        "--keep-weekly 1"
+        "--keep-monthly 3"
         "--keep-yearly 10"
       ];
       timerConfig = {
