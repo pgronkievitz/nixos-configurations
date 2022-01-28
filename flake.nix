@@ -140,6 +140,7 @@
           { home-manager.users.pg.imports = hmModules.themis; }
           ./modules/development
           ./modules/development/devops.nix
+          ./modules/development/kotlin.nix
           ./modules/virtual-machines.nix
           ./modules/audio.nix
           ./modules/xserver.nix
