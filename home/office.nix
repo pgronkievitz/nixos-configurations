@@ -21,11 +21,6 @@ in {
     pkgs.firefox
     pkgs.brave
     pkgs.zotero
-    pkgs.calibre
-    pkgs.megasync
-    pkgs.youtube-dl
-    pkgs.freetube
-    pkgs.bitwarden
     pkgs.playerctl
   ];
   programs.rbw = {
