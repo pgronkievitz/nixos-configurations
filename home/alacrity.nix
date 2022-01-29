@@ -34,7 +34,7 @@ in {
           family = "FantasqueSansMono Nerd Font Mono";
           style = "Light Italic";
         };
-        size = 14.0;
+        size = 12.0;
         use_thin_strokes = true;
       };
       draw_bold_text_with_bright_colors = false;
