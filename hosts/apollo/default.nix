@@ -8,7 +8,7 @@
   };
   hardware.bluetooth.enable = false;
   services.openssh.listenAddresses = [{
-    addr = "100.85.251.69";
+    addr = "0.0.0.0";
     port = 14442;
   }];
 }

@@ -32,7 +32,7 @@
   };
   services.openssh.listenAddresses = [
     {
-      addr = "100.113.244.67";
+      addr = "0.0.0.0";
       port = 14442;
     }
     {

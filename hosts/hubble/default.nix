@@ -27,7 +27,7 @@
     };
   };
   services.openssh.listenAddresses = [{
-    addr = "100.111.43.19";
+    addr = "0.0.0.0";
     port = 14442;
   }];
 }
