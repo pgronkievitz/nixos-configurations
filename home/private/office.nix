@@ -6,5 +6,6 @@
     pkgs.youtube-dl
     pkgs.freetube
     pkgs.bitwarden
+    pkgs.beancount
   ];
 }
