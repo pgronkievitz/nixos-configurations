@@ -7,5 +7,6 @@
     pkgs.freetube
     pkgs.bitwarden
     pkgs.beancount
+    pkgs.imagemagick
   ];
 }
