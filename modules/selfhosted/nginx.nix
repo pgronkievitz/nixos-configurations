@@ -1,4 +1,5 @@
 {
+  users.groups.acme = {};
   services.nginx = {
     enable = true;
     recommendedProxySettings = true;
