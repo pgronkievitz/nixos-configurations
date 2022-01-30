@@ -11,7 +11,6 @@
   security.audit.enable = true;
   security.audit.rules = [ "-a exit,always -F arch=b64 -S execve" ];
   security.sudo.execWheelOnly = true;
-  nix.trustedUsers = [ "root" "pg" ];
 
   # SSH
 
