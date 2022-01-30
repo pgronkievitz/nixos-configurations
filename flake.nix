@@ -127,6 +127,7 @@
             };
           }
           ./modules/development
+          ./modules/development/devops.nix
           ./modules/virtual-machines.nix
           ./modules/audio.nix
           ./modules/school.nix
