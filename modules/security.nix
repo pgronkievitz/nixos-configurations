@@ -38,7 +38,7 @@
     enable = true;
     enableSSHSupport = false;
   };
-  environment.systemPackages = [ pkgs.chkrootkit ];
+  environment.systemPackages = [ pkgs.chkrootkit pkgs.lxsession ];
   security.pki.certificates = [''
     -----BEGIN CERTIFICATE-----
     MIIDVDCCAjygAwIBAgIUZReotbfgd+u+CIUpETPwIX6nEXEwDQYJKoZIhvcNAQEL
