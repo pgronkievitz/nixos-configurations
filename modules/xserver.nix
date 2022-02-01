@@ -19,7 +19,13 @@
       };
       defaultSession = "none+qtile";
     };
-    windowManager.qtile.enable = true;
+    windowManager = {
+      qtile.enable = true;
+      awesome = {
+        enable = true;
+        luaModules = [ pkgs.luaPackages.luarocks pkgs.luaPackages.vicious ];
+      };
+    };
     layout = "pl";
     xkbOptions = "caps:swapescape";
     libinput = {
