@@ -3,10 +3,7 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    tuxedo = {
-      url = "github:blitz/tuxedo-nixos";
-      flake = false;
-    };
+    tuxedo.url = "github:blitz/tuxedo-nixos";
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -112,8 +109,7 @@
         ];
         graphics = [ ./modules/fonts.nix ];
       in {
-        artemis.modules = let tcc = import inputs.tuxedo;
-        in [
+        artemis.modules = [
           ./hosts/artemis
           {
             home-manager.users.pg.imports = hmModules.artemis;
@@ -134,7 +130,7 @@
           ./modules/xserver.nix
           ./modules/gpt.nix
           # ./modules/tuxedo.nix
-          tcc.module
+          inputs.tuxedo.nixosModule
         ] ++ graphics;
         themis.modules = graphics ++ [
           ./hosts/themis
