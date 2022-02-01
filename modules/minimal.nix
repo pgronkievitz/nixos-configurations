@@ -7,6 +7,8 @@
     pkgs.htop
     pkgs.neovim
     pkgs.cachix
+    pkgs.zip
+    pkgs.unzip
     pkgs.networkmanager
     pkgs.networkmanagerapplet
     pkgs.networkmanager_openvpn
