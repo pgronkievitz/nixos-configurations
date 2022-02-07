@@ -8,7 +8,7 @@
 #+begin_center
 | *Shell*    | zsh        |
 | *DM*       | sddm       |
-| *WM*       | qtile      |
+| *WM*       | awesome    |
 | *Editor*   | Doom Emacs |
 | *Terminal* | Alacritty  |
 | *Launcher* | rofi       |
@@ -41,8 +41,8 @@ I don't know if I wan't to keep anything else - I'll probably know after deletin
 *** DONE Fix colors to be defined in one file instead of every themed app
 *** TODO [#D] Set up disk encryption
 *** DONE [#B] Set up logging in with password + U2F key
-** PROJ WM :computers:
-*** TODO Add qtile config into this directory to make it more manageable
+** DONE WM :computers:
+*** KILL Add qtile config into this directory to make it more manageable
 Or consider setting this up in qtile config
 ** DONE Shell :computers:
 *** DONE configure ZSH via nix file
