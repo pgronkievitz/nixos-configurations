@@ -34,7 +34,7 @@
           ./home/xserver.nix
           ./home/editors/emacs
           ./home/alacrity.nix
-          ./home/dunst.nix
+          # ./home/dunst.nix
           ./home/zathura.nix
           ./home/syncthing.nix
           ./home/mpv.nix
