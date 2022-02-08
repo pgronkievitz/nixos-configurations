@@ -3,12 +3,12 @@
   gtk = {
     enable = true;
     iconTheme = {
-      package = pkgs.paper-icon-theme;
-      name = "Paper";
+      package = pkgs.flat-remix-icon-theme;
+      name = "Flat-Remix-Blue-Light";
     };
     theme = {
-      package = pkgs.paper-gtk-theme;
-      name = "Paper";
+      package = pkgs.flat-remix-gtk;
+      name = "Flat-Remix-GTK-Blue-Light";
     };
   };
   systemd.user.sessionVariables.EDITOR = "emacs";
