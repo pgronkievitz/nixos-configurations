@@ -2,6 +2,7 @@
 let
   my-dicts = dicts: [ dicts.en dicts.pl dicts.en-computers dicts.en-science ];
   my-aspell = pkgs.aspellWithDicts my-dicts;
+  my-hunspell = pkgs.hunspellWithDicts [ pkgs.hunspellDicts.en-us ];
 in {
   home.packages = [
     pkgs.libreoffice-fresh
@@ -11,6 +12,7 @@ in {
     pkgs.gimp
     pkgs.pandoc
     my-aspell
+    my-hunspell
     pkgs.ispell
     pkgs.languagetool
     (pkgs.xfce.thunar.override {
