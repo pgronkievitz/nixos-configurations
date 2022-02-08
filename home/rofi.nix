@@ -3,7 +3,7 @@
 {
   programs.rofi = {
     enable = true;
-    font = "FantasqueSansMono Nerd Font 16";
+    font = "VictorMono Nerd Font 16";
     theme = "paper-float";
   };
 }

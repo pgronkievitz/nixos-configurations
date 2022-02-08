@@ -11,7 +11,7 @@
         progress_bar_max_width = 200;
         padding = 10;
         separator_color = "auto";
-        font = "FantasqueSansMono NF 14";
+        font = "VictorMono NF 14";
         markup = "full";
         format = ''
           <b>%s</b>

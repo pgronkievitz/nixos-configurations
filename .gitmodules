@@ -1,0 +1,3 @@
+[submodule "configs/awesomewm"]
+	path = configs/awesomewm
+	url = git@gitlab.com:pgronkievitz/awesomewm.git

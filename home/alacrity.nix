@@ -25,13 +25,13 @@ in {
         miltiplier = 3;
       };
       font = {
-        normal = { family = "FantasqueSansMono Nerd Font Mono"; };
+        normal = { family = "VictorMono Nerd Font Mono"; };
         bold = {
-          family = "FantasqueSansMono Nerd Font Mono";
+          family = "VictorMono Nerd Font Mono";
           style = "Medium";
         };
         italic = {
-          family = "FantasqueSansMono Nerd Font Mono";
+          family = "VictorMono Nerd Font Mono";
           style = "Light Italic";
         };
         size = 12.0;
