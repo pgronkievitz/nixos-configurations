@@ -28,12 +28,5 @@ in {
     pkgs.zotero
     pkgs.playerctl
   ];
-  programs.rbw = {
-    enable = true;
-    # settings = {
-    #   base_url = "https://vault.gronkiewicz.xyz";
-    #   # identity_url = "https://vault.gronkiewicz.xyz/identity";
-    #   email = "vault@gronkiewicz.xyz";
-    # };
-  };
+  programs.rbw.enable = true;
 }
