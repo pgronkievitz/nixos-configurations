@@ -13,7 +13,12 @@ in {
     my-aspell
     pkgs.ispell
     pkgs.languagetool
-    pkgs.pcmanfm
+    (pkgs.xfce.thunar.override {
+      thunarPlugins =
+        [ pkgs.xfce.thunar-volman pkgs.xfce.thunar-archive-plugin ];
+    })
+    pkgs.xfce.xfconf
+    pkgs.xfce.exo
     pkgs.pavucontrol
     pkgs.pamixer
     pkgs.alsa-utils
