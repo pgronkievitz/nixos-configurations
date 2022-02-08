@@ -6,13 +6,13 @@
 #+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
 [[https://builtwithnix.org/badge.svg]] [[https://img.shields.io/badge/Made_with-Doom_Emacs-blueviolet.svg]]
 #+begin_center
-| *Shell*    | zsh        |
-| *DM*       | sddm       |
-| *WM*       | awesome    |
-| *Editor*   | Doom Emacs |
-| *Terminal* | Alacritty  |
-| *Launcher* | rofi       |
-| *Browser*  | Firefox    |
+| *Shell*    | zsh              |
+| *DM*       | sddm             |
+| *WM*       | awesome          |
+| *Editor*   | Doom Emacs       |
+| *Terminal* | Alacritty        |
+| *Launcher* | awesome's prompt |
+| *Browser*  | Firefox          |
 #+end_center
 
 #+CAPTION: Nobody's gonna use my laptop!
