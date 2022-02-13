@@ -119,6 +119,7 @@
           ./modules/school.nix
           ./modules/xserver.nix
           ./modules/gpt.nix
+          ./modules/android.nix
           # ./modules/tuxedo.nix
           inputs.tuxedo.nixosModule
         ] ++ graphics;
