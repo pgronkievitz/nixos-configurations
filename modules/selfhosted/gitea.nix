@@ -1,33 +1,21 @@
 let
   servicename = "gitea";
   shortname = "git";
-  port = "9001";
-  domains = [
-    "www.${shortname}.gronkiewicz.xyz"
-    "${servicename}.gronkiewicz.xyz"
-    "www.${servicename}.gronkiewicz.xyz"
-  ];
 in { config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "gitea/gitea:1.16.0-rc1-rootless";
-        ports = [ "${port}:3000" ];
+        image = "gitea/gitea:1.16.0";
         volumes = [ "/media/data/${servicename}:/data" ];
+        extraOptions = [
+          "--label=traefik.http.routers.${servicename}.rule=Host(`${shortname}.gronkiewicz.xyz`,`${shortname}.lab.home`)"
+          "--label=traefik.http.services.${servicename}.loadbalancer.server.port=3000"
+          "--label=traefik.http.routers.${servicename}.tls=true"
+          "--label=traefik.tcp.routers.${servicename}-ssh.rule=HostSNI(`*`)"
+          "--label=traefik.tcp.routers.${servicename}-ssh.entrypoints=ssh"
+          "--label=traefik.tcp.services.${servicename}-ssh.loadbalancer.server.port=2222"
+        ];
       };
     };
-  };
-  services.nginx.virtualHosts = {
-    "${shortname}.gronkiewicz.xyz" = {
-      useACMEHost = "${shortname}.gronkiewicz.xyz";
-      forceSSL = true;
-      locations."/".proxyPass = "http://127.0.0.1:${port}";
-      serverAliases = domains;
-    };
-  };
-  security.acme.certs."${shortname}.gronkiewicz.xyz" = {
-    extraDomainNames = domains;
-    dnsProvider = "cloudflare";
-    credentialsFile = config.age.secrets.cloudflare.path;
   };
 }

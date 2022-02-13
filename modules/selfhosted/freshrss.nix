@@ -1,34 +1,18 @@
 let
   servicename = "freshrss";
   shortname = "rss";
-  port = "9401";
-  domains = [
-    "www.${shortname}.gronkiewicz.xyz"
-    "${servicename}.gronkiewicz.xyz"
-    "www.${servicename}.gronkiewicz.xyz"
-  ];
 in { config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
         image = "lscr.io/linuxserver/freshrss:1.19.1";
-        ports = [ "${port}:80" ];
         environment = { TZ = "Europe/Warsaw"; };
         volumes = [ "/media/data/${servicename}:/config" ];
+        extraOptions = [
+          "--label=traefik.http.routers.${servicename}.rule=Host(`${shortname}.gronkiewicz.xyz`,`${shortname}.lab.home`)"
+          "--label=traefik.http.routers.${servicename}.tls=true"
+        ];
       };
     };
-  };
-  services.nginx.virtualHosts = {
-    "${shortname}.gronkiewicz.xyz" = {
-      useACMEHost = "${shortname}.gronkiewicz.xyz";
-      forceSSL = true;
-      locations."/".proxyPass = "http://127.0.0.1:${port}";
-      serverAliases = domains;
-    };
-  };
-  security.acme.certs."${shortname}.gronkiewicz.xyz" = {
-    extraDomainNames = domains;
-    dnsProvider = "cloudflare";
-    credentialsFile = config.age.secrets.cloudflare.path;
   };
 }

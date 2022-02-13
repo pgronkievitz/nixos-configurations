@@ -1,1 +1,1 @@
-{ ... }: { imports = [ ./nginx.nix ]; }
+{ ... }: { imports = [ ./traefik.nix ]; }
