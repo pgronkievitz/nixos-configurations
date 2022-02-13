@@ -31,7 +31,7 @@
     };
     rest = {
       user = "pg";
-      repository = "rest:https://restic.gronkiewicz.xyz/pg";
+      repository = "rest:https://restic.lab.home/pg";
       initialize = true;
       passwordFile = config.age.secrets.artemisbkp.path;
       paths = [ "/home/pg" ];
