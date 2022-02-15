@@ -36,7 +36,6 @@
           ./home/alacrity.nix
           # ./home/dunst.nix
           ./home/zathura.nix
-          ./home/syncthing.nix
           ./home/mpv.nix
           ./home/redshift.nix
           ./home/rofi.nix
