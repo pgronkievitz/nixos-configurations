@@ -5,7 +5,7 @@ in { config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "pihole/pihole:2022.01.1";
+        image = "pihole/pihole:2022.02.1";
         ports = [ "100.111.43.19:9999:80" "53:53/tcp" "53:53/udp" ];
         volumes = [
           "/media/data/${servicename}/dnsmasq:/etc/pihole"

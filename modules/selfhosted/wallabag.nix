@@ -5,7 +5,7 @@ in { config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "wallabag/wallabag:2.4.2";
+        image = "wallabag/wallabag:2.4.3";
         volumes = [ "/media/data/${servicename}:/var/www/wallabag/data" ];
         environment = {
           "SYMFONY__ENV__DOMAIN_NAME" = "https://${shortname}.lab.home";
