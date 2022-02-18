@@ -159,6 +159,7 @@
           ./modules/selfhosted/calibre.nix
           ./modules/selfhosted/restic-server.nix
           ./modules/selfhosted/nextcloud.nix
+          { age.secrets.ncdb.file = ./secrets/ncdb.age; }
           ./modules/selfhosted/paperless.nix
           # ./modules/selfhosted/kubeserver.nix
           ./modules/gpt.nix

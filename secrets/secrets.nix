@@ -13,10 +13,11 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGA+womWFzFqOsX9Scz/zOXRabLErDjEzIFHrUMjePOm";
   systems = [ artemis apollo dart ];
   servers = [ apollo dart hubble ];
-  private = [ artemis pg ];
+  laptop = [ artemis pg ];
 in {
   "cloudflare.age".publicKeys = users ++ servers;
-  "artemis/bkp.age".publicKeys = private;
-  "artemis/bkp-env.age".publicKeys = private;
+  "artemis/bkp.age".publicKeys = laptop;
+  "artemis/bkp-env.age".publicKeys = laptop;
   "ssl.age".publicKeys = servers ++ users;
+  "ncdb.age".publicKeys = users ++ [ dart ];
 }
