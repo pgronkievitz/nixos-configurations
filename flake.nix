@@ -2,8 +2,7 @@
   description = "pgronkievitz's config";
 
   inputs = {
-    # nixpkgs.url = "nixpkgs/nixos-unstable/";
-    nixpkgs.url = "nixpkgs/1882c6b7368fd284ad01b0a5b5601ef136321292"
+    nixpkgs.url = "nixpkgs/nixos-unstable-small";
     tuxedo.url = "github:blitz/tuxedo-nixos";
     home-manager = {
       url = "github:nix-community/home-manager/master";
