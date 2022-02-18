@@ -137,7 +137,6 @@
           ./hosts/apollo
           { home-manager.users.pg.imports = hmModules.apollo; }
           ./modules/selfhosted/vaultwarden.nix
-          ./modules/selfhosted/nextcloud.nix
           ./modules/selfhosted/freshrss.nix
           ./modules/selfhosted/wallabag.nix
           ./modules/selfhosted/torrents.nix
@@ -159,6 +158,7 @@
           ./modules/selfhosted/grocy.nix
           ./modules/selfhosted/calibre.nix
           ./modules/selfhosted/restic-server.nix
+          ./modules/selfhosted/nextcloud.nix
           ./modules/selfhosted/paperless.nix
           # ./modules/selfhosted/kubeserver.nix
           ./modules/gpt.nix

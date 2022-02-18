@@ -1,6 +1,6 @@
 let
   servicename = "nextcloud";
-  shortname = "nc";
+  shortname = "nc2";
 in { config, ... }: {
   virtualisation.oci-containers = {
     containers = {
