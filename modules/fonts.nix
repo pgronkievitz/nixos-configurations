@@ -6,12 +6,13 @@
       })
       pkgs.merriweather
       pkgs.merriweather-sans
+      pkgs.victor-mono
     ];
     fontconfig = {
       defaultFonts = {
         serif = [ "Merriweather" ];
         emoji = [ "Noto Color Emoji" ];
-        monospace = [ "VictorMono Nerd Font" ];
+        monospace = [ "Victor Mono" ];
         sansSerif = [ "Ubuntu Nerd Font" ];
       };
     };
