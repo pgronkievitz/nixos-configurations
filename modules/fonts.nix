@@ -1,3 +1,9 @@
 { pkgs, ... }: {
-  fonts.fonts = [ pkgs.nerdfonts pkgs.merriweather pkgs.merriweather-sans ];
+  fonts.fonts = [
+    (pkgs.nerdfonts.override {
+      fonts = [ "UbuntuMono" "FiraCode" "VictorMono" ];
+    })
+    pkgs.merriweather
+    pkgs.merriweather-sans
+  ];
 }
