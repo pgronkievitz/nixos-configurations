@@ -169,6 +169,9 @@
           { home-manager.users.pg.imports = hmModules.hubble; }
           ./modules/selfhosted/pihole.nix
           ./modules/selfhosted/homer.nix
+          ./modules/selfhosted/grafana.nix
+          ./modules/selfhosted/kuma.nix
+          ./modules/selfhosted/prometheus.nix
           # ./modules/selfhosted/kubeserver.nix
           ./modules/mbr.nix
         ] ++ servers;
