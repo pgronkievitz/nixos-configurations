@@ -10,20 +10,22 @@ in { config, ... }: {
         extraOptions = [
           "--label=traefik.http.routers.${servicename}.rule=Host(`${shortname}.gronkiewicz.xyz`,`${shortname}.lab.home`)"
           "--label=traefik.http.routers.${servicename}.tls=true"
-          "--network=nextcloud"
+          "--label=traefik.http.routers.${servicename}.middlewares=${servicename}"
+          "--label=traefik.http.middlewares.${servicename}.headers.stsSeconds=31536000"
+          "--network=${servicename}"
         ];
         dependsOn = [ "${servicename}-db" "${servicename}-redis" ];
       };
       "${servicename}-db" = {
         image = "postgres:14.2-alpine";
         volumes = [ "/media/data/${servicename}/db:/var/lib/postgresql/data" ];
-        extraOptions = [ "--network=nextcloud" ];
+        extraOptions = [ "--network=${servicename}" ];
         environmentFiles = [ config.age.secrets.ncdb.path ];
       };
       "${servicename}-redis" = {
         image = "redis:6.2.6-alpine";
         volumes = [ "/media/data/${servicename}/redis:/usr/local/etc/redis" ];
-        extraOptions = [ "--network=nextcloud" ];
+        extraOptions = [ "--network=${servicename}" ];
       };
     };
   };
