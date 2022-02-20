@@ -1,7 +1,4 @@
-{ colors, config, pkgs, ... }:
-let colors = import ./colors.nix;
-in {
-
+{ colors, config, pkgs, ... }: {
   programs.alacritty = {
     enable = true;
     settings = {
