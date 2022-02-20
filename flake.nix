@@ -16,6 +16,7 @@
     };
     agenix.url = "github:ryantm/agenix";
     deploy-rs.url = "github:serokell/deploy-rs";
+    nixpkgs-f2k.url = "github:fortuneteller2k/nixpkgs-f2k";
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, fup, agenix, deploy-rs, ... }:
@@ -87,6 +88,7 @@
       channels.nixpkgs.overlaysBuilder = channels: [
         inputs.fup.overlay
         inputs.emacs-overlay.overlay
+        inputs.nixpkgs-f2k.overlay
       ];
       channelsConfig = {
         allowUnfree = true;

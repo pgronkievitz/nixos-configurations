@@ -13,6 +13,7 @@
     windowManager = {
       awesome = {
         enable = true;
+        package = pkgs.awesome-git;
         luaModules = [ pkgs.luaPackages.luarocks pkgs.luaPackages.vicious ];
       };
     };
