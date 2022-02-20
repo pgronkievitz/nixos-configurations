@@ -4,7 +4,7 @@
     useDHCP = false;
     firewall = {
       enable = true;
-      trustedInterfaces = [ "tailscale0" "virbr0" ];
+      trustedInterfaces = [ "docker0" "tailscale0" "virbr0" ];
     };
   };
   security.sudo.execWheelOnly = true;
