@@ -5,7 +5,7 @@ in { config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "nextcloud:23.0.1";
+        image = "nextcloud:23.0.2";
         volumes = [ "/media/data/${servicename}/data:/var/www/html" ];
         extraOptions = [
           "--label=traefik.http.routers.${servicename}.rule=Host(`${shortname}.gronkiewicz.xyz`,`${shortname}.lab.home`)"
