@@ -1,6 +1,4 @@
-{ config, pkgs, ... }:
-let colors = import ./colors.nix;
-in {
+{ colors, config, pkgs, ... }: {
   programs.zathura = {
     enable = true;
     options = {
