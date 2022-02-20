@@ -9,12 +9,12 @@ in { config, ... }: {
         environment = { TZ = "Europe/Warsaw"; };
         volumes = [
           "/media/data/${servicename}/config.yml:/etc/prometheus/prometheus.yml:ro"
-          "/media/data/${servicename}/ca.crt:/prometheus/ca.crt:ro"
           "/media/data/${servicename}/data:/prometheus"
         ];
         extraOptions = [
           "--label=traefik.http.routers.${servicename}.rule=Host(`${shortname}.gronkiewicz.xyz`,`${shortname}.lab.home`)"
           "--label=traefik.http.routers.${servicename}.tls=true"
+          "--network=host"
         ];
       };
     };
