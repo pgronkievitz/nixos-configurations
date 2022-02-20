@@ -12,9 +12,9 @@ in { config, ... }: {
           "--label=traefik.http.routers.${servicename}.tls=true"
           "--label=traefik.http.middlewares.${servicename}-dav.redirectRegex.permanent=true"
           ''
-            --label=traefik.http.middlewares.${servicename}-dav.redirectRegex.regex="https://(.*)/.well-known/(card|cal)dav"''
+            --label=traefik.http.middlewares.${servicename}-dav.redirectRegex.regex="https://${servicename}.lab.home/.well-known/(card|cal)dav"''
           ''
-            --label=traefik.http.middlewares.${servicename}-dav.redirectRegex.replacement="https://''${1}/remote.php/dav/"''
+            --label=traefik.http.middlewares.${servicename}-dav.redirectRegex.replacement="https://${servicename}.lab.home/remote.php/dav/"''
           "--label=traefik.http.middlewares.${servicename}-sts.headers.stsSeconds=31536000"
           "--label=traefik.http.routers.${servicename}.middlewares=${servicename}"
           "--label=traefik.http.middlewares.${servicename}.chain.middlewares=${servicename}-dav,${servicename}-sts"
@@ -35,4 +35,10 @@ in { config, ... }: {
       };
     };
   };
+  # services.prometheus.exporters.nextcloud = {
+  #   enable = true;
+  #   passwordFile = "";
+  #   user = "";
+  #   url = "";
+  # };
 }
