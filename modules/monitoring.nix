@@ -4,5 +4,7 @@
       enable = true;
       openFirewall = true;
     };
+    systemd.enable = true;
+    smartctl.enable = true;
   };
 }
