@@ -18,6 +18,7 @@
     enable = true;
     fade = true;
     fadeDelta = 5;
+    package = pkgs.picom-dccsillag;
   };
   xsession.pointerCursor = {
     package = pkgs.bibata-cursors;
