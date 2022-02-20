@@ -1,9 +1,6 @@
 { ... }: {
   services.prometheus.exporters = {
-    node = {
-      enable = true;
-      openFirewall = true;
-    };
+    node.enable = true;
     systemd.enable = true;
     smartctl.enable = true;
   };
