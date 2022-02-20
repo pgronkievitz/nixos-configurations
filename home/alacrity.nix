@@ -7,6 +7,7 @@ in {
     settings = {
       env.TERM = "xterm-256color";
       window = {
+        opacity = 0.9;
         scale_with_dpi = true;
         dimensions = {
           columns = 100;
@@ -103,7 +104,6 @@ in {
         color = "0xffffff";
         duration = 0;
       };
-      backround_opacity = 1.0;
       key_bindings = [
         {
           key = "J";
