@@ -1,4 +1,4 @@
-{ ... }: {
+{ lib, ... }: {
   imports = [ ./hardware-configuration.nix ./backups.nix ];
   networking = {
     nameservers = [ "5.2.74.19" "9.9.9.9" ];
@@ -30,4 +30,5 @@
     addr = "0.0.0.0";
     port = 14442;
   }];
+  services.prometheus.exporters.smartctl.enable = lib.mkForce false;
 }
