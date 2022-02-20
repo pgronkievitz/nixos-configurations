@@ -17,7 +17,7 @@ in { config, ... }: {
             --label=traefik.http.middlewares.${servicename}-dav.redirectRegex.replacement="https://''${1}/remote.php/dav/"''
           "--label=traefik.http.middlewares.${servicename}-sts.headers.stsSeconds=31536000"
           "--label=traefik.http.routers.${servicename}.middlewares=${servicename}"
-          "--label=traefik.http.middlewares.${servicename}.chain.middlewares=${servicename}-sts,${servicename}-dav"
+          "--label=traefik.http.middlewares.${servicename}.chain.middlewares=${servicename}-dav,${servicename}-sts"
           "--network=${servicename}"
         ];
         dependsOn = [ "${servicename}-db" "${servicename}-redis" ];
