@@ -9,6 +9,7 @@ in { config, ... }: {
         environment = { TZ = "Europe/Warsaw"; };
         volumes = [
           "/media/data/${servicename}/config.yml:/etc/prometheus/prometheus.yml:ro"
+          "/media/data/${servicename}/ca.crt:/prometheus/ca.crt:ro"
           "/media/data/${servicename}/data:/prometheus"
         ];
         extraOptions = [
