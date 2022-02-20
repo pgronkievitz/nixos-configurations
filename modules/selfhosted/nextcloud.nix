@@ -1,6 +1,6 @@
 let
   servicename = "nextcloud";
-  shortname = "nc2";
+  shortname = "nc";
 in { config, ... }: {
   virtualisation.oci-containers = {
     containers = {
@@ -14,9 +14,7 @@ in { config, ... }: {
           ''
             --label=traefik.http.middlewares.${servicename}-dav.redirectRegex.regex="https://(.*)/.well-known/(card|cal)dav"''
           ''
-            --label=traefik.http.middlewares.${servicename}-dav.redirectRegex.replacement="https://${
-              1
-            }/remote.php/dav/"''
+            --label=traefik.http.middlewares.${servicename}-dav.redirectRegex.replacement="https://$$1/remote.php/dav/"''
           "--label=traefik.http.middlewares.${servicename}-sts.headers.stsSeconds=31536000"
           "--label=traefik.http.routers.${servicename}.middlewares=${servicename}"
           "--label=traefik.http.middlewares.${servicename}.chain.middlewares=${servicename}-sts,${servicename}-dav"
