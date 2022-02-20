@@ -35,10 +35,9 @@ in { config, ... }: {
       };
     };
   };
-  # services.prometheus.exporters.nextcloud = {
-  #   enable = true;
-  #   passwordFile = "";
-  #   user = "";
-  #   url = "";
-  # };
+  services.prometheus.exporters.nextcloud = {
+    enable = true;
+    passwordFile = config.age.secrets.ncmonitoring.path;
+    url = "https://nc.lab.local";
+  };
 }

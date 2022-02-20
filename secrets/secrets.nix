@@ -20,4 +20,5 @@ in {
   "artemis/bkp-env.age".publicKeys = laptop;
   "ssl.age".publicKeys = servers ++ users;
   "ncdb.age".publicKeys = users ++ [ dart ];
+  "ncmonitoring.age".publicKeys = users ++ [ dart ];
 }

@@ -159,7 +159,13 @@
           ./modules/selfhosted/calibre.nix
           ./modules/selfhosted/restic-server.nix
           ./modules/selfhosted/nextcloud.nix
-          { age.secrets.ncdb.file = ./secrets/ncdb.age; }
+          {
+            age.secrets.ncdb.file = ./secrets/ncdb.age;
+            age.secrets.ncmonitoring = {
+              file = ./secrets/ncmonitoring.age;
+              owner = "nextcloud-exporter";
+            };
+          }
           ./modules/selfhosted/paperless.nix
           # ./modules/selfhosted/kubeserver.nix
           ./modules/gpt.nix
