@@ -16,7 +16,10 @@
     };
     agenix.url = "github:ryantm/agenix";
     deploy-rs.url = "github:serokell/deploy-rs";
-    nixpkgs-f2k.url = "github:fortuneteller2k/nixpkgs-f2k";
+    nixpkgs-f2k = {
+      url = "github:fortuneteller2k/nixpkgs-f2k";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, fup, agenix, deploy-rs, ... }:
