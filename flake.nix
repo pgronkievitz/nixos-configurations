@@ -38,11 +38,9 @@
           ./home/xserver.nix
           ./home/editors/emacs
           ./home/alacrity.nix
-          # ./home/dunst.nix
           ./home/zathura.nix
           ./home/mpv.nix
           ./home/redshift.nix
-          ./home/rofi.nix
           ./home/communicators.nix
           ./home/office.nix
           ./home/nmapplet.nix
@@ -185,7 +183,6 @@
           # ./modules/selfhosted/kubeserver.nix
           ./modules/mbr.nix
         ] ++ servers;
-
       };
       deploy = {
         sshUser = "pg";
