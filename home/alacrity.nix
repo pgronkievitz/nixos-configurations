@@ -32,7 +32,7 @@
           family = "VictorMono Nerd Font Mono";
           style = "Light Italic";
         };
-        size = 12.0;
+        size = 10.0;
         use_thin_strokes = true;
       };
       draw_bold_text_with_bright_colors = false;
