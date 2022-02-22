@@ -145,6 +145,12 @@
           ./modules/selfhosted/freshrss.nix
           ./modules/selfhosted/wallabag.nix
           ./modules/selfhosted/torrents.nix
+          ./modules/selfhosted/readarr.nix
+          ./modules/selfhosted/sonarr.nix
+          ./modules/selfhosted/radarr.nix
+          ./modules/selfhosted/lidarr.nix
+          ./modules/selfhosted/bazarr.nix
+          ./modules/selfhosted/prowlarr.nix
           # ./modules/selfhosted/kubeserver.nix
           ./modules/gpt.nix
         ] ++ servers;
@@ -154,12 +160,6 @@
           { home-manager.users.pg.imports = hmModules.dart; }
           ./modules/selfhosted/ca.nix
           ./modules/selfhosted/gitea.nix
-          # ./modules/selfhosted/readarr.nix
-          # ./modules/selfhosted/sonarr.nix
-          # ./modules/selfhosted/radarr.nix
-          # ./modules/selfhosted/lidarr.nix
-          # ./modules/selfhosted/bazarr.nix
-          # ./modules/selfhosted/prowlarr.nix
           ./modules/selfhosted/grocy.nix
           ./modules/selfhosted/calibre.nix
           ./modules/selfhosted/restic-server.nix
