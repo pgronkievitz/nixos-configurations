@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, inputs, ... }: {
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
     kernel.sysctl = { "net.ipv4.ip_forward" = 1; };
@@ -13,6 +13,7 @@
     pkgs.networkmanagerapplet
     pkgs.networkmanager_openvpn
     pkgs.tailscale
+    inputs.agenix.defaultPackage.x86_64-linux
   ];
   services.tailscale.enable = true;
   programs.mtr.enable = true;

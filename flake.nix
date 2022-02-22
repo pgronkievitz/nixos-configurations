@@ -14,7 +14,10 @@
       url = "github:gytis-ivaskevicius/flake-utils-plus/master";
       inputs.flake-utils.follows = "fu";
     };
-    agenix.url = "github:ryantm/agenix";
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     deploy-rs.url = "github:serokell/deploy-rs";
     nixpkgs-f2k = {
       url = "github:fortuneteller2k/nixpkgs-f2k";
@@ -151,22 +154,25 @@
           { home-manager.users.pg.imports = hmModules.dart; }
           ./modules/selfhosted/ca.nix
           ./modules/selfhosted/gitea.nix
-          ./modules/selfhosted/readarr.nix
-          ./modules/selfhosted/sonarr.nix
-          ./modules/selfhosted/radarr.nix
-          ./modules/selfhosted/lidarr.nix
-          ./modules/selfhosted/bazarr.nix
-          ./modules/selfhosted/prowlarr.nix
+          # ./modules/selfhosted/readarr.nix
+          # ./modules/selfhosted/sonarr.nix
+          # ./modules/selfhosted/radarr.nix
+          # ./modules/selfhosted/lidarr.nix
+          # ./modules/selfhosted/bazarr.nix
+          # ./modules/selfhosted/prowlarr.nix
           ./modules/selfhosted/grocy.nix
           ./modules/selfhosted/calibre.nix
           ./modules/selfhosted/restic-server.nix
           ./modules/selfhosted/nextcloud.nix
+          ./modules/selfhosted/photoprism.nix
           {
             age.secrets.ncdb.file = ./secrets/ncdb.age;
             age.secrets.ncmonitoring = {
               file = ./secrets/ncmonitoring.age;
               owner = "nextcloud-exporter";
             };
+            age.secrets.photos.file = ./secrets/photoprism.age;
+            age.secrets.photos-db.file = ./secrets/photoprismdb.age;
           }
           ./modules/selfhosted/paperless.nix
           # ./modules/selfhosted/kubeserver.nix

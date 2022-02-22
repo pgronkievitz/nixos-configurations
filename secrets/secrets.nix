@@ -21,4 +21,6 @@ in {
   "ssl.age".publicKeys = servers ++ users;
   "ncdb.age".publicKeys = users ++ [ dart ];
   "ncmonitoring.age".publicKeys = users ++ [ dart ];
+  "photoprismdb.age".publicKeys = users ++ [ dart ];
+  "photoprism.age".publicKeys = users ++ [ dart ];
 }
