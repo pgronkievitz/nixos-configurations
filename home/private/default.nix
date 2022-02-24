@@ -10,4 +10,8 @@
     enable = true;
     startInBackground = true;
   };
+  services.kdeconnect = {
+    enable = true;
+    indicator = true;
+  };
 }
