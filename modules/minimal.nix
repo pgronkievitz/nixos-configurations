@@ -11,7 +11,7 @@
     pkgs.unzip
     pkgs.networkmanager
     pkgs.networkmanagerapplet
-    pkgs.networkmanager_openvpn
+    pkgs.networkmanager-openvpn
     pkgs.tailscale
     inputs.agenix.defaultPackage.x86_64-linux
   ];
