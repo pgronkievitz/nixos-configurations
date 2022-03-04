@@ -23,6 +23,4 @@
       };
     };
   };
-  networking.firewall.allowedTCPPorts = [ 1716 ];
-  networking.firewall.allowedUDPPorts = [ 1716 ];
 }

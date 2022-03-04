@@ -115,6 +115,7 @@
               owner = "1000";
               file = ./secrets/artemis/bkp-env.age;
             };
+            programs.kdeconnect.enable = true;
           }
           ./modules/development
           ./modules/development/devops.nix
@@ -181,7 +182,7 @@
         hubble.modules = [
           ./hosts/hubble
           { home-manager.users.pg.imports = hmModules.hubble; }
-          ./modules/selfhosted/pihole.nix
+          ./modules/selfhosted/adguard.nix
           ./modules/selfhosted/homer.nix
           ./modules/selfhosted/grafana.nix
           ./modules/selfhosted/kuma.nix

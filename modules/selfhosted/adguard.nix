@@ -1,17 +1,16 @@
 let
-  servicename = "pihole";
+  servicename = "adguard";
   shortname = "dns";
 in { config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "pihole/pihole:2022.02.1";
-        ports = [ "100.111.43.19:9999:80" "53:53/tcp" "53:53/udp" ];
+        image = "adguard/adguardhome:v0.107.3";
+        ports = [ "53:53/tcp" "53:53/udp" ];
         volumes = [
-          "/media/data/${servicename}/dnsmasq:/etc/pihole"
-          "/media/data/${servicename}/pihole:/etc/dnsmasq.d"
+          "/media/data/${servicename}/work:/opt/adguardhome/work"
+          "/media/data/${servicename}/conf:/opt/adguardhome/conf"
         ];
-        environment = { TZ = "Europe/Warsaw"; };
         extraOptions = [
           "--label=traefik.http.routers.${servicename}.rule=Host(`${shortname}.gronkiewicz.xyz`,`${shortname}.lab.home`)"
           "--label=traefik.http.services.${servicename}.loadbalancer.server.port=80"
