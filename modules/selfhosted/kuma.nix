@@ -1,5 +1,5 @@
 let
-  servicename = "uptime-kuma";
+  servicename = "uptimekuma";
   shortname = "uptime";
 in { config, ... }: {
   virtualisation.oci-containers = {
