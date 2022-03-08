@@ -5,7 +5,7 @@ in { config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "prom/uptime-kuma:v1.11.4";
+        image = "louislam/uptime-kuma:1.12.1-alpine";
         environment = { TZ = "Europe/Warsaw"; };
         volumes = [ "/media/data/${servicename}/data:/app/data" ];
         extraOptions = [
