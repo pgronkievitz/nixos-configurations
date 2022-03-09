@@ -166,6 +166,7 @@
           ./modules/selfhosted/restic-server.nix
           ./modules/selfhosted/nextcloud.nix
           ./modules/selfhosted/photoprism.nix
+          ./modules/selfhosted/openbooks.nix
           {
             age.secrets.ncdb.file = ./secrets/ncdb.age;
             age.secrets.ncmonitoring = {
