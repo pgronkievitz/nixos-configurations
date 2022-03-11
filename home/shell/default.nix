@@ -25,18 +25,57 @@
     enableSyntaxHighlighting = true;
     enableAutosuggestions = true;
     defaultKeymap = "viins";
-    plugins = [
-      {
-        name = "p10k";
-        src = pkgs.zsh-powerlevel10k;
-        file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
-      }
-      {
-        name = "p10k-config";
-        src = lib.cleanSource ./p10k-config;
-        file = "p10k.zsh-theme";
-      }
-    ];
     sessionVariables.EDITOR = "emacs";
+  };
+  programs.starship = {
+    enable = true;
+    enableZshIntegration = true;
+    settings = {
+      add_newline = false;
+      format = lib.concatStrings [
+        "$username"
+        "$shlvl"
+        "$kubernetes"
+        "$git_branch"
+        "$git_commit"
+        "$git_state"
+        "$git_metrics"
+        "$git_status"
+        "$container"
+        "$golang"
+        "$helm"
+        "$pulumi"
+        "$python"
+        "$rlang"
+        "$terraform"
+        "$vagrant"
+        "$nix_shell"
+        "$conda"
+        "$env_var"
+        "$line_break"
+        "$directory"
+        "$hostname"
+        "$cmd_duration"
+        "$jobs"
+        "$battery"
+        "$status"
+        "$character"
+      ];
+      kubernetes.disabled = false;
+      python.version_format = "\${major}.\${minor}";
+      nix_shell.impure_msg = "!";
+      directory = {
+        truncation_symbol = "📂/";
+        home_symbol = "🏠";
+      };
+      cmd_duration = {
+        format = "$duration ($style)";
+        show_notifications = true;
+      };
+      status = {
+        pipestatus = true;
+        disabled = false;
+      };
+    };
   };
 }
