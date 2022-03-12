@@ -3,10 +3,6 @@
     enable = true;
     serverAliveInterval = 20;
     matchBlocks = {
-      "tilde" = {
-        hostname = "tilde.team";
-        user = "pg";
-      };
       "mikrus" = {
         hostname = "srv09.mikr.us";
         user = "pg";
