@@ -4,7 +4,6 @@
     pkgs.calibre
     pkgs.megasync
     pkgs.youtube-dl
-    pkgs.freetube
     pkgs.bitwarden
     pkgs.beancount
     pkgs.imagemagick
