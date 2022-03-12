@@ -18,6 +18,11 @@
         user = "pg";
         port = 14442;
       };
+      "nextcloud" = {
+        hostname = "mini01.mikr.us";
+        user = "root";
+        port = 10127;
+      };
     };
   };
 }
