@@ -3,11 +3,6 @@
     enable = true;
     serverAliveInterval = 20;
     matchBlocks = {
-      "mikrus" = {
-        hostname = "srv09.mikr.us";
-        user = "pg";
-        port = 10130;
-      };
       "apollo" = {
         hostname = "100.85.251.69";
         user = "pg";
