@@ -8,6 +8,5 @@
     pkgs.bitwarden
     pkgs.beancount
     pkgs.imagemagick
-    pkgs.wakatime
   ];
 }
