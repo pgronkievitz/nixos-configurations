@@ -11,9 +11,6 @@ in { config, ... }: {
           "--label=traefik.http.routers.${servicename}.rule=Host(`${shortname}.gronkiewicz.xyz`,`${shortname}.lab.home`)"
           "--label=traefik.http.services.${servicename}.loadbalancer.server.port=3000"
           "--label=traefik.http.routers.${servicename}.tls=true"
-          "--label=traefik.tcp.routers.${servicename}-ssh.rule=HostSNI(`*`)"
-          "--label=traefik.tcp.routers.${servicename}-ssh.entrypoints=ssh"
-          "--label=traefik.tcp.services.${servicename}-ssh.loadbalancer.server.port=2222"
         ];
       };
     };

@@ -13,7 +13,6 @@
         };
       };
       entryPoints.https.address = ":443";
-      entryPoints.ssh.address = ":22";
       metrics.prometheus.addRoutersLabels = true;
     };
     dynamicConfigOptions = {
