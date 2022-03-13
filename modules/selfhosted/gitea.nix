@@ -12,6 +12,7 @@ in { config, ... }: {
           "--label=traefik.http.services.${servicename}.loadbalancer.server.port=3000"
           "--label=traefik.http.routers.${servicename}.tls=true"
         ];
+        ports = [ "22:22" ];
       };
     };
   };
