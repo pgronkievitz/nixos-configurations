@@ -5,7 +5,7 @@ in { config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "lscr.io/linuxserver/freshrss:1.19.1";
+        image = "lscr.io/linuxserver/freshrss:1.19.2";
         environment = { TZ = "Europe/Warsaw"; };
         volumes = [ "/media/data/${servicename}:/config" ];
         extraOptions = [
