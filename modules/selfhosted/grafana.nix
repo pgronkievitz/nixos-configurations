@@ -5,7 +5,7 @@ in { config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "grafana/grafana-oss:8.4.1";
+        image = "grafana/grafana-oss:8.4.3";
         environment = { TZ = "Europe/Warsaw"; };
         volumes = [ "/media/data/${servicename}:/var/lib/grafana" ];
         extraOptions = [
