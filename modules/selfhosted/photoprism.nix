@@ -5,7 +5,7 @@ in { config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "photoprism/photoprism:20220121";
+        image = "photoprism/photoprism:220302-buster";
 
         environmentFiles = [ config.age.secrets.photos.path ];
         environment = {
