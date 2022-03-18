@@ -10,7 +10,7 @@ let
   hubble =
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFXwGIHC62SpqrKZ3CVxqEp05iM1BcUgcwpIzMEdAIRJ";
   artemis =
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGA+womWFzFqOsX9Scz/zOXRabLErDjEzIFHrUMjePOm";
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKgsN7S+Q/BeqgHhvNmuctN3jFV1Q4fiJdbL9LWdwXZi";
   systems = [ artemis apollo dart ];
   servers = [ apollo dart hubble ];
   laptop = [ artemis pg ];
