@@ -32,6 +32,32 @@
     fsType = "zfs";
   };
 
+  fileSystems."/persistent" = {
+    device = "data/root/persistent";
+    fsType = "zfs";
+    neededForBoot = true;
+  };
+
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-uuid/60A2-56B8";
+    fsType = "vfat";
+  };
+
+  environment.persistence."/persistent" = {
+    hideMounts = true;
+    directories = [
+      "/var/log"
+      "/var/lib/bluetooth"
+      "/var/lib/blueman"
+      "/var/lib/systemd/coredump"
+      "/var/lib/tailscale"
+      "/var/lib/docker"
+      "/var/lib/asusd"
+      "/etc/NetworkManager/system-connections"
+      "/etc/ssh"
+    ];
+    files = [ "/etc/machine-id" ];
+  };
 
   swapDevices = [ ];
 

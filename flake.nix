@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
     nixpkgs-asus.url = "github:Cogitri/nixpkgs/asusctl";
+    impermanence.url = "github:nix-community/impermanence";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     home-manager = {
       url = "github:nix-community/home-manager/master";
@@ -124,6 +125,7 @@
             in [ overlay-asus ];
           }
           inputs.nixos-hardware.nixosModules.asus-zephyrus-ga401
+          inputs.impermanence.nixosModules.impermanence
           ./modules/development
           ./modules/development/devops.nix
           ./modules/virtual-machines.nix
