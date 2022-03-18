@@ -3,7 +3,8 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    tuxedo.url = "github:blitz/tuxedo-nixos";
+    nixpkgs-asus.url = "github:Cogitri/nixpkgs/asusctl";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -116,7 +117,13 @@
               file = ./secrets/artemis/bkp-env.age;
             };
             programs.kdeconnect.enable = true;
+            nixpkgs.overlays = let
+              overlay-asus = final: prev: {
+                asus = inputs.nixpkgs-asus.legacyPackages.${prev.system};
+              };
+            in [ overlay-asus ];
           }
+          inputs.nixos-hardware.nixosModules.asus-zephyrus-ga401
           ./modules/development
           ./modules/development/devops.nix
           ./modules/virtual-machines.nix
@@ -126,7 +133,7 @@
           ./modules/gpt.nix
           ./modules/android.nix
           # ./modules/tuxedo.nix
-          inputs.tuxedo.nixosModule
+          # inputs.tuxedo.nixosModule
         ] ++ graphics;
         themis.modules = graphics ++ [
           ./hosts/themis

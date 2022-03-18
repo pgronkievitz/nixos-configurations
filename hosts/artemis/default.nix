@@ -1,21 +1,21 @@
 { config, pkgs, ... }: {
-  imports = [ ./hardware-configuration.nix ./xserver.nix ./backups.nix ];
+  imports = [
+    ./hardware-configuration.nix
+    ./xserver.nix
+    ./backups.nix
+    ./asusctl.nix
+    ./supergfxctl.nix
+  ];
   boot = {
-    extraModulePackages = [ config.boot.kernelPackages.tuxedo-keyboard ];
     initrd.kernelModules = [ "amdgpu" ];
-    kernelParams = [
-      "pci=noats"
-      "tuxedo_keyboard.mode=0"
-      "tuxedo_keyboard.brightness=4"
-      "tuxedo_keybaord.color_left=0x00ffff"
-    ];
-    plymouth = { enable = true; };
+    kernelParams = [ ];
+    plymouth.enable = true;
   };
   networking = {
     hostName = "artemis";
     domain = "gronkiewicz.xyz";
-    interfaces.enp2s0.useDHCP = true;
-    interfaces.wlo1.useDHCP = true;
+    hostId = "9b6802b9";
+    interfaces.wlp2s0.useDHCP = true;
   };
   hardware.bluetooth = {
     enable = true;
@@ -40,4 +40,7 @@
       port = 14442;
     }
   ];
+
+  environment.systemPackages = [ pkgs.asus.asusctl pkgs.asus.supergfxctl ];
+  services.asusctl.enable = true;
 }

@@ -1,1 +1,1 @@
-{ pkgs, ... }: { services.xserver.videoDrivers = [ "amdgpu" ]; }
+{ pkgs, ... }: { services.xserver.videoDrivers = [ "nvidia" "amdgpu" ]; }
