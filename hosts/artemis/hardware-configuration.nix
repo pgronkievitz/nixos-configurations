@@ -4,40 +4,34 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
-    ];
+  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "usbhid" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" =
-    { device = "tmpfs";
-      fsType = "tmpfs";
-    };
+  fileSystems."/" = {
+    device = "tmpfs";
+    fsType = "tmpfs";
+  };
 
-  fileSystems."/nix" =
-    { device = "data/root/nix";
-      fsType = "zfs";
-    };
+  fileSystems."/nix" = {
+    device = "data/root/nix";
+    fsType = "zfs";
+  };
 
-  fileSystems."/nix/store" =
-    { device = "/nix/store";
-      fsType = "none";
-      options = [ "bind" ];
-    };
+  fileSystems."/nix/store" = {
+    device = "/nix/store";
+    fsType = "none";
+    options = [ "bind" ];
+  };
 
-  fileSystems."/home" =
-    { device = "data/root/home";
-      fsType = "zfs";
-    };
+  fileSystems."/home" = {
+    device = "data/root/home";
+    fsType = "zfs";
+  };
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/60A2-56B8";
-      fsType = "vfat";
-    };
 
   swapDevices = [ ];
 
