@@ -56,7 +56,7 @@
       "/etc/NetworkManager/system-connections"
       "/etc/ssh"
     ];
-    files = [ "/etc/machine-id" ];
+    files = [ "/etc/machine-id" "/etc/supergfxd.conf" ];
   };
 
   swapDevices = [ ];
