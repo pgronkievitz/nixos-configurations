@@ -3,6 +3,7 @@
     enable = true;
     qemu = {
       package = pkgs.qemu_kvm;
+      runAsRoot = false;
       ovmf.enable = true;
     };
     onBoot = "ignore";
