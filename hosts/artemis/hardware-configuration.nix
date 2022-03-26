@@ -56,11 +56,7 @@
       "/etc/NetworkManager/system-connections"
       "/etc/ssh"
     ];
-    files = [
-      "/etc/machine-id"
-      "/etc/supergfxd.conf"
-      "/sys/devices/pci0000:00/0000:00:08.1/0000:04:00.0/backlight/amdgpu_bl0/actual_brightness"
-    ];
+    files = [ "/etc/machine-id" ];
   };
 
   swapDevices = [ ];
