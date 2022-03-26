@@ -67,6 +67,7 @@
         dart = shared ++ servers ++ [ ];
         hubble = shared ++ servers ++ [ ];
       };
+
     in fup.lib.mkFlake {
       inherit self inputs;
       hostDefaults = {
