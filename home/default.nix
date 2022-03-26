@@ -7,8 +7,9 @@
       name = "Flat-Remix-Blue-Light";
     };
     theme = {
-      package = pkgs.flat-remix-gtk;
-      name = "Flat-Remix-GTK-Blue-Light";
+      package = pkgs.plano-theme;
+      name = "Plano";
+    };
     cursorTheme = {
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Classic";
