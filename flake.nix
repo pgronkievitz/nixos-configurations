@@ -107,6 +107,7 @@
       in {
         artemis.modules = [
           ./hosts/artemis
+          ./modules/games.nix
           {
             home-manager.users.pg.imports = hmModules.artemis;
             age.secrets.artemisbkp = {
