@@ -206,13 +206,13 @@
         user = "root";
         sshOpts = [ "-p" "14442" ];
         nodes = {
-          apollo = {
-            hostname = "apollo.gronkiewicz.xyz";
-            profiles.system = {
-              path = deploy-rs.lib.x86_64-linux.activate.nixos
-                self.nixosConfigurations.apollo;
-            };
-          };
+          # apollo = {
+          #   hostname = "apollo.gronkiewicz.xyz";
+          #   profiles.system = {
+          #     path = deploy-rs.lib.x86_64-linux.activate.nixos
+          #       self.nixosConfigurations.apollo;
+          #   };
+          # };
           dart = {
             hostname = "dart.gronkiewicz.xyz";
             profiles.system = {
