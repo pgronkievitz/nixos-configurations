@@ -14,6 +14,7 @@ in { config, ... }: {
         extraOptions = [
           "--label=traefik.http.routers.${servicename}.rule=Host(`${shortname}.gronkiewicz.xyz`,`${shortname}.lab.home`)"
           "--label=traefik.http.routers.${servicename}.tls=true"
+          "--network=mda"
         ];
       };
     };
