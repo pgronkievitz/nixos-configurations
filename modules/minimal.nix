@@ -1,6 +1,6 @@
 { pkgs, inputs, ... }: {
   boot = {
-    kernelPackages = pkgs.linuxPackages;
+    kernelPackages = pkgs.linuxPackages_latest;
     kernel.sysctl = { "net.ipv4.ip_forward" = 1; };
   };
   environment.systemPackages = [
