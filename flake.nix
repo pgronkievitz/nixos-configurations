@@ -227,13 +227,6 @@
                 self.nixosConfigurations.hubble;
             };
           };
-          artemis = {
-            hostname = "localhost";
-            profiles.system = {
-              path = deploy-rs.lib.x86_64-linux.activate.nixos
-                self.nixosConfigurations.artemis;
-            };
-          };
         };
       };
     };
