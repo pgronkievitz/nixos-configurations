@@ -1,4 +1,4 @@
-{ colors, config, pkgs, ... }: {
+{ theme, config, pkgs, ... }: {
   programs.alacritty = {
     enable = true;
     settings = {
@@ -23,13 +23,13 @@
         miltiplier = 3;
       };
       font = {
-        normal = { family = "VictorMono Nerd Font Mono"; };
+        norma.family = theme.font;
         bold = {
-          family = "VictorMono Nerd Font Mono";
+          family = theme.font;
           style = "Medium";
         };
         italic = {
-          family = "VictorMono Nerd Font Mono";
+          family = theme.font;
           style = "Light Italic";
         };
         size = 10.0;
@@ -39,61 +39,61 @@
 
       colors = {
         primary = {
-          background = colors.light.bg;
-          foreground = colors.light.fg;
-          dim_foreground = colors.light.bg-alt;
+          background = theme.colors.bg;
+          foreground = theme.colors.fg;
+          dim_foreground = theme.colors.fg-alt;
         };
         cursor = {
-          text = colors.light.grey;
-          cursor = colors.light.blue;
+          text = theme.colors.grey;
+          cursor = theme.colors.blue;
         };
         vi_mode_cursor = {
-          text = colors.light.grey;
-          cursor = colors.light.yellow;
+          text = theme.colors.grey;
+          cursor = theme.colors.yellow;
         };
         selection = {
           text = "CellForeground";
-          background = colors.light.base4;
+          background = theme.colors.base4;
         };
         search = {
           matches = {
             foreground = "CellBackground";
-            background = colors.light.dark-cyan;
+            background = theme.colors.dark-cyan;
           };
           bar = {
-            background = colors.light.blue;
-            foreground = colors.light.blue;
+            background = theme.colors.blue;
+            foreground = theme.colors.blue;
           };
         };
         normal = {
-          black = colors.light.base0;
-          red = colors.light.red;
-          green = colors.light.green;
-          yellow = colors.light.yellow;
-          blue = colors.light.blue;
-          magenta = colors.light.magenta;
-          cyan = colors.light.cyan;
-          white = colors.light.base8;
+          black = theme.colors.fg;
+          red = theme.colors.red;
+          green = theme.colors.green;
+          yellow = theme.colors.yellow;
+          blue = theme.colors.blue;
+          magenta = theme.colors.magenta;
+          cyan = theme.colors.cyan;
+          white = theme.colors.bg;
         };
         bright = {
-          black = colors.light.base1;
-          red = colors.light.orange;
-          green = colors.light.teal;
-          yellow = colors.light.yellow;
-          blue = colors.light.blue;
-          magenta = colors.light.magenta;
-          cyan = colors.light.cyan;
-          white = colors.light.base8;
+          black = theme.colors.base6;
+          red = theme.colors.orange;
+          green = theme.colors.teal;
+          yellow = theme.colors.yellow;
+          blue = theme.colors.blue;
+          magenta = theme.colors.magenta;
+          cyan = theme.colors.cyan;
+          white = theme.colors.base0;
         };
         dim = {
-          black = colors.light.base1;
-          red = colors.light.red;
-          green = colors.light.green;
-          yellow = colors.light.yellow;
-          blue = colors.light.dark-blue;
-          magenta = colors.light.violet;
-          cyan = colors.light.dark-cyan;
-          white = colors.light.base6;
+          black = theme.colors.base1;
+          red = theme.colors.red;
+          green = theme.colors.green;
+          yellow = theme.colors.yellow;
+          blue = theme.colors.dark-blue;
+          magenta = theme.colors.violet;
+          cyan = theme.colors.dark-cyan;
+          white = theme.colors.base6;
         };
       };
       bell = {

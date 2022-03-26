@@ -1,36 +1,36 @@
-{ colors, config, pkgs, ... }: {
+{ theme, config, pkgs, ... }: {
   programs.zathura = {
     enable = true;
     options = {
-      default-bg = colors.light.bg;
-      default-fg = colors.light.fg;
+      default-bg = theme.colors.bg;
+      default-fg = theme.colors.fg;
 
-      statusbar-bg = colors.light.bg-alt;
-      statusbar-fg = colors.light.fg-alt;
+      statusbar-bg = theme.colors.bg-alt;
+      statusbar-fg = theme.colors.fg-alt;
 
-      inputbar-bg = colors.light.bg-alt;
-      inputbar-fg = colors.light.fg-alt;
+      inputbar-bg = theme.colors.bg-alt;
+      inputbar-fg = theme.colors.fg-alt;
 
-      notification-bg = colors.light.teal;
-      notification-fg = colors.light.fg-alt;
+      notification-bg = theme.colors.teal;
+      notification-fg = theme.colors.fg-alt;
 
-      notification-error-bg = colors.light.red;
-      notification-error-fg = colors.light.fg-alt;
+      notification-error-bg = theme.colors.red;
+      notification-error-fg = theme.colors.fg-alt;
 
-      notification-warning-bg = colors.light.yellow;
-      notification-warning-fg = colors.light.fg-alt;
+      notification-warning-bg = theme.colors.yellow;
+      notification-warning-fg = theme.colors.fg-alt;
 
-      highlight-color = colors.light.blue;
-      highlight-active-color = colors.light.yellow;
+      highlight-color = theme.colors.blue;
+      highlight-active-color = theme.colors.yellow;
 
-      completion-bg = colors.light.bg-alt;
-      completion-fg = colors.light.fg-alt;
+      completion-bg = theme.colors.bg-alt;
+      completion-fg = theme.colors.fg-alt;
 
-      completion-highlight-bg = colors.light.base8;
-      completion-highlight-fg = colors.light.cyan;
+      completion-highlight-bg = theme.colors.base8;
+      completion-highlight-fg = theme.colors.cyan;
 
-      recolor-lightcolor = colors.light.base8;
-      recolor-darkcolor = colors.light.base0;
+      recolor-lightcolor = theme.colors.base8;
+      recolor-darkcolor = theme.colors.base0;
       recolor = true;
       recolor-keephue = true;
     };

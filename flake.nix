@@ -83,7 +83,7 @@
             home-manager = {
               extraSpecialArgs = {
                 inherit inputs self;
-                colors = import ./home/colors.nix;
+                theme = import ./home/theming.nix;
               };
               useGlobalPkgs = true;
               useUserPackages = true;
