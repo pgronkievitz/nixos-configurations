@@ -8,7 +8,7 @@
   ];
   boot = {
     initrd.kernelModules = [ "amdgpu" ];
-    kernelParams = [ ];
+    kernelParams = [ "nvidia-drm.modeset=1" ];
     plymouth.enable = true;
   };
   networking = {
@@ -43,4 +43,8 @@
 
   environment.systemPackages = [ pkgs.asus.asusctl pkgs.asus.supergfxctl ];
   services.asusctl.enable = true;
+  services.supergfxctl = {
+    enable = true;
+    gfx-mode = "Integrated";
+  };
 }
