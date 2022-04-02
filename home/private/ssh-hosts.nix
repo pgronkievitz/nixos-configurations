@@ -23,6 +23,10 @@
         user = "root";
         port = 10127;
       };
+      "nvidia" = {
+        hostname = "172.16.3.101";
+        user = "pgronkiewicz";
+      };
     };
   };
 }
