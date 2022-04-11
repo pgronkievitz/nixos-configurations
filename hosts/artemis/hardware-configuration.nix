@@ -55,6 +55,7 @@
       "/var/lib/asusd"
       "/etc/NetworkManager/system-connections"
       "/etc/ssh"
+      "/var/lib/lxd"
     ];
     files = [ "/etc/machine-id" ];
   };

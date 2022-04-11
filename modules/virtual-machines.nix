@@ -9,7 +9,7 @@
     onBoot = "ignore";
     onShutdown = "shutdown";
   };
-  environment.systemPackages = [ pkgs.virtmanager ];
+  environment.systemPackages = [ pkgs.virtmanager pkgs.lxc ];
   services.webdav = {
     enable = true;
     settings = {
@@ -22,4 +22,5 @@
     user = "pg";
     group = "users";
   };
+  virtualisation.lxd.enable = true;
 }
