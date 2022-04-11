@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   home.packages = [
     pkgs.zotero
-    pkgs.calibre
+    # pkgs.calibre
     pkgs.megasync
     pkgs.youtube-dl
     pkgs.bitwarden
