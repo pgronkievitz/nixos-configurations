@@ -1,6 +1,6 @@
 { theme, config, pkgs, ... }: {
   programs.zathura = {
-    enable = true;
+    enable = false;
     options = {
       default-bg = theme.colors.bg;
       default-fg = theme.colors.fg;
