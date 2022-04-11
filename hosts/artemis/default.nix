@@ -8,7 +8,7 @@
   ];
   boot = {
     initrd.kernelModules = [ "amdgpu" ];
-    kernelParams = [ "nvidia-drm.modeset=1" ];
+    kernelParams = [ "amd_pstate.shared_mem=1" ];
     plymouth.enable = true;
   };
   networking = {
