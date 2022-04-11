@@ -2,7 +2,10 @@
 let
   my-dicts = dicts: [ dicts.en dicts.pl dicts.en-computers dicts.en-science ];
   my-aspell = pkgs.aspellWithDicts my-dicts;
-  my-hunspell = pkgs.hunspellWithDicts [ pkgs.hunspellDicts.en-us ];
+  my-hunspell = pkgs.hunspellWithDicts [
+    pkgs.hunspellDicts.en-us
+    pkgs.hunspellDicts.en_US-large
+  ];
 in {
   home.packages = [
     pkgs.libreoffice-fresh
