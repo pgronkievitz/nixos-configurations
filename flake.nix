@@ -179,6 +179,7 @@
           ./modules/selfhosted/nextcloud.nix
           ./modules/selfhosted/photoprism.nix
           ./modules/selfhosted/openbooks.nix
+          ./modules/selfhosted/minio.nix
           {
             age.secrets.ncdb.file = ./secrets/ncdb.age;
             age.secrets.ncmonitoring = {
