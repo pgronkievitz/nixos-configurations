@@ -17,4 +17,5 @@ in { config, ... }: {
       };
     };
   };
+  networking.firewall.trustedInterfaces = [ "enp3s0" ];
 }
