@@ -1,7 +1,7 @@
 { pkgs, lib, ... }: {
   networking = {
     networkmanager.enable = true;
-    networkmanager.packages = [ pkgs.networkmanager-fortisslvpn ];
+    networkmanager.plugins = [ pkgs.networkmanager-fortisslvpn ];
     useDHCP = false;
     firewall = {
       enable = true;
