@@ -180,6 +180,7 @@
           ./modules/selfhosted/photoprism.nix
           ./modules/selfhosted/openbooks.nix
           ./modules/selfhosted/minio.nix
+          ./modules/selfhosted/podsync.nix
           {
             age.secrets.ncdb.file = ./secrets/ncdb.age;
             age.secrets.ncmonitoring = {
