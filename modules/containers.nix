@@ -10,4 +10,5 @@
   };
   users.groups.services = { };
   environment.systemPackages = [ pkgs.docker-client ];
+  virtualisation.oci-containers.backend = "docker";
 }
