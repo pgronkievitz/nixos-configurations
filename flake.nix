@@ -176,7 +176,6 @@
           ./modules/selfhosted/gitea.nix
           ./modules/selfhosted/grocy.nix
           ./modules/selfhosted/calibre.nix
-          ./modules/selfhosted/restic-server.nix
           ./modules/selfhosted/nextcloud.nix
           ./modules/selfhosted/photoprism.nix
           ./modules/selfhosted/openbooks.nix

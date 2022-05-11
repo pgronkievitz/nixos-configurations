@@ -5,10 +5,10 @@ in { config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "searxng/searxng:2022.04.23-ca1a5f9d";
+        image = "searxng/searxng:2022.05.11-459b9c18";
         environment = {
           BASE_URL = "https://${shortname}.lab.home";
-          INSTANCE_NAME= shortname;
+          INSTANCE_NAME = shortname;
         };
         volumes = [ "/media/data/${servicename}:/etc/searxng" ];
         extraOptions = [
