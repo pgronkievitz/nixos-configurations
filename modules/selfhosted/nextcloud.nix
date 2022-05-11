@@ -6,7 +6,10 @@ in { config, ... }: {
     containers = {
       "${servicename}" = {
         image = "nextcloud:24.0.0";
-        volumes = [ "/media/data/${servicename}/data:/var/www/html" ];
+        volumes = [
+          "/media/data/${servicename}/data:/var/www/html"
+          "/media/data/${servicename}/php.ini:/usr/local/etc/php/conf.d/zzz-custom.ini"
+        ];
         extraOptions = [
           "--label=traefik.http.routers.${servicename}.rule=Host(`${shortname}.gronkiewicz.xyz`,`${shortname}.lab.home`)"
           "--label=traefik.http.routers.${servicename}.tls=true"
