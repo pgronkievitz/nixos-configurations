@@ -155,7 +155,7 @@
           { home-manager.users.pg.imports = hmModules.apollo; }
           ./modules/selfhosted/vaultwarden.nix
           ./modules/selfhosted/homeassistant.nix
-          ./modules/selfhosted/freshrss.nix
+          # ./modules/selfhosted/freshrss.nix
           ./modules/selfhosted/wallabag.nix
           ./modules/selfhosted/torrents.nix
           ./modules/selfhosted/readarr.nix
