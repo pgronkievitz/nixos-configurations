@@ -67,4 +67,5 @@
   home-manager.backupFileExtension = "BAK";
   security.sudo.wheelNeedsPassword = false;
   security.sudo.execWheelOnly = true;
+  system.stateVersion = "22.05";
 }
