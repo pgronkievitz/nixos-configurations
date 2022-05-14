@@ -6,6 +6,7 @@
     firewall = {
       enable = true;
       trustedInterfaces = [ "docker0" "tailscale0" "virbr0" ];
+      checkReversePath = "loose";
     };
   };
   security.sudo.execWheelOnly = true;
