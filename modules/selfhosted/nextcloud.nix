@@ -1,7 +1,7 @@
 let
   servicename = "nextcloud";
   shortname = "nc";
-in { config, ... }: {
+in { pkgs, config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
@@ -41,4 +41,7 @@ in { config, ... }: {
     passwordFile = config.age.secrets.ncmonitoring.path;
     url = "https://nc.lab.local";
   };
+  services.cron.systemCronJobs = [
+    "*/5 * * * * pg ${pkgs.docker}/bin/docker exec -u 33 nextcloud php cron.php"
+  ];
 }
