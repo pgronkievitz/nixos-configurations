@@ -165,6 +165,7 @@
           ./modules/selfhosted/bazarr.nix
           ./modules/selfhosted/prowlarr.nix
           ./modules/selfhosted/searx.nix
+          ./modules/selfhosted/znc.nix
           # ./modules/selfhosted/kubeserver.nix
           ./modules/gpt.nix
         ] ++ servers;
