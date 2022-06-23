@@ -5,7 +5,7 @@ in { config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "searxng/searxng:2022.05.11-459b9c18";
+        image = "searxng/searxng:2022.06.22-ed1ff4b8";
         environment = {
           BASE_URL = "https://${shortname}.lab.home";
           INSTANCE_NAME = shortname;

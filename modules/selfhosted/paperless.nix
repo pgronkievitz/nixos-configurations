@@ -5,7 +5,7 @@ in { config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "lscr.io/linuxserver/paperless-ngx:1.7.0";
+        image = "lscr.io/linuxserver/paperless-ngx:1.7.1";
         volumes = [
           "/media/data/${servicename}/config:/config"
           "/media/data/${servicename}/data:/data"
