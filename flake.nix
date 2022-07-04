@@ -183,6 +183,7 @@
           ./modules/selfhosted/minio.nix
           ./modules/selfhosted/n8n.nix
           ./modules/selfhosted/podsync.nix
+          ./modules/selfhosted/kiwix.nix
           {
             age.secrets.ncdb.file = ./secrets/ncdb.age;
             age.secrets.ncmonitoring = {
