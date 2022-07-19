@@ -15,12 +15,10 @@ let
   servers = [ apollo dart hubble ];
   laptop = [ artemis pg ];
 in {
-  "cloudflare.age".publicKeys = users ++ servers;
-  "artemis/bkp.age".publicKeys = laptop;
-  "artemis/bkp-env.age".publicKeys = laptop;
   "ssl.age".publicKeys = servers ++ users;
   "ncdb.age".publicKeys = users ++ [ dart ];
   "ncmonitoring.age".publicKeys = users ++ [ dart ];
   "photoprismdb.age".publicKeys = users ++ [ dart ];
   "photoprism.age".publicKeys = users ++ [ dart ];
+  "authentik.age".publicKeys = users ++ [ dart ];
 }
