@@ -206,7 +206,7 @@
           ./modules/selfhosted/grafana.nix
           ./modules/selfhosted/kuma.nix
           ./modules/selfhosted/prometheus.nix
-          ./modules/selfhosted/authserver.nix
+          # ./modules/selfhosted/authserver.nix
           # ./modules/selfhosted/kubeserver.nix
           ./modules/mbr.nix
         ] ++ servers;
