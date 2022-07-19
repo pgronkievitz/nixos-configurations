@@ -5,7 +5,7 @@ in { config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "ghcr.io/home-assistant/home-assistant:2022.6.7";
+        image = "ghcr.io/home-assistant/home-assistant:2022.7.5";
         volumes = [
           "/media/data/${servicename}:/config"
           "/etc/localtime:/etc/localtime:ro"

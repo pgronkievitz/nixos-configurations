@@ -5,7 +5,7 @@ in { config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "adguard/adguardhome:v0.108.0-b.9";
+        image = "adguard/adguardhome:v0.108.0-b.10";
         ports = [ "53:53/tcp" "53:53/udp" ];
         volumes = [
           "/media/data/${servicename}/work:/opt/adguardhome/work"

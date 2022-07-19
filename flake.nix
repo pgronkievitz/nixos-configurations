@@ -95,7 +95,7 @@
       channels.nixpkgs.overlaysBuilder = channels: [
         inputs.fup.overlay
         inputs.emacs-overlay.overlay
-        inputs.nixpkgs-f2k.overlay
+        inputs.nixpkgs-f2k.overlays.default
       ];
       channelsConfig = {
         allowUnfree = true;
@@ -192,6 +192,7 @@
             };
             age.secrets.photos.file = ./secrets/photoprism.age;
             age.secrets.photos-db.file = ./secrets/photoprismdb.age;
+            age.secrets.authentik.file = ./secrets/authentik.age;
           }
           ./modules/selfhosted/paperless.nix
           # ./modules/selfhosted/kubeserver.nix
@@ -205,6 +206,7 @@
           ./modules/selfhosted/grafana.nix
           ./modules/selfhosted/kuma.nix
           ./modules/selfhosted/prometheus.nix
+          ./modules/selfhosted/authserver.nix
           # ./modules/selfhosted/kubeserver.nix
           ./modules/mbr.nix
         ] ++ servers;
