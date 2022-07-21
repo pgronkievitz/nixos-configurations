@@ -20,5 +20,4 @@ in {
   "ncmonitoring.age".publicKeys = users ++ [ dart ];
   "photoprismdb.age".publicKeys = users ++ [ dart ];
   "photoprism.age".publicKeys = users ++ [ dart ];
-  "authentik.age".publicKeys = users ++ [ dart ];
 }
