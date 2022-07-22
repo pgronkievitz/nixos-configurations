@@ -20,4 +20,6 @@ in {
   "ncmonitoring.age".publicKeys = users ++ [ dart ];
   "photoprismdb.age".publicKeys = users ++ [ dart ];
   "photoprism.age".publicKeys = users ++ [ dart ];
+  "friendicadb.age".publicKeys = users ++ [ hubble ];
+  "friendica.age".publicKeys = users ++ [ hubble ];
 }

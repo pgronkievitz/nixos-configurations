@@ -14,6 +14,11 @@
       };
       entryPoints.https.address = ":443";
       metrics.prometheus.addRoutersLabels = true;
+      certificatesResolvers.letsencrypt.acme = {
+        email = "patryk@gronkiewicz.dev";
+        storage = "/media/data/traefik/acme.json";
+        httpChallenge.entrypoint = "https";
+      };
     };
     dynamicConfigOptions = {
       tls.stores.default.defaultCertificate = {
