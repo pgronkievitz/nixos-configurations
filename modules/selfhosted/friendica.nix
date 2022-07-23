@@ -1,7 +1,7 @@
 let
   servicename = "friendica";
   shortname = "social";
-in { config, ... }: {
+in { pkgs, config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
@@ -22,17 +22,6 @@ in { config, ... }: {
           "--network=${servicename}"
         ];
       };
-      "${servicename}-cron" = {
-        image = "friendica:2022.06-apache";
-        entrypoint = "/cron.sh";
-        environment = {
-          MYSQL_HOST = "${servicename}-db";
-        };
-        volumes = [ "/media/data/${servicename}/data/html:/var/www/html" ];
-        environmentFiles = [ config.age.secrets.friendica.path ];
-        dependsOn = [ "${servicename}-db" ];
-        extraOptions = [ "--network=${servicename}" ];
-      };
       "${servicename}-db" = {
         image = "mariadb:10.8.3-jammy";
         volumes = [ "/media/data/${servicename}/db:/var/lib/mysql" ];
@@ -46,4 +35,7 @@ in { config, ... }: {
       };
     };
   };
+  services.cron.systemCronJobs = [
+    "*/5 * * * * pg ${pkgs.docker}/bin/docker exec -u 33 friendica php bin/worker.php"
+  ];
 }
