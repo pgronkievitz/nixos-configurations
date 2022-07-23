@@ -18,8 +18,6 @@ in { config, ... }: {
         volumes = [ "/media/data/${servicename}/data:/var/www/data" ];
         extraOptions = [
           "--label=traefik.http.routers.${servicename}.rule=Host(`${shortname}.gronkiewicz.dev`)"
-          "--label=traefik.http.routers.${servicename}.tls=true"
-          "--label=traefik.http.routers.${servicename}.tls.certresolver=letsencrypt"
           "--network=${servicename}"
         ];
       };
