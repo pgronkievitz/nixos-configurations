@@ -31,6 +31,7 @@ in { config, ... }: {
         volumes = [ "/media/data/${servicename}/data/html:/var/www/html" ];
         environmentFiles = [ config.age.secrets.friendica.path ];
         dependsOn = [ "${servicename}-db" ];
+        extraOptions = [ "--network=${servicename}" ];
       };
       "${servicename}-db" = {
         image = "mariadb:10.8.3-jammy";
