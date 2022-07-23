@@ -15,15 +15,26 @@ in { config, ... }: {
           MYSQL_HOST = "${servicename}-db";
         };
         environmentFiles = [ config.age.secrets.friendica.path ];
-        volumes = [ "/media/data/${servicename}/data:/var/www/data" ];
+        dependsOn = [ "${servicename}-db" ];
+        volumes = [ "/media/data/${servicename}/data:/var/www" ];
         extraOptions = [
           "--label=traefik.http.routers.${servicename}.rule=Host(`${shortname}.gronkiewicz.dev`)"
           "--network=${servicename}"
         ];
       };
+      "${servicename}-cron" = {
+        image = "friendica:2022.06-apache";
+        entrypoint = "/cron.sh";
+        environment = {
+          MYSQL_HOST = "${servicename}-db";
+        };
+        volumes = [ "/media/data/${servicename}/data:/var/www" ];
+        environmentFiles = [ config.age.secrets.friendica.path ];
+        dependsOn = [ "${servicename}-db" ];
+      };
       "${servicename}-db" = {
         image = "mariadb:10.8.3-jammy";
-        volumes = [ "/media/data/${servicename}/db:/var/lib/postgresql/data" ];
+        volumes = [ "/media/data/${servicename}/db:/var/lib/mysql" ];
         extraOptions = [ "--network=${servicename}" ];
         environmentFiles = [ config.age.secrets.friendicadb.path ];
       };
