@@ -16,7 +16,7 @@ in { config, ... }: {
         };
         environmentFiles = [ config.age.secrets.friendica.path ];
         dependsOn = [ "${servicename}-db" ];
-        volumes = [ "/media/data/${servicename}/data:/var/www" ];
+        volumes = [ "/media/data/${servicename}/data/html:/var/www/html" ];
         extraOptions = [
           "--label=traefik.http.routers.${servicename}.rule=Host(`${shortname}.gronkiewicz.dev`)"
           "--network=${servicename}"
@@ -28,7 +28,7 @@ in { config, ... }: {
         environment = {
           MYSQL_HOST = "${servicename}-db";
         };
-        volumes = [ "/media/data/${servicename}/data:/var/www" ];
+        volumes = [ "/media/data/${servicename}/data/html:/var/www/html" ];
         environmentFiles = [ config.age.secrets.friendica.path ];
         dependsOn = [ "${servicename}-db" ];
       };
