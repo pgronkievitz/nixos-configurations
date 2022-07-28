@@ -17,6 +17,7 @@ in { config, ... }: {
           "--label=traefik.http.routers.${servicename}.rule=Host(`${shortname}.gronkiewicz.xyz`,`${shortname}.lab.home`)"
           "--label=traefik.http.routers.${servicename}.tls=true"
           "--label=traefik.http.services.${servicename}.loadbalancer.server.port=9091"
+          "--network=torrenting"
         ];
       };
     };
