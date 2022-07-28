@@ -164,6 +164,7 @@
           ./modules/selfhosted/lidarr.nix
           ./modules/selfhosted/bazarr.nix
           ./modules/selfhosted/prowlarr.nix
+          ./modules/selfhosted/navidrome.nix
           ./modules/selfhosted/searx.nix
           ./modules/selfhosted/znc.nix
           # ./modules/selfhosted/kubeserver.nix
