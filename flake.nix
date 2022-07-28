@@ -192,7 +192,6 @@
             };
             age.secrets.photos.file = ./secrets/photoprism.age;
             age.secrets.photos-db.file = ./secrets/photoprismdb.age;
-            age.secrets.authentik.file = ./secrets/authentik.age;
           }
           ./modules/selfhosted/paperless.nix
           # ./modules/selfhosted/kubeserver.nix
