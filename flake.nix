@@ -185,6 +185,7 @@
           ./modules/selfhosted/n8n.nix
           ./modules/selfhosted/podsync.nix
           ./modules/selfhosted/kiwix.nix
+          ./modules/selfhosted/miniflux.nix
           {
             age.secrets.ncdb.file = ./secrets/ncdb.age;
             age.secrets.ncmonitoring = {
@@ -193,6 +194,8 @@
             };
             age.secrets.photos.file = ./secrets/photoprism.age;
             age.secrets.photos-db.file = ./secrets/photoprismdb.age;
+            age.secrets.miniflux.file = ./secrets/miniflux.age;
+            age.secrets.minifluxdb.file = ./secrets/minifluxdb.age;
           }
           ./modules/selfhosted/paperless.nix
           # ./modules/selfhosted/kubeserver.nix

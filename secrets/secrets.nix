@@ -22,4 +22,6 @@ in {
   "photoprism.age".publicKeys = users ++ [ dart ];
   "friendicadb.age".publicKeys = users ++ [ hubble ];
   "friendica.age".publicKeys = users ++ [ hubble ];
+  "minifluxdb.age".publicKeys = users ++ [ dart ];
+  "miniflux.age".publicKeys = users ++ [ dart ];
 }
