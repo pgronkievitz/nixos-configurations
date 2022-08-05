@@ -11,10 +11,13 @@ in { config, ... }: {
           "SYMFONY__ENV__DOMAIN_NAME" = "https://${shortname}.lab.home";
         };
         extraOptions = [
-          "--label=traefik.http.routers.${servicename}.rule=Host(`${shortname}.gronkiewicz.xyz`,`${shortname}.lab.home`)"
+          "--label=traefik.http.routers.${servicename}.rule=Host(`${shortname}.lab.home`)"
           "--label=traefik.http.routers.${servicename}.tls=true"
-          "--label=traefik.http.middlewares.${servicename}-https.redirectscheme.scheme=https"
-          "--label=traefik.http.middlewares.${servicename}-https.redirectscheme.permanent=true"
+
+          "--label=traefik.http.middlewares.${servicename}.redirectscheme.scheme=https"
+          "--label=traefik.http.routers.${servicename}-http.entrypoints=http"
+          "--label=traefik.http.routers.${servicename}-http.rule=Host(`${shortname}.lab.home`)"
+          "--label=traefik.http.routers.${servicename}-http.middlewares=${servicename}"
         ];
       };
     };
