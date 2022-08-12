@@ -5,7 +5,7 @@ in { pkgs, config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "nextcloud:24.0.4";
+        image = "nextcloud:24.0.3";
         volumes = [
           "/media/data/${servicename}/data:/var/www/html"
           "/media/data/${servicename}/php.ini:/usr/local/etc/php/conf.d/zzz-custom.ini"
@@ -24,13 +24,13 @@ in { pkgs, config, ... }: {
         dependsOn = [ "${servicename}-db" "${servicename}-redis" ];
       };
       "${servicename}-db" = {
-        image = "postgres:14.2-alpine";
+        image = "postgres:14.5-alpine";
         volumes = [ "/media/data/${servicename}/db:/var/lib/postgresql/data" ];
         extraOptions = [ "--network=${servicename}" ];
         environmentFiles = [ config.age.secrets.ncdb.path ];
       };
       "${servicename}-redis" = {
-        image = "redis:6.2.6-alpine";
+        image = "redis:7.0.4-alpine";
         volumes = [ "/media/data/${servicename}/redis:/usr/local/etc/redis" ];
         extraOptions = [ "--network=${servicename}" ];
       };
