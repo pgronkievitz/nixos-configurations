@@ -5,7 +5,7 @@ in { config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "kiwix/kiwix-serve:3.3.0";
+        image = "kiwix/kiwix-serve:3.3.0-1";
         volumes = [
           "/media/data/${servicename}:/data"
         ];

@@ -154,7 +154,6 @@
           ./hosts/apollo
           { home-manager.users.pg.imports = hmModules.apollo; }
           ./modules/selfhosted/vaultwarden.nix
-          ./modules/selfhosted/homeassistant.nix
           # ./modules/selfhosted/freshrss.nix
           ./modules/selfhosted/wallabag.nix
           ./modules/selfhosted/torrents.nix
@@ -167,7 +166,6 @@
           ./modules/selfhosted/navidrome.nix
           ./modules/selfhosted/searx.nix
           ./modules/selfhosted/znc.nix
-          # ./modules/selfhosted/kubeserver.nix
           ./modules/gpt.nix
         ] ++ servers;
         dart.modules = [
@@ -198,7 +196,6 @@
             age.secrets.minifluxdb.file = ./secrets/minifluxdb.age;
           }
           ./modules/selfhosted/paperless.nix
-          # ./modules/selfhosted/kubeserver.nix
           ./modules/gpt.nix
         ] ++ servers;
         hubble.modules = [
@@ -209,12 +206,10 @@
             age.secrets.friendicadb.file = ./secrets/friendicadb.age;
           }
           ./modules/selfhosted/adguard.nix
-          ./modules/selfhosted/homer.nix
           ./modules/selfhosted/grafana.nix
           ./modules/selfhosted/kuma.nix
           ./modules/selfhosted/prometheus.nix
           ./modules/selfhosted/friendica.nix
-          # ./modules/selfhosted/kubeserver.nix
           ./modules/mbr.nix
         ] ++ servers;
       };

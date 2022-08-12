@@ -5,7 +5,7 @@ in { config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "n8nio/n8n:0.186.1";
+        image = "n8nio/n8n:0.190.0";
         environment = {
           TZ = "Europe/Warsaw";
           GENERIC_TIMEZONE = "Europe/Warsaw";

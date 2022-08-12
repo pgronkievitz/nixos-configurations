@@ -5,7 +5,7 @@ in { config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "vaultwarden/server:1.25.1-alpine";
+        image = "vaultwarden/server:1.25.2-alpine";
         volumes = [ "/media/data/${servicename}:/data" ];
         environment = {
           WEBSOCKET_ENABLED = "true";

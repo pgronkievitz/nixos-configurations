@@ -5,7 +5,7 @@ in { config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "gitea/gitea:1.17.0-rc1";
+        image = "gitea/gitea:1.17.0";
         volumes = [ "/media/data/${servicename}:/data" ];
         extraOptions = [
           "--label=traefik.http.routers.${servicename}.rule=Host(`${shortname}.gronkiewicz.xyz`,`${shortname}.lab.home`)"
