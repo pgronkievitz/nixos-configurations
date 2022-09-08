@@ -8,7 +8,10 @@ in { config, ... }: {
         image = "gitea/gitea:1.17.2";
         volumes = [ "/media/data/${servicename}:/data" ];
         extraOptions = [
-          "--label=traefik.http.routers.${servicename}.rule=Host(`${shortname}.gronkiewicz.dev`,`${shortname}.lab.home`)"
+          "--label=traefik.http.routers.${servicename}.rule=Host(`${shortname}.gronkiewicz.dev`)"
+          "--label=traefik.http.routers.${servicename}.tls=true"
+          "--label=traefik.http.routers.${servicename}.tls.certresolver=letsencrypt"
+
           "--label=traefik.http.services.${servicename}.loadbalancer.server.port=3000"
           "--network=${servicename}"
         ];

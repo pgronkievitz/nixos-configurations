@@ -13,6 +13,12 @@
         # };
       };
       entryPoints.https.address = ":443";
+      certificatesResolvers.letsencrypt.acme = {
+        email = "patryk@gronkiewicz.dev";
+        storage = "/media/data/acme.json";
+        httpChallenge.entryPoint = "http";
+
+      };
       metrics.prometheus.addRoutersLabels = true;
     };
     dynamicConfigOptions = {
