@@ -209,6 +209,7 @@
           ./modules/selfhosted/kuma.nix
           ./modules/selfhosted/prometheus.nix
           ./modules/selfhosted/friendica.nix
+          ./modules/selfhosted/gitea.nix
           ./modules/selfhosted/websites.nix
           ./modules/mbr.nix
         ] ++ servers;
