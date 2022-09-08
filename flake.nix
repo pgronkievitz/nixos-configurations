@@ -203,6 +203,7 @@
             home-manager.users.pg.imports = hmModules.hubble;
             age.secrets.friendica.file = ./secrets/friendica.age;
             age.secrets.friendicadb.file = ./secrets/friendicadb.age;
+            age.secrets.giteadb.file = ./secrets/giteadb.age;
           }
           ./modules/selfhosted/adguard.nix
           ./modules/selfhosted/grafana.nix

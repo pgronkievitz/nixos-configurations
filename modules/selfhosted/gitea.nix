@@ -10,8 +10,15 @@ in { config, ... }: {
         extraOptions = [
           "--label=traefik.http.routers.${servicename}.rule=Host(`${shortname}.gronkiewicz.dev`,`${shortname}.lab.home`)"
           "--label=traefik.http.services.${servicename}.loadbalancer.server.port=3000"
+          "--network=${servicename}"
         ];
         ports = [ "22:22" ];
+      };
+      "${servicename}-db" = {
+        image = "postgres:14.5-alpine";
+        volumes = [ "/media/data/${servicename}/db:/var/lib/postgresql/data" ];
+        extraOptions = [ "--network=${servicename}" ];
+        environmentFiles = [ config.age.secrets.giteadb.path ];
       };
     };
   };

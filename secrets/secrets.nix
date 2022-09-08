@@ -24,4 +24,5 @@ in {
   "friendica.age".publicKeys = users ++ [ hubble ];
   "minifluxdb.age".publicKeys = users ++ [ dart ];
   "miniflux.age".publicKeys = users ++ [ dart ];
+  "giteadb.age".publicKeys = users ++ [ hubble ];
 }
