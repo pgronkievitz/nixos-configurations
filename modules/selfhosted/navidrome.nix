@@ -13,7 +13,7 @@ in { config, ... }: {
           ND_BASEURL = "";
         };
         volumes = [
-          "/media/data/${servicename}/music:/music:ro"
+          "/media/data/lidarr/music:/music:ro"
           "/media/data/${servicename}/data:/data"
         ];
         extraOptions = [
