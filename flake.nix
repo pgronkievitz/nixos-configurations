@@ -211,6 +211,7 @@
           ./modules/selfhosted/prometheus.nix
           ./modules/selfhosted/friendica.nix
           ./modules/selfhosted/gitea.nix
+          ./modules/selfhosted/lenpaste.nix
           ./modules/selfhosted/websites.nix
           ./modules/mbr.nix
         ] ++ servers;
