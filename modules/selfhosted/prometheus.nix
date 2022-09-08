@@ -5,7 +5,7 @@ in { config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "prom/prometheus:v2.37.0";
+        image = "prom/prometheus:v2.38.0";
         environment = { TZ = "Europe/Warsaw"; };
         volumes = [
           "/media/data/${servicename}/config.yml:/etc/prometheus/prometheus.yml:ro"
