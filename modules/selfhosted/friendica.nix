@@ -5,7 +5,7 @@ in { pkgs, config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "friendica:2022.09-apache";
+        image = "friendica:2022.06-apache";
         environment = {
           FRIENDICA_URL = "${shortname}.gronkiewicz.dev";
           FIRENDICA_TZ = "UTC";
