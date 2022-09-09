@@ -6,7 +6,7 @@ in { config, ... }: {
     containers = {
       "${servicename}" = {
         image = "adguard/adguardhome:v0.108.0-b.14";
-        ports = [ "53:53/tcp" "53:53/udp" ];
+        ports = [ "100.111.43.19:53:53/tcp" "100.111.43.19:53:53/udp" ];
         volumes = [
           "/media/data/${servicename}/work:/opt/adguardhome/work"
           "/media/data/${servicename}/conf:/opt/adguardhome/conf"
