@@ -205,7 +205,7 @@
             age.secrets.friendicadb.file = ./secrets/friendicadb.age;
             age.secrets.giteadb.file = ./secrets/giteadb.age;
           }
-          ./modules/selfhosted/adguard.nix
+          ./modules/selfhosted/pihole.nix
           ./modules/selfhosted/grafana.nix
           ./modules/selfhosted/kuma.nix
           ./modules/selfhosted/prometheus.nix
