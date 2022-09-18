@@ -172,7 +172,6 @@
           ./hosts/dart
           ./modules/zfs.nix
           { home-manager.users.pg.imports = hmModules.dart; }
-          ./modules/selfhosted/gitea.nix
           ./modules/selfhosted/grocy.nix
           ./modules/selfhosted/calibre.nix
           ./modules/selfhosted/nextcloud.nix
