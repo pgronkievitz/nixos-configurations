@@ -203,6 +203,10 @@
             age.secrets.friendica.file = ./secrets/friendica.age;
             age.secrets.friendicadb.file = ./secrets/friendicadb.age;
             age.secrets.giteadb.file = ./secrets/giteadb.age;
+            age.secrets.pleroma = {
+              file = ./secrets/pleroma.age;
+              owner = "pleroma";
+            };
           }
           ./modules/selfhosted/pihole.nix
           ./modules/selfhosted/grafana.nix

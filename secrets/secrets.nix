@@ -25,4 +25,5 @@ in {
   "minifluxdb.age".publicKeys = users ++ [ dart ];
   "miniflux.age".publicKeys = users ++ [ dart ];
   "giteadb.age".publicKeys = users ++ [ hubble ];
+  "pleroma.age".publicKeys = users ++ [ hubble ];
 }
