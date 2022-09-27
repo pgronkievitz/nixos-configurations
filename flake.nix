@@ -209,6 +209,7 @@
           ./modules/selfhosted/kuma.nix
           ./modules/selfhosted/prometheus.nix
           ./modules/selfhosted/friendica.nix
+          ./modules/selfhosted/pleroma.nix
           ./modules/selfhosted/gitea.nix
           ./modules/selfhosted/lenpaste.nix
           ./modules/selfhosted/websites.nix
