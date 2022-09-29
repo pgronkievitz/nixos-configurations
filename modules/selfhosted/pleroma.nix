@@ -61,6 +61,7 @@
         pleroma = {
           rule = "Host(`pleroma.gronkiewicz.dev`)";
           service = "pleroma";
+          tls.certresolver = "letsencrypt";
         };
       };
       services = {

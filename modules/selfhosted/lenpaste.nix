@@ -26,6 +26,8 @@ in { config, ... }: {
         extraOptions = [
           "--label=traefik.http.routers.${servicename}.rule=Host(`${shortname}.gronkiewicz.dev`)"
           "--label=traefik.http.services.${servicename}.loadbalancer.server.port=80"
+          "--label=traefik.http.routers.${servicename}.tls=true"
+          "--label=traefik.http.routers.${servicename}.tls.certresolver=letsencrypt"
         ];
       };
     };
