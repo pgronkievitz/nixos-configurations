@@ -200,8 +200,6 @@
           ./hosts/hubble
           {
             home-manager.users.pg.imports = hmModules.hubble;
-            age.secrets.friendica.file = ./secrets/friendica.age;
-            age.secrets.friendicadb.file = ./secrets/friendicadb.age;
             age.secrets.giteadb.file = ./secrets/giteadb.age;
             age.secrets.pleroma = {
               file = ./secrets/pleroma.age;
@@ -212,7 +210,6 @@
           ./modules/selfhosted/grafana.nix
           ./modules/selfhosted/kuma.nix
           ./modules/selfhosted/prometheus.nix
-          ./modules/selfhosted/friendica.nix
           ./modules/selfhosted/pleroma.nix
           ./modules/selfhosted/gitea.nix
           ./modules/selfhosted/lenpaste.nix
