@@ -5,7 +5,7 @@ in { config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "evanbuss/openbooks:4.4.0";
+        image = "evanbuss/openbooks:4.4.1";
         environment = { TZ = "Europe/Warsaw"; };
         volumes = [ "/media/data/${servicename}:/books" ];
         extraOptions = [

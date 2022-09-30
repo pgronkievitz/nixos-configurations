@@ -5,7 +5,7 @@ in { config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "lscr.io/linuxserver/radarr:4.1.0";
+        image = "lscr.io/linuxserver/radarr:4.2.4";
         volumes = [
           "/media/data/${servicename}/config:/config"
           "/media/data/${servicename}/movies:/movies"

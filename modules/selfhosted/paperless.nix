@@ -5,21 +5,30 @@ in { config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "lscr.io/linuxserver/paperless-ngx:1.8.0";
+        image = "ghcr.io/paperless-ngx/paperless-ngx:1.9.2";
         volumes = [
-          "/media/data/${servicename}/config:/config"
-          "/media/data/${servicename}/data:/data"
+          "/media/data/${servicename}/config:/usr/src/paperless/data"
+          "/media/data/${servicename}/data/consume:/usr/src/paperless/consume"
+          "/media/data/${servicename}/data/media:/usr/src/paperless/media"
+          "/media/data/${servicename}/data/export:/usr/src/paperless/export"
         ];
         environment = {
           TZ = "Europe/Warsaw";
-          PUID = "1000";
-          PGID = "1000";
+          USERMAP_UID = "1000";
+          USERMAP_GID = "1000";
           PAPERLESS_URL = "https://${shortname}.lab.home";
+          PAPERLESS_REDIS = "redis://${servicename}-redis:6379";
         };
         extraOptions = [
-          "--label=traefik.http.routers.${servicename}.rule=Host(`${shortname}.gronkiewicz.xyz`,`${shortname}.lab.home`)"
+          "--label=traefik.http.routers.${servicename}.rule=Host(`${shortname}.lab.home`)"
           "--label=traefik.http.routers.${servicename}.tls=true"
+          "--network=${servicename}"
         ];
+      };
+      "${servicename}-redis" = {
+        image = "redis:7.0.4-alpine";
+        volumes = [ "/media/data/${servicename}/redis:/usr/local/etc/redis" ];
+        extraOptions = [ "--network=${servicename}" ];
       };
     };
   };
