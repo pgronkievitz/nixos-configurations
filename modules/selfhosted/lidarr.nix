@@ -13,7 +13,6 @@ in { config, ... }: {
           "/media/data/${servicename}/downloads:/downloads"
         ];
         environment.TZ = "Europe/Warsaw";
-        user = "1000:1000";
         extraOptions = [
           "--label=traefik.http.routers.${servicename}-${shortname}.rule=Host(`${shortname}.lab.home`)"
           "--label=traefik.http.services.${servicename}-${shortname}.loadbalancer.server.port=8686"
