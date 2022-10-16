@@ -207,7 +207,6 @@
           }
           ./modules/selfhosted/pihole.nix
           ./modules/selfhosted/grafana.nix
-          ./modules/selfhosted/kuma.nix
           ./modules/selfhosted/prometheus.nix
           ./modules/selfhosted/pleroma.nix
           ./modules/selfhosted/gitea.nix
