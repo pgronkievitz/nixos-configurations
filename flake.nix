@@ -208,6 +208,7 @@
           ./modules/selfhosted/pihole.nix
           ./modules/selfhosted/grafana.nix
           ./modules/selfhosted/prometheus.nix
+          ./modules/selfhosted/ejabberd.nix
           ./modules/selfhosted/pleroma.nix
           ./modules/selfhosted/gitea.nix
           ./modules/selfhosted/lenpaste.nix
