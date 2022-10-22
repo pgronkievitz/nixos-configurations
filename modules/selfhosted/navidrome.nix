@@ -5,7 +5,7 @@ in { config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "deluan/navidrome:0.47.5";
+        image = "deluan/navidrome:0.48.0";
         environment = {
           ND_SCANSCHEDULE = "1h";
           ND_LOGLEVEL = "INFO";

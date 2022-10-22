@@ -20,12 +20,12 @@ in { config, ... }: {
           "5222:5222" # XMPP
           "5269:5269" # XMPP fed
         ];
-        extraOptions = [
-          "--label=traefik.http.routers.${servicename}.rule=Host(`${shortname}.gronkiewicz.dev`)"
-          "--label=traefik.http.routers.${servicename}.tls=true"
-          "--label=traefik.http.routers.${servicename}.tls.certresolver=letsencrypt"
-          "--label=traefik.http.services.${servicename}.loadbalancer.server.port=5280"
-        ];
+#       extraOptions = [
+#         "--label=traefik.http.routers.${servicename}.rule=Host(`${shortname}.gronkiewicz.dev`)"
+#         "--label=traefik.http.routers.${servicename}.tls=true"
+#         "--label=traefik.http.routers.${servicename}.tls.certresolver=letsencrypt"
+#         "--label=traefik.http.services.${servicename}.loadbalancer.server.port=5280"
+#       ];
       };
     };
   };

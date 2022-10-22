@@ -1,4 +1,4 @@
-let nginxver="1.23.1-alpine"; in {
+let nginxver="1.23.2-alpine"; in {
   virtualisation.oci-containers = {
     containers = {
       "gronkiewi-cz" = let servicename = "gronkiewi.cz"; in {
