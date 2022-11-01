@@ -21,10 +21,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     deploy-rs.url = "github:serokell/deploy-rs";
-    nixpkgs-f2k = {
-      url = "github:fortuneteller2k/nixpkgs-f2k";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, fup, agenix, deploy-rs, ... }:
@@ -95,7 +91,6 @@
       channels.nixpkgs.overlaysBuilder = channels: [
         inputs.fup.overlay
         inputs.emacs-overlay.overlay
-        inputs.nixpkgs-f2k.overlays.default
       ];
       channelsConfig = {
         allowUnfree = true;
