@@ -207,6 +207,7 @@
           ./modules/selfhosted/gitea.nix
           ./modules/selfhosted/lenpaste.nix
           ./modules/selfhosted/websites.nix
+          ./modules/selfhosted/n8nproxy.nix
           ./modules/mbr.nix
         ] ++ servers;
       };

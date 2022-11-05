@@ -11,7 +11,7 @@ in { config, ... }: {
           GENERIC_TIMEZONE = "Europe/Warsaw";
           N8N_EDITOR_BASE_URL = "https://n8n.lab.home";
           N8N_DIAGNOSTICS_ENABLED = "false";
-          WEBHOOK_URL = "https://n8n.lab.home";
+          WEBHOOK_URL = "https://n8n.gronkiewicz.dev";
         };
         volumes = [ "/media/data/${servicename}:/home/node/.n8n" ];
         extraOptions = [
