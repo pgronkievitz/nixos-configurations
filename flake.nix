@@ -172,7 +172,6 @@
           ./modules/selfhosted/photoprism.nix
           ./modules/selfhosted/openbooks.nix
           ./modules/selfhosted/minio.nix
-          ./modules/selfhosted/n8n.nix
           ./modules/selfhosted/podsync.nix
           ./modules/selfhosted/kiwix.nix
           ./modules/selfhosted/miniflux.nix
@@ -206,8 +205,8 @@
           ./modules/selfhosted/pleroma.nix
           ./modules/selfhosted/gitea.nix
           ./modules/selfhosted/lenpaste.nix
+          ./modules/selfhosted/n8n.nix
           ./modules/selfhosted/websites.nix
-          ./modules/selfhosted/n8nproxy.nix
           ./modules/mbr.nix
         ] ++ servers;
       };
