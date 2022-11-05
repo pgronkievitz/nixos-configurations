@@ -60,15 +60,4 @@
     YnW/M3nqnpgCj7EtzJ3XiE5Gj1Yr1w==
     -----END CERTIFICATE-----
   ''];
-
-  system.replaceRuntimeDependencies = [
-    ({
-      original = pkgs.openssl;
-      replacement = let
-        nixpkgsfixed = builtins.fetchTarball "https://github.com/NixOS/nixpkgs/archive/eeca5969b3f42ac943639aaec503816f053e5e53.tar.gz";
-        inherit (pkgs.callPackage (nixpkgsfixed + "/pkgs/development/libraries/openssl") {}) openssl_3;
-      in openssl_3;
-    })
-  ];
-
 }
