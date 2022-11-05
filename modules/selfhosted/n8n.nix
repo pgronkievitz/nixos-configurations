@@ -9,6 +9,8 @@ in { config, ... }: {
         environment = {
           TZ = "Europe/Warsaw";
           GENERIC_TIMEZONE = "Europe/Warsaw";
+          N8N_EDITOR_BASE_URL = "https://n8n.lab.home";
+          N8N_DIAGNOSTICS_ENABLED = "false";
         };
         volumes = [ "/media/data/${servicename}:/home/node/.n8n" ];
         extraOptions = [
