@@ -194,6 +194,7 @@
           {
             home-manager.users.pg.imports = hmModules.hubble;
             age.secrets.giteadb.file = ./secrets/giteadb.age;
+            age.secrets.matrixdb.file = ./secrets/matrixdb.age;
             age.secrets.pleroma = {
               file = ./secrets/pleroma.age;
               owner = "pleroma";
@@ -207,6 +208,7 @@
           ./modules/selfhosted/lenpaste.nix
           ./modules/selfhosted/n8n.nix
           ./modules/selfhosted/websites.nix
+          ./modules/selfhosted/matrix.nix
           ./modules/mbr.nix
         ] ++ servers;
       };
