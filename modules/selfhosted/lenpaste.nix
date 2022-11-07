@@ -5,7 +5,7 @@ in { config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "git.lcomrade.su/root/lenpaste:1.1.1";
+        image = "git.lcomrade.su/root/lenpaste:1.2";
         environment = {
           LENPASTE_ADDRESS = ":80";
           LENPASTE_DB_DRIVER = "sqlite3";

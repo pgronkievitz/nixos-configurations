@@ -5,7 +5,7 @@ in { pkgs, config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "nextcloud:25.0.0";
+        image = "nextcloud:25.0.1";
         volumes = [
           "/media/data/${servicename}/data:/var/www/html"
           "/media/data/${servicename}/php.ini:/usr/local/etc/php/conf.d/zzz-custom.ini"
