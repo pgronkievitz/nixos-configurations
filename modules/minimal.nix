@@ -28,6 +28,7 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJQfo481KqK1LXCwZdz6sDvEbgxoL0cqV3n0J+nbTjaZ u0_a313@localhost"
       "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIDH7219zlzbwGZxSHkbKWFZ6HlgYF352/88uyhapeMNRAAAABHNzaDo= pg@artemis"
       "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIAVmIuEGVOre3GqyZydZiZ/BKYFLSLqU9qZLmIn6BN1ZAAAABHNzaDo= pg@artemis"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICAbvEeFqXTFAXkYYvC5WTguYRgYrFa//kCfSdRu5SRK pg@artemis"
     ];
     hashedPassword =
       "$6$spoDBwr2hANMIaZ$joTTa3EpgdT2U.eOisBOEr26WasNdiVj39J3f4DcRkG48ubiobsdIiskgdreGl2EiW4JbpKFcwp5ByjjkfgmJ/";
