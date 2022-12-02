@@ -16,7 +16,7 @@
   programs.ssh.startAgent = true;
   services.openssh = {
     enable = true;
-    allowSFTP = false;
+    allowSFTP = true;
     passwordAuthentication = false;
     permitRootLogin = "no";
     extraConfig = ''
