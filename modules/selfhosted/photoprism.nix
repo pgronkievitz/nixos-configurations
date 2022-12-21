@@ -1,11 +1,12 @@
 let
   servicename = "photoprism";
   shortname = "photos";
-in { config, ... }: {
+in
+{ config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "photoprism/photoprism:221105-bullseye";
+        image = "photoprism/photoprism:2211-bullseye";
 
         environmentFiles = [ config.age.secrets.photos.path ];
         environment = {

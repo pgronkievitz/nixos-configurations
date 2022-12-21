@@ -1,11 +1,12 @@
 let
   servicename = "paperless";
   shortname = "docs";
-in { config, ... }: {
+in
+{ config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "ghcr.io/paperless-ngx/paperless-ngx:1.9.2";
+        image = "ghcr.io/paperless-ngx/paperless-ngx:1.10.2";
         volumes = [
           "/media/data/${servicename}/config:/usr/src/paperless/data"
           "/media/data/${servicename}/data/consume:/usr/src/paperless/consume"

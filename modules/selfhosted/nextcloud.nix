@@ -1,11 +1,12 @@
 let
   servicename = "nextcloud";
   shortname = "nc";
-in { pkgs, config, ... }: {
+in
+{ pkgs, config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "nextcloud:25.0.1";
+        image = "nextcloud:25.0.2";
         volumes = [
           "/media/data/${servicename}/data:/var/www/html"
           "/media/data/${servicename}/php.ini:/usr/local/etc/php/conf.d/zzz-custom.ini"

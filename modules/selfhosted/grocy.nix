@@ -1,11 +1,12 @@
 let
   servicename = "grocy";
   shortname = "gro";
-in { config, ... }: {
+in
+{ config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "lscr.io/linuxserver/grocy:3.3.1";
+        image = "lscr.io/linuxserver/grocy:3.3.2";
         volumes = [ "/media/data/${servicename}:/config" ];
         environment = { TZ = "Europe/Warsaw"; };
         extraOptions = [

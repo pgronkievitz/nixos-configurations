@@ -1,11 +1,12 @@
 let
   servicename = "kiwix";
   shortname = "wiki";
-in { config, ... }: {
+in
+{ config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "kiwix/kiwix-serve:3.3.0-1";
+        image = "kiwix/kiwix-serve:3.4.0";
         volumes = [
           "/media/data/${servicename}:/data"
         ];

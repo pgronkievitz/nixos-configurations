@@ -1,11 +1,12 @@
 let
   servicename = "bazarr";
   shortname = "baz";
-in { config, ... }: {
+in
+{ config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "lscr.io/linuxserver/bazarr:1.1.2";
+        image = "lscr.io/linuxserver/bazarr:1.1.3";
         volumes = [
           "/media/data/${servicename}/config:/config"
           "/media/data/sonarr/tv:/tv"

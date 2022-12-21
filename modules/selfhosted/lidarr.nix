@@ -1,11 +1,12 @@
 let
   servicename = "lidarr";
   shortname = "lid";
-in { config, ... }: {
+in
+{ config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "youegraillot/lidarr-on-steroids:1.2.2";
+        image = "youegraillot/lidarr-on-steroids:1.2.7";
         volumes = [
           "/media/data/${servicename}/config:/config"
           "/media/data/${servicename}/config_deemix:/config_deemix"

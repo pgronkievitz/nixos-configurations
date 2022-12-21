@@ -1,11 +1,12 @@
 let
   servicename = "miniflux";
   shortname = "rss";
-in { pkgs, config, ... }: {
+in
+{ pkgs, config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "miniflux/miniflux:2.0.39-distroless";
+        image = "miniflux/miniflux:2.0.41-distroless";
         extraOptions = [
           "--label=traefik.http.routers.${servicename}.rule=Host(`${shortname}.gronkiewicz.xyz`,`${shortname}.lab.home`)"
           "--label=traefik.http.routers.${servicename}.tls=true"

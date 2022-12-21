@@ -1,11 +1,12 @@
 let
   servicename = "grafana";
   shortname = "grafana";
-in { config, ... }: {
+in
+{ config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "grafana/grafana-oss:9.2.3";
+        image = "grafana/grafana-oss:9.3.2";
         environment = { TZ = "Europe/Warsaw"; };
         volumes = [ "/media/data/${servicename}:/var/lib/grafana" ];
         extraOptions = [

@@ -1,11 +1,12 @@
 let
   servicename = "gitea";
   shortname = "git";
-in { config, ... }: {
+in
+{ config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "gitea/gitea:1.17.3";
+        image = "codeberg.org/forgejo/forgejo:1.18.0-rc1-1";
         volumes = [ "/media/data/${servicename}:/data" ];
         extraOptions = [
           "--label=traefik.http.routers.${servicename}.rule=Host(`${shortname}.gronkiewicz.dev`)"

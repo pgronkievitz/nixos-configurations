@@ -1,11 +1,12 @@
 let
   servicename = "n8nio";
   shortname = "n8n";
-in { config, ... }: {
+in
+{ config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "n8nio/n8n:0.201.0";
+        image = "n8nio/n8n:0.209.0";
         environment = {
           TZ = "Europe/Warsaw";
           GENERIC_TIMEZONE = "Europe/Warsaw";

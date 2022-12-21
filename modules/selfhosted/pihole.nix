@@ -1,11 +1,12 @@
 let
   servicename = "pihole";
   shortname = "dns";
-in { config, ... }: {
+in
+{ config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
-        image = "pihole/pihole:2022.10";
+        image = "pihole/pihole:2022.11.2";
         ports = [ "100.111.43.19:53:53/tcp" "100.111.43.19:53:53/udp" ];
         volumes = [
           "/media/data/${servicename}/pihole:/etc/pihole"
