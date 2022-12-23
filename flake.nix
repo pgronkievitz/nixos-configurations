@@ -45,7 +45,6 @@
           ###########
           # SERVERS #
           ###########
-          apollo = shared ++ servers ++ [ ];
           dart = shared ++ servers ++ [ ];
           hubble = shared ++ servers ++ [ ];
         };
@@ -89,23 +88,6 @@
           servers = [ ./modules/monitoring.nix ./modules/selfhosted ];
         in
         {
-          apollo.modules = [
-            ./hosts/apollo
-            { home-manager.users.pg.imports = hmModules.apollo; }
-            ./modules/selfhosted/vaultwarden.nix
-            # ./modules/selfhosted/freshrss.nix
-            ./modules/selfhosted/wallabag.nix
-            ./modules/selfhosted/torrents.nix
-            ./modules/selfhosted/readarr.nix
-            ./modules/selfhosted/sonarr.nix
-            ./modules/selfhosted/radarr.nix
-            ./modules/selfhosted/lidarr.nix
-            ./modules/selfhosted/bazarr.nix
-            ./modules/selfhosted/prowlarr.nix
-            ./modules/selfhosted/navidrome.nix
-            ./modules/selfhosted/znc.nix
-            ./modules/gpt.nix
-          ] ++ servers;
           dart.modules = [
             ./hosts/dart
             ./modules/zfs.nix
@@ -119,6 +101,10 @@
             ./modules/selfhosted/podsync.nix
             ./modules/selfhosted/kiwix.nix
             ./modules/selfhosted/miniflux.nix
+            ./modules/selfhosted/vaultwarden.nix
+            ./modules/selfhosted/wallabag.nix
+            ./modules/selfhosted/torrents.nix
+            ./modules/selfhosted/navidrome.nix
             {
               age.secrets.ncdb.file = ./secrets/ncdb.age;
               age.secrets.ncmonitoring = {
@@ -161,13 +147,6 @@
         user = "root";
         sshOpts = [ "-p" "14442" ];
         nodes = {
-          # apollo = {
-          #   hostname = "apollo.gronkiewicz.xyz";
-          #   profiles.system = {
-          #     path = deploy-rs.lib.x86_64-linux.activate.nixos
-          #       self.nixosConfigurations.apollo;
-          #   };
-          # };
           dart = {
             hostname = "dart.gronkiewicz.xyz";
             profiles.system = {
