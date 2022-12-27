@@ -107,6 +107,7 @@
             ./modules/selfhosted/navidrome.nix
             ./modules/selfhosted/archivebox.nix
             ./modules/selfhosted/flame.nix
+            ./modules/selfhosted/mealie.nix
             {
               age.secrets.ncdb.file = ./secrets/ncdb.age;
               age.secrets.ncmonitoring = {
