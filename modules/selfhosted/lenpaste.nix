@@ -1,7 +1,8 @@
 let
   servicename = "lenpaste";
   shortname = "paste";
-in { config, ... }: {
+in
+{ config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
@@ -28,6 +29,10 @@ in { config, ... }: {
           "--label=traefik.http.services.${servicename}.loadbalancer.server.port=80"
           "--label=traefik.http.routers.${servicename}.tls=true"
           "--label=traefik.http.routers.${servicename}.tls.certresolver=letsencrypt"
+          "--label=flame.type=app"
+          "--label=flame.name=${servicename}"
+          "--label=flame.url=https://${shortname}.lab.home"
+          "--label=flame.icon=content-paste"
         ];
       };
     };

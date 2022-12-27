@@ -1,7 +1,8 @@
 let
   servicename = "openbooks";
   shortname = "books";
-in { config, ... }: {
+in
+{ config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
@@ -9,8 +10,12 @@ in { config, ... }: {
         environment = { TZ = "Europe/Warsaw"; };
         volumes = [ "/media/data/${servicename}:/books" ];
         extraOptions = [
-          "--label=traefik.http.routers.${servicename}.rule=Host(`${shortname}.gronkiewicz.xyz`,`${shortname}.lab.home`)"
+          "--label=traefik.http.routers.${servicename}.rule=Host(`${shortname}.lab.home`)"
           "--label=traefik.http.routers.${servicename}.tls=true"
+          "--label=flame.type=app"
+          "--label=flame.name=${servicename}"
+          "--label=flame.url=https://${shortname}.lab.home"
+          "--label=flame.icon=book"
         ];
         cmd = [ "--persist" ];
       };

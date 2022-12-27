@@ -10,8 +10,12 @@ in
         environment = { TZ = "Europe/Warsaw"; };
         volumes = [ "/media/data/${servicename}:/var/lib/grafana" ];
         extraOptions = [
-          "--label=traefik.http.routers.${servicename}.rule=Host(`${shortname}.gronkiewicz.xyz`,`${shortname}.lab.home`)"
+          "--label=traefik.http.routers.${servicename}.rule=Host(`${shortname}.lab.home`)"
           "--label=traefik.http.routers.${servicename}.tls=true"
+          "--label=flame.type=app"
+          "--label=flame.name=${servicename}"
+          "--label=flame.url=https://${shortname}.lab.home"
+          "--label=flame.icon=chart-line"
         ];
       };
     };

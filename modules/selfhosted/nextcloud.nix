@@ -12,7 +12,7 @@ in
           "/media/data/${servicename}/php.ini:/usr/local/etc/php/conf.d/zzz-custom.ini"
         ];
         extraOptions = [
-          "--label=traefik.http.routers.${servicename}.rule=Host(`${shortname}.gronkiewicz.xyz`,`${shortname}.lab.home`)"
+          "--label=traefik.http.routers.${servicename}.rule=Host(`${shortname}.lab.home`)"
           "--label=traefik.http.routers.${servicename}.tls=true"
           "--label=traefik.http.middlewares.${servicename}-dav.redirectregex.permanent=true"
           "--label=traefik.http.middlewares.${servicename}-dav.redirectregex.regex=https://(.*)/.well-known/(card|cal)dav"
@@ -20,6 +20,10 @@ in
           "--label=traefik.http.middlewares.${servicename}-sts.headers.stsSeconds=31536000"
           "--label=traefik.http.middlewares.${servicename}.chain.middlewares=${servicename}-dav,${servicename}-sts"
           "--label=traefik.http.routers.${servicename}.middlewares=${servicename}"
+          "--label=flame.type=app"
+          "--label=flame.name=${servicename}"
+          "--label=flame.url=https://${shortname}.lab.home"
+          "--label=flame.icon=cloud"
           "--network=${servicename}"
         ];
         dependsOn = [ "${servicename}-db" "${servicename}-redis" ];

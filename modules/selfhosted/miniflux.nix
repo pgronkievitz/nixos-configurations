@@ -8,8 +8,12 @@ in
       "${servicename}" = {
         image = "miniflux/miniflux:2.0.41-distroless";
         extraOptions = [
-          "--label=traefik.http.routers.${servicename}.rule=Host(`${shortname}.gronkiewicz.xyz`,`${shortname}.lab.home`)"
+          "--label=traefik.http.routers.${servicename}.rule=Host(`${shortname}.lab.home`)"
           "--label=traefik.http.routers.${servicename}.tls=true"
+          "--label=flame.type=app"
+          "--label=flame.name=${servicename}"
+          "--label=flame.url=https://${shortname}.lab.home"
+          "--label=flame.icon=rss"
           "--network=${servicename}"
         ];
         environmentFiles = [ config.age.secrets.miniflux.path ];

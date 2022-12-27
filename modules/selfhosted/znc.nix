@@ -11,7 +11,7 @@ in { config, ... }: {
           "5000:5000"
         ];
         extraOptions = [
-          "--label=traefik.http.routers.${servicename}.rule=Host(`${shortname}.gronkiewicz.xyz`,`${shortname}.lab.home`)"
+          "--label=traefik.http.routers.${servicename}.rule=Host(`${shortname}.lab.home`)"
           "--label=traefik.http.services.${servicename}.loadbalancer.server.port=5000"
           "--label=traefik.http.routers.${servicename}.tls=true"
         ];

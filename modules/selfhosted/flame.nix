@@ -10,7 +10,10 @@ in
         environment = {
           PASSWORD = "admin"; # it's not critical anyways
         };
-        volumes = [ "/media/data/${servicename}:/app/data" ];
+        volumes = [
+          "/media/data/${servicename}:/app/data"
+          "/var/run/docker.sock:/var/run/docker.sock"
+        ];
         extraOptions = [
           "--label=traefik.http.routers.${servicename}.rule=Host(`${shortname}.lab.home`)"
           "--label=traefik.http.routers.${servicename}.tls=true"

@@ -10,7 +10,7 @@ in
         volumes = [ "/media/data/${servicename}:/config" ];
         environment.TZ = "Europe/Warsaw";
         extraOptions = [
-          "--label=traefik.http.routers.${servicename}.rule=Host(`${shortname}.gronkiewicz.xyz`,`${shortname}.lab.home`)"
+          "--label=traefik.http.routers.${servicename}.rule=Host(`${shortname}.lab.home`)"
           "--label=traefik.http.routers.${servicename}.tls=true"
           "--network=torrenting"
         ];

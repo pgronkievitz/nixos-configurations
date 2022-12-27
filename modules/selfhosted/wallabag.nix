@@ -1,7 +1,8 @@
 let
   servicename = "wallabag";
   shortname = "wb";
-in { config, ... }: {
+in
+{ config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
@@ -18,6 +19,10 @@ in { config, ... }: {
           "--label=traefik.http.routers.${servicename}-http.entrypoints=http"
           "--label=traefik.http.routers.${servicename}-http.rule=Host(`${shortname}.lab.home`)"
           "--label=traefik.http.routers.${servicename}-http.middlewares=${servicename}"
+          "--label=flame.type=app"
+          "--label=flame.name=${servicename}"
+          "--label=flame.url=https://${shortname}.lab.home"
+          "--label=flame.icon=alpha-w"
         ];
       };
     };

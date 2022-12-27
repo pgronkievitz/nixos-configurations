@@ -1,7 +1,8 @@
 let
   servicename = "transmission";
   shortname = "torrent";
-in { config, ... }: {
+in
+{ config, ... }: {
   virtualisation.oci-containers = {
     containers = {
       "${servicename}" = {
@@ -14,9 +15,13 @@ in { config, ... }: {
           "/media/data/${servicename}/watch:/watch"
         ];
         extraOptions = [
-          "--label=traefik.http.routers.${servicename}.rule=Host(`${shortname}.gronkiewicz.xyz`,`${shortname}.lab.home`)"
+          "--label=traefik.http.routers.${servicename}.rule=Host(`${shortname}.lab.home`)"
           "--label=traefik.http.routers.${servicename}.tls=true"
           "--label=traefik.http.services.${servicename}.loadbalancer.server.port=9091"
+          "--label=flame.type=app"
+          "--label=flame.name=${servicename}"
+          "--label=flame.url=https://${shortname}.lab.home"
+          "--label=flame.icon=cloud-download"
           "--network=torrenting"
         ];
       };

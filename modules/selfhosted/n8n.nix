@@ -18,6 +18,10 @@ in
         extraOptions = [
           "--label=traefik.http.routers.${servicename}.rule=Host(`${shortname}.gronkiewicz.dev`)"
           "--label=traefik.http.routers.${servicename}.tls=true"
+          "--label=flame.type=app"
+          "--label=flame.name=${servicename}"
+          "--label=flame.url=https://${shortname}.gronkiewicz.dev"
+          "--label=flame.icon=robot-industrial"
         ];
       };
     };

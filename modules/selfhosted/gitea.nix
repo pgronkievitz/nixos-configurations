@@ -14,6 +14,10 @@ in
           "--label=traefik.http.routers.${servicename}.tls.certresolver=letsencrypt"
 
           "--label=traefik.http.services.${servicename}.loadbalancer.server.port=3000"
+          "--label=flame.type=app"
+          "--label=flame.name=${servicename}"
+          "--label=flame.url=https://${shortname}.lab.home"
+          "--label=flame.icon=git"
           "--network=${servicename}"
         ];
         ports = [ "22:22" ];
