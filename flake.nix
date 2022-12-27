@@ -2,7 +2,7 @@
   description = "pgronkievitz's config";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:urandom2/nixpkgs/netmaker";
     nixpkgs-asus.url = "github:Cogitri/nixpkgs/asusctl";
     impermanence.url = "github:nix-community/impermanence";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";

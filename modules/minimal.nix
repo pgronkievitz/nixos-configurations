@@ -13,9 +13,12 @@
     pkgs.networkmanagerapplet
     pkgs.networkmanager-openvpn
     pkgs.tailscale
+    pkgs.netmaker
+    pkgs.wireguard-tools
     inputs.agenix.defaultPackage.x86_64-linux
   ];
   services.tailscale.enable = true;
+  networking.wireguard.enable = true;
   programs.mtr.enable = true;
   users.mutableUsers = false;
   users.users.pg = {
