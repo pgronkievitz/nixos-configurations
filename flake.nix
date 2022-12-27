@@ -108,6 +108,7 @@
             ./modules/selfhosted/archivebox.nix
             ./modules/selfhosted/flame.nix
             ./modules/selfhosted/mealie.nix
+            ./modules/selfhosted/technitium.nix
             {
               age.secrets.ncdb.file = ./secrets/ncdb.age;
               age.secrets.ncmonitoring = {
@@ -118,6 +119,7 @@
               age.secrets.photos-db.file = ./secrets/photoprismdb.age;
               age.secrets.miniflux.file = ./secrets/miniflux.age;
               age.secrets.minifluxdb.file = ./secrets/minifluxdb.age;
+              age.secrets.technitium.file = ./secrets/technitium.age;
             }
             ./modules/selfhosted/paperless.nix
             ./modules/gpt.nix

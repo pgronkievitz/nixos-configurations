@@ -14,7 +14,8 @@ let
   systems = [ artemis apollo dart ];
   servers = [ apollo dart hubble ];
   laptop = [ artemis pg ];
-in {
+in
+{
   "ssl.age".publicKeys = servers ++ users;
   "ncdb.age".publicKeys = users ++ [ dart ];
   "ncmonitoring.age".publicKeys = users ++ [ dart ];
@@ -25,4 +26,5 @@ in {
   "giteadb.age".publicKeys = users ++ [ hubble ];
   "pleroma.age".publicKeys = users ++ [ hubble ];
   "matrixdb.age".publicKeys = users ++ [ hubble ];
+  "technitium.age".publicKeys = users ++ [ dart ];
 }
