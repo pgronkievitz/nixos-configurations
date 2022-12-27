@@ -13,6 +13,7 @@ in
         extraOptions = [
           "--label=traefik.http.routers.${servicename}.rule=Host(`${shortname}.lab.home`)"
           "--label=traefik.http.routers.${servicename}.tls=true"
+          "--label=traefik.http.services.${servicename}.loadbalancer.server.port=8080"
           "--label=flame.type=app"
           "--label=flame.name=${servicename}"
           "--label=flame.url=https://${shortname}.lab.home"
