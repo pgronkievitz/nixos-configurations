@@ -135,7 +135,6 @@
                 owner = "pleroma";
               };
             }
-            ./modules/selfhosted/pihole.nix
             ./modules/selfhosted/grafana.nix
             ./modules/selfhosted/prometheus.nix
             ./modules/selfhosted/pleroma.nix
